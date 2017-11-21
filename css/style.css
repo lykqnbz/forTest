@@ -57,9 +57,9 @@ ul,ol {list-style:none;}
 .catch_img{}
 
 /* 弹出层 */
-.black_overlay_1 {position:absolute;top:0%;left:0%;width:100%;height:300%;background-color:rgba(0,0,0,0.8);z-index:1001;overflow:auto;}
-.black_overlay_2 {position:absolute;top:0%;left:0%;width:100%;height:300%;background-color:rgba(0,0,0,0.8);z-index:1001;overflow:auto;}
-.black_overlay_3 {position:absolute;top:0%;left:0%;width:100%;height:300%;background-color:rgba(0,0,0,0.8);z-index:1001;overflow:auto;}
+.black_overlay_1 {position:flex;top:0%;left:0%;width:100%;height:300%;background-color:rgba(0,0,0,0.8);z-index:1001;overflow:auto;}
+.black_overlay_2 {position:flex;top:0%;left:0%;width:100%;height:300%;background-color:rgba(0,0,0,0.8);z-index:1001;overflow:auto;}
+.black_overlay_3 {position:flex;top:0%;left:0%;width:100%;height:300%;background-color:rgba(0,0,0,0.8);z-index:1001;overflow:auto;}
 .overlay {width:67%;margin:40% 16%;background:#fff;border-radius:15px;}
 .overlay p:nth-child(1) {font-size:1.15rem;color:#72CB5D;font-weight:600;margin-top:5%;}
 .overlay_1 {width:67%;margin:45% 16%;background:#fff;border-radius:15px;}
