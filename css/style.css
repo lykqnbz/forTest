@@ -11,7 +11,7 @@ ul,ol {list-style:none;}
 @media screen and (max-width:320px){html{font-size:12px;}} /* 苹果5 */
 
 /* 房间内页面 room.html */
-.header {height:60px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#fff;position: relative;}
+.header {display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#fff;position: relative;}
 .h_left {display:-webkit-box;display:-ms-flexbox;display:flex;}
 .h_left img {display:block;margin-right:7px;}
 .h_right {display:-webkit-box;display:-ms-flexbox;display:flex;}
