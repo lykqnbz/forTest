@@ -36,6 +36,9 @@ $(".money").click(function(){
     $(".black_overlay_1").removeClass("hidden");
     $(".catch_failed").removeClass("hidden");
     $("body").height($(window).height()).css({"overflow-y": "hidden"})
+    $('.black_overlay_1,.catch_failed').bind("touchmove",function(e){
+        e.preventDefault();
+        });
 });
 $(".leftkey").click(function(){
     $(".black_overlay_2").removeClass("hidden");
