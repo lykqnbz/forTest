@@ -22,13 +22,13 @@ ul,ol {list-style:none;}
 .hr_right img {width:40px;height:40px;border-radius:50%;}
 .liveimage {z-index:1;width:100%;border-radius:2%;position:relative;}
 .userimage {border:2px solid #72CB5D;width:5.9rem;height:7.95rem;border-top-left-radius:10px;border-bottom-right-radius:10px;position:absolute;top:-2px;left:-2px;z-index: 999;}
-.userimg {width:5.9rem;height:7.95rem;border-top-left-radius:8px;border-bottom-right-radius:8px;}
+.userimg {width:5.9rem;height:7.95rem;border-top-left-radius:10px;border-bottom-right-radius:10px;}
 .username {position:absolute;bottom:0px;left:0px;height:1.3rem;font-size:12px;width:100%;line-height:1.3rem;text-align:center;border-bottom-right-radius:6px;color:#ddd;background:rgba(0,0,0,0.459);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .rotate_img {position:absolute;top:50%;margin-top:-23px;right:0px;z-index: 999;}
 .talk{width: 60%;overflow:hidden;;position: absolute;left: 0px;bottom: 50px;color: #fff;font-size: 0.875rem;}
 .talk_name{color: #FFCC50}
 .talk li{font-size:12px;}
-.talk li span{display: inline-block;background: rgba(0,0,0,0.7);padding:2% 5%;margin-bottom: 6%;line-height: 20px;border-top-right-radius: 5px;border-bottom-right-radius:5px;}
+.talk li span{display: inline-block;background: rgba(0,0,0,0.7);padding:2% 5%;margin-bottom: 10px;;line-height: 20px;border-top-right-radius: 5px;border-bottom-right-radius:5px;}
 .talk_img {position:absolute;left:0px;bottom:15px;z-index: 999;}
 .menu_in{font-size:0.875rem;margin-top: 5%;}
 .menu_ready{}
