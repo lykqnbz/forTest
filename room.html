@@ -45,7 +45,7 @@
         </div>
     </div>
     <header class="header">   
-            <div class="h_left" onclick="window.open('machine_list.html','_self')"><img src="images/return.png">返回</div>
+            <div class="h_left" onclick="window.open('machine_list.html','_self')"><img src="images/return.png" style="width:10px;height:18px;">返回</div>
             <div class="h_right">
                 <div class="hr_left">
                     <div class="hrl_top">5人</div>
@@ -152,7 +152,7 @@
          $(".liveimage").css("height",screen.height*0.68+"px");
     }    
 
-    var p=0,t=0;iftop=true; 
+    var p=0,t=0;iftop=false; 
     $(window).scroll(function(e){  
         p = $(this).scrollTop();  
         if(t<=p&&iftop==true&&p>screen.height*0.15){
@@ -160,7 +160,7 @@
         $("html,body").animate({scrollTop: $(".catch_list").offset().top}, 1000);
             iftop=false;
         }  
-        if(p==0){
+        if(p>=0&&p<screen.height*0.15){
             iftop=true;
         }
         setTimeout(function(){t = p;},0);         
