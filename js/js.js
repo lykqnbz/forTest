@@ -11,14 +11,18 @@ $(".talk_img").click(function(){
 });
 $(".clt_left").click(function(){
     if($(".catch_img").css("display")=="none"){
-        $(".catch_list_li,.clt_left").addClass("hidden");
-        $(".catch_img,.clt_right").removeClass("hidden");
+        $(".clt_left").addClass("catch_active");
+        $(".clt_left").removeClass("catch_active");
+        $(".catch_list_li").addClass("hidden");
+        $(".catch_img").removeClass("hidden");
     }
 });
 $(".clt_right").click(function(){
     if($(".catch_list_li").css("display")=="none"){
-        $(".catch_list_li,.clt_left").removeClass("hidden");
-        $(".catch_img,.clt_right").addClass("hidden");
+        $(".clt_left").removeClass("catch_active");
+        $(".clt_right").addClass("catch_active");
+        $(".catch_list_li").removeClass("hidden");
+        $(".catch_img").addClass("hidden");
     }
 });
 $(".begin_button").click(function(){
