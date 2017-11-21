@@ -136,13 +136,15 @@
 </body>
 <script src="js/js.js"></script>
 <script>
-    if(is_weixn()==true)
-    {
-        alert(1);
-    }
-    else{
+    //判断是不是微信内置浏览器
+
+    var ua = navigator.userAgent.toLowerCase(); 
+    if(ua.match(/MicroMessenger/i)=="micromessenger") { 
+            alert(1);
+    } else { 
         alert(2);
-    }
+    } 
+   
     $(".liveimage").css("height",screen.height*0.57+"px");
     $(".directiion_button").css("height",screen.height*0.17+"px");
     $(".catch_list").css("height",screen.height*0.7+"px");

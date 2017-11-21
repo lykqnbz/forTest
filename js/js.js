@@ -63,12 +63,3 @@ $(".nomoney .nomoney_left").click(function(){
     $("body").height($(window).height()).css({"overflow-y": "visible"})
 });
 
-//判断是不是微信内置浏览器
-function is_weixn(){ 
-    var ua = navigator.userAgent.toLowerCase(); 
-    if(ua.match(/MicroMessenger/i)=="micromessenger") { 
-    return true; 
-    } else { 
-    return false; 
-    } 
-}
