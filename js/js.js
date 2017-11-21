@@ -35,31 +35,31 @@ $(".begin_button").click(function(){
 $(".money").click(function(){
     $(".black_overlay_1").removeClass("hidden");
     $(".catch_failed").removeClass("hidden");
-    $("body").height($(window).height()).css({"overflow-y": "hidden"})
+    $("body,html").height($(window).height()).css({"overflow-y": "hidden"})
 });
 $(".leftkey").click(function(){
     $(".black_overlay_2").removeClass("hidden");
     $(".catch_success").removeClass("hidden");
-    $("body").height($(window).height()).css({"overflow-y": "hidden"})
+    $("body,html").height($(window).height()).css({"overflow-y": "hidden"})
 });
 $(".rightkey").click(function(){
     $(".black_overlay_3").removeClass("hidden");
     $(".nomoney").removeClass("hidden");
-    $("body").height($(window).height()).css({"overflow-y": "hidden"})
+    $("body,html").height($(window).height()).css({"overflow-y": "hidden"})
 });
 $(".catch_failed .overlay_button_1").click(function(){
     $(".black_overlay_1").addClass("hidden");
     $(".catch_failed").addClass("hidden");
-    $("body").height($(window).height()).css({"overflow-y": "visible"})
+    $("body,html").height($(window).height()).css({"overflow-y": "visible"})
 });
 $(".catch_success .overlay_button_1").click(function(){
     $(".black_overlay_2").addClass("hidden");
     $(".catch_success").addClass("hidden");
-    $("body").height($(window).height()).css({"overflow-y": "visible"})
+    $("body,html").height($(window).height()).css({"overflow-y": "visible"})
 });
 $(".nomoney .nomoney_left").click(function(){
     $(".black_overlay_3").addClass("hidden");
     $(".nomoney").addClass("hidden");
-    $("body").height($(window).height()).css({"overflow-y": "visible"})
+    $("body,html").height($(window).height()).css({"overflow-y": "visible"})
 });
 
