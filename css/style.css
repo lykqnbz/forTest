@@ -29,7 +29,7 @@ ul,ol {list-style:none;}
 .talk_name{color: #FFCC50}
 .talk li{font-size:12px;}
 .talk li span{display: inline-block;background: rgba(0,0,0,0.7);padding:2% 5%;margin-bottom: 10px;;line-height: 20px;border-top-right-radius: 5px;border-bottom-right-radius:5px;}
-.talk_img {position:absolute;left:0px;bottom:15px;z-index: 999;}
+.talk_img {position:absolute;left:0px;bottom:15px;z-index: 999;width:60px;height:24px;}
 .menu_in{font-size:0.875rem;margin-top: 5%;}
 .menu_ready{}
 .menu{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin:3% 0 2% 0;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color: #fff;}
