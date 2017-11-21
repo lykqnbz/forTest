@@ -13,9 +13,9 @@ ul,ol {list-style:none;}
 /* 房间内页面 room.html */
 .header {height:60px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#fff;position: relative;}
 .h_left {display:-webkit-box;display:-ms-flexbox;display:flex;}
-.h_left img {display:block;margin-right:7px;width: 27px;height: 21px;}
+.h_left img {display:block;margin-right:7px;}
 .h_right {display:-webkit-box;display:-ms-flexbox;display:flex;}
-.h_right img {width: 29px;height: 22px;}
+.h_right img {}
 .hr_left {font-size:14px;margin-right:10px;}
 .hrl_top {text-align:right;}
 .hrl_bottom {font-size:12px;}
