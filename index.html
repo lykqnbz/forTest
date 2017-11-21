@@ -27,7 +27,7 @@
     .invite_top p{ text-align: center;  font-size: 1rem; margin-top: 10px;}
     .invite_top p:nth-child(4){ font-size: 20px;}
     .invite_centen{margin-left: 10%;margin-right: 10%;width: 80%;color: #fff;display: flex;flex-direction: column;margin-top: 5%;}
-    .invite_centen li{display: flex;align-items: center;margin-top: 5%;}
+    .invite_centen li{display: flex;align-items: center;}
     .invite_centen li span{margin-left: 15px;}
     .invite_bottom{position: absolute;bottom: 0px; width: 100%;}
 </style>
@@ -35,7 +35,7 @@
 <body>
     <section>
         <div class="invite_top">
-            <img src="images/topCartoon.png">
+            <img src="images/topCartoon.png" style="width:85px;height:60px;">
             <img src="images/erweima.png">
             <p>我的邀请码</p>
             <p>5555555</p>
@@ -57,6 +57,18 @@
     </section>
     <img class="invite_bottom" src="images/bottomCartoon.png">
 </body>
+<script>
+    if(screen.width<350)
+    {
+     document.getElementsByClassName("invite_top")[0].style.height="200px";  
+     document.getElementsByClassName("invite_top")[0].style.marginTop="18%";
+     document.getElementsByClassName("invite_centen")[0].style.lineHeight="40px";   
+    }
+    else{
+     document.getElementsByClassName("invite_centen")[0].style.lineHeight="50px";  
+    }
+
+</script>
 </html>
 
 
