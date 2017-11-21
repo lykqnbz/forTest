@@ -24,7 +24,7 @@ $(".clt_right").click(function(){
 $(".begin_button").click(function(){
     $(".menu_ready").removeClass("hidden");
     $(".catch_list,.menu_in").addClass("hidden");
-
+});
 // 弹出框
 $(".money").click(function(){
     $(".black_overlay_1,.catch_failed").removeClass("hidden");
