@@ -154,7 +154,7 @@
     var p=0,t=0;iftop=true; 
     $(window).scroll(function(e){  
         p = $(this).scrollTop();  
-        if(t<=p&&iftop==true&&p>screen.height*0.25){
+        if(t<=p&&iftop==true&&p>screen.height*0.15){
         //下滚  
         $("html,body").animate({scrollTop: $(".catch_list").offset().top}, 1000);
             iftop=false;
