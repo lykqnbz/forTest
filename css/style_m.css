@@ -12,4 +12,4 @@ body {overflow:hidden;background:url(../images/bg.png) no-repeat top center;back
 .cl_top img {width:80%;}
 .c_right {display:flex;align-items:center;justify-content:center;margin-top:20px;}
 #cr_img {width:95%;}
-.download_m {position:flex;width:165px;height:70px;left:50%;top:87%;background:url(../images/down_m.png)  no-repeat;background-size:100% 100%;text-align:center;line-height:70px;color:#fff;border-radius:40px;font-size:16px;margin-left:-82.5px;}
+.download_m {position:fixed;width:165px;height:70px;left:50%;top:87%;background:url(../images/down_m.png)  no-repeat;background-size:100% 100%;text-align:center;line-height:70px;color:#fff;border-radius:40px;font-size:16px;margin-left:-82.5px;}
