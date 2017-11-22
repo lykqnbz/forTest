@@ -109,7 +109,7 @@
                 抓中记录
             </div>
         </div>
-        <ul class="catch_list_li">
+        <ul class="catch_list_li" style="overflow: auto;-webkit-overflow-scrolling:touch">
             <li>
                 <div class="catch_li_left"><img src="images/icon.png"> <span>得过且过</span></div>
                 <div class="catch_li_right"> <span>16:20</span> </div>
@@ -164,7 +164,6 @@
 </body>
 <script src="js/js.js"></script>
 <script>
-    alert('1：'+window.screen.height  +"  2: "+window.screen.availHeight)
     //判断是不是微信内置浏览器
     var ua = navigator.userAgent.toLowerCase(); 
     if(ua.match(/MicroMessenger/i)=="micromessenger") { 
@@ -175,6 +174,7 @@
     $(".header").css("height",screen.height*0.07+"px");
     $(".directiion_button").css("height",screen.height*0.17+"px");
     $(".catch_list").css("height",screen.height*0.7+"px");
+    $(".catch_list_li").css("height",screen.height*0.7-47+"px");
     $(".overlay").css("height",screen.height*0.5+"px");
     $(".overlay_1").css("height",screen.height*0.25+"px");
     $(".talk").css("height",screen.height*0.19+"px");
