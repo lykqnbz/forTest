@@ -1,74 +1,67 @@
 <!DOCTYPE html>
+<!-- saved from url=(0035)http://www.h5.jamma.cn/wawa/slaver/ -->
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="cleartype" content="on">
-    <title>邀请码</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <style>
-    *{margin: 0px;padding: 0px;}
-    ul{list-style:none;}
-    html{font-size: 16px;}
-    @media screen and (min-width:641px){html{font-size:18px;}}
-    @media screen and (max-width:640px){html{font-size:16px;}}
-    @media screen and (max-width:480px){html{font-size:14px;}}
-    @media screen and (max-width:359px){html{font-size:10px;}}
-    body{background: url(images/bg.png) no-repeat;background-size:100% auto;}
-    section{width: 100%;}
-    .invite_top{ background: #E9ECEC; margin-left: 10%;margin-right: 10%;height: 219px;width: 80%;border-radius: 10px;margin-top: 20%;position: relative;}
-    .invite_top img:nth-child(1){ position: absolute;top: -51px;left: 50%; margin-left: -43.5px;}
-    .invite_top img:nth-child(2){ width: 35%; display: block; margin:  0 auto; padding-top: 28px; }
-    .invite_top p{ text-align: center;  font-size: 1rem; margin-top: 10px;}
-    .invite_top p:nth-child(4){ font-size: 20px;}
-    .invite_centen{margin-left: 10%;margin-right: 10%;width: 80%;color: #fff;display: flex;flex-direction: column;margin-top: 5%;}
-    .invite_centen li{display: flex;align-items: center;}
-    .invite_centen li span{margin-left: 15px;}
-    .invite_bottom{position: absolute;bottom: 0px; width: 100%;}
-</style>
+    <meta name="format-detection" content="email=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" type="image/x-icon" href="images/icon.ico" media="screen">
+    <title>掌中娃娃机</title>
+    <link rel="stylesheet" type="text/css" media="screen and (max-device-width: 600px)" href="css/style_m.css"/>
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 601px)" href="css/style.css"/>
 </head>
-<body>
-    <section>
-        <div class="invite_top">
-            <img src="images/topCartoon.png" style="width:85px;height:60px;">
-            <img src="images/erweima.png">
-            <p>我的邀请码</p>
-            <p>5555555</p>
-        </div>
-        <ul class="invite_centen">
-            <li>
-                <img src="images/invitation1.png" style="width:34px;height:34px;">
-                <span>邀请好友，您和友好各得30娃娃币</span>
-            </li>
-            <li>
-                <img src="images/invitation2.png" style="width:34px;height:34px;">
-                <span>每天登录就送10娃娃币</span>
-            </li>
-            <li>
-                <img src="images/invitation3.png" style="width:34px;height:34px;">
-                <span>超值爆款网红娃娃，萌又多，上新快</span>
-            </li>
-        </ul>
-    </section>
-    <img class="invite_bottom" src="images/bottomCartoon.png">
+<body style="height:100%;">
+    <div class="page">
+        <header class="head">
+            <img src="images/logo.png">
+        </header>
+        <section class="centen">
+            <div class="c_left">
+                <div class="cl_top">
+                    <img src="images/title.png">
+                </div>
+                <div class="cl_bototm">
+                    <div class="clb_l">
+                        <img src="images/sina_code.png" style="width:180px;height:180px;">
+                        <img src="images/sina_m.png">
+                        <a href="https://itunes.apple.com/us/app/%E6%8E%8C%E4%B8%AD%E5%A8%83%E5%A8%83%E6%9C%BA/id1315863819?l=zh&ls=1&mt=8">
+                            <img src="images/download_ios.png">
+                        </a>
+                    </div>
+                    <div class="clb_l">
+                        <img src="images/wechat_code.png" style="width:180px;height:180px;">
+                        <img src="images/wechat_m.png">
+                        <a href="http://api.catchingdoll.com/api/v1/app/download">
+                            <img src="images/download_android.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="c_right">
+               <img id="cr_img" src="images/tel.png">
+            </div>
+        </section>
+        <a id="c_down"><div class="download_m"></div></a>
+    </div>
 </body>
 <script>
-    if(screen.width<350)
+    if(screen.width<600){
+        document.getElementById("cr_img").src = "images/tel_m.png";
+    }
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    if(isiOS==true)
     {
-     document.getElementsByClassName("invite_top")[0].style.height="200px";  
-     document.getElementsByClassName("invite_top")[0].style.marginTop="18%";
-     document.getElementsByClassName("invite_centen")[0].style.lineHeight="40px";   
+        document.getElementById("c_down").href = "https://itunes.apple.com/us/app/%E6%8E%8C%E4%B8%AD%E5%A8%83%E5%A8%83%E6%9C%BA/id1315863819?l=zh&ls=1&mt=8";
     }
-    else{
-     document.getElementsByClassName("invite_centen")[0].style.lineHeight="50px";  
+    else if(isAndroid==true)
+    {
+        document.getElementById("c_down").href = "http://api.catchingdoll.com/api/v1/app/download";
     }
-
 </script>
 </html>
-
-

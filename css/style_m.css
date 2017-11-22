@@ -1,0 +1,55 @@
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,th,td {margin:0;padding:0;}
+a {text-decoration:none;}
+a:hover {text-decoration:underline;}
+ul,ol {list-style:none;}
+.hidden {display:none !important;}
+body {
+    overflow:hidden;
+    background:url(../images/bg.png) no-repeat top center;background-attachment:fixed;background-size:cover;}
+
+
+.cl_bototm{display: none;}
+.head{
+    display: none;
+}
+.page{
+    padding: 5%;
+}
+.centen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cl_top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cl_top img{
+    width: 80%;
+}
+.c_right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+#cr_img{
+    width:95%;
+}
+.download_m{
+    position: absolute;
+    width: 165px;
+    height: 70px;
+    left: 50%;
+    top: 87%;
+    background: url(../images/down_m.png)  no-repeat;;
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 70px;
+    color: #fff;
+    border-radius: 40px;
+    font-size: 16px;
+    margin-left: -82.5px;
+}
