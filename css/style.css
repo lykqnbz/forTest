@@ -13,7 +13,7 @@ body {background:url(../images/bg.png) no-repeat top center;background-attachmen
 @media (min-width:768px) {.page {width:750px;margin:0 auto;overflow:hidden;}}
 @media (min-width:992px) {.page {width:970px;margin:0 auto;overflow:hidden;}}
 @media (min-width:1200px) {.page {width:1170px;margin:0 auto;overflow:hidden;}}
-.head {padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;margin-top:10px;}
+.head {padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;margin-top:20px;}
 .centen {display:flex;}
 .c_rihgt {width:53%;}
 .c_left {width:49%;display:flex;align-items:center;justify-content:space-around;flex-direction:column;}
