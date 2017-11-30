@@ -13,15 +13,38 @@
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <script src="js/jquery.js"></script>
     <link rel="stylesheet" href="css1/style.css">
+    <style>
+        .login_hint {width:60%;height:41%;position:absolute;top:50%;left:50%;margin-top:-35.5%;margin-left:-30%;}
+        .login_hint .login_title {background:#0AB054;display:flex;justify-content:space-around;flex-direction:column;align-items:center;border-top-left-radius:7px;border-top-right-radius:7px;height:16%;}
+        .login_hint .login_title img {width:4rem;height:4rem;margin-top:8px;}
+        .login_hint .login_title p {color:#fff;margin-bottom:5px;}
+        .login_hint .login_centen {display:flex;justify-content:space-around;flex-direction:column;align-items:center;text-align:center;background:#fff;border-bottom-left-radius:7px;border-bottom-right-radius:7px;}
+        .login_hint .login_centen p {font-size:1.4rem;margin-top:20px;}
+        .login_hint .login_centen span {font-size:12px;color:#bbb;}
+        .login_hint .login_centen div {color:#fff;line-height:6%;width:64%;font-size:0.9rem;text-align:center;background:#0AB054;border-radius:10px;margin-bottom:10px;}
+        .black_overlay_8 {position:fixed;top:0%;left:0%;width:100%;height:100%;background-color:rgba(0,0,0,0.6);z-index:1001;overflow:auto;}
+    </style>
 </head>
-<body style="background:url(images/background.png) no-repeat;">
-    <div class="login_button"  onclick="window.open('room_list.html','_self')">
-        微信登录
+<body>
+<div class="black_overlay_8">
+    <div class="login_hint">
+        <div class="login_title">
+            <img src="reward.png">
+            <p>登录奖励</p>
+        </div>
+        <div class="login_centen">
+            <p>获得娃娃币+10</p>
+            <span>娃娃币已经存入您的账户钱包<br/>每日首次登录均可获得</span>
+            <div>确定</div>
+        </div>
     </div>
-    <u class="login_clause">登录注册表示同意用户协议与隐私条款</u>
+</div>
+    
 </body>
-<script src="js/js.js"></script>
 <script>
-    $("body").css("background-size",screen.width+"px "+screen.height+"px");
+    $(".login_title").css("height",innerHeight*0.16+"px");    
+    $(".login_centen div").css("height",innerHeight*0.06+"px");   
+    $(".login_centen div").css("line-height",innerHeight*0.06+"px");   
+    $(".login_centen").css("height",innerHeight*0.253+"px");   
 </script>
 </html>
