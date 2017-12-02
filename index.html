@@ -14,32 +14,42 @@
     <script src="js/jquery.js"></script>
     <link rel="stylesheet" href="css1/style.css">
     <style>
-        div{
-            width: 300px;
-            height: 300px;
-            position: absolute;
-            top: 0px;
-            left: 0px;           
-            z-index: 100;
+        html{
+            font-size: 15px;
         }
-        img{
-            width: 300px;
-            height: 300px;
-            position: absolute;
-            top: 0px;
+        .chat_input{
+            width: 100%;
+            height: 3.2rem;
+            line-height: 3.2rem;
+            background: red;
+            position: fixed;    
             left: 0px;
+            bottom: 0px;
+        }
+        .chat_input input{
+            width: 90%;
+            height: 2.26rem;
+            box-sizing: border-box;
+            margin-left: 5%;
+            font-size: 1rem;
+            border: none;
+        }
+        .chat_send{
+            text-align: right;
+            width: 1.13rem;
+            height: 1.13rem;
+            position: absolute;
+            top: 50%;
+            margin-top: -0.565rem;
+            right: 1.75rem;
         }
     </style>
 </head>
 <body>
-    <div onclick="fn()"></div>
-    <img src="images/banner_2.jpg">
 
-
-    <script type="text/javascript">
-        function fn(){
-            alert("处理你想要处理的事情！不可以保存图片")
-        }
-    </script>
+    <div class="chat_input">
+        <input type="text"  />
+        <img class="chat_send" src="send.png">
+    </div>
 </body>
 </html>

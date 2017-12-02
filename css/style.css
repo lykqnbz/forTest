@@ -442,3 +442,42 @@ ul,ol {list-style:none;}
 .setting .but_close1 {background:rgba(255,255,255,0.4);border:1px solid rgba(0,0,0,0.15);border-left:transparent;}
 .setting .but_close2 {left:0px;top:0px;border:1px solid rgba(0,0,0,0.3);}
 .setting_list .list_name{font-size: 15px;}
+
+
+
+
+
+/* 娃娃机 房间列表 room/index  */
+.room_index .header {display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#fff;position: relative;}
+.room_index .h_left {display:-webkit-box;display:-ms-flexbox;display:flex;}
+.room_index .h_left img {display:block;margin-right:7px;}
+.room_index .h_right {display:-webkit-box;display:-ms-flexbox;display:flex;}
+.room_index .h_right img {}
+.room_index .hr_left {font-size:14px;margin-right:10px;}
+.room_index .hrl_top {text-align:right;}
+.room_index .hrl_bottom {font-size:12px;}
+.room_index .h_centen {position:absolute;left:50%;margin-left:-2.25rem;font-size:1.125rem;top:50%;margin-top:-0.8rem;}
+.room_index .border_idle {border:1px solid #87DE48;border-radius:15px;}
+.room_index .border_ingame {border:1px solid #F5A13B;border-radius:15px;}
+.room_index .radius {border-radius:15px;}
+.room_index .room_list {display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-wrap:wrap;flex-wrap:wrap;}
+.room_index .room_list_li {background:#fff;width:48.5%;margin-top:3%;position:relative;}
+.room_index .ifin{width: 90%;position: absolute;bottom: 5%;left: 5%;}
+.room_index .ifin{display: -webkit-box;display: -ms-flexbox;display: flex;-ms-flex-pack: distribute;justify-content: space-around;-webkit-box-align: center;-ms-flex-align: center;align-items: center;font-size: 14px; }
+.room_index .ifin span{width: 33%;height: 23px;text-align: center;line-height: 23px;font-size: 12px;display: block;color: #fff;border-radius: 7px;}
+
+.room_index .ifin_1,ifin_3{background: #F5A13B}
+.room_index .ifin_2{background:#89E049 }
+.room_index .wawa_img {width:64%;height: 50%;position:absolute;left:50%;top:45%;margin-left:-32%;margin-top:-32%;}
+.room_index .wawa_name {position:absolute;bottom:15%;left:5%;font-weight:600;font-size:0.95rem;width:90%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.room_index .wawa_price {position:absolute;bottom:5%;left:5%;font-size:0.70rem;font-weight: 600}
+.room_index .room_index.header {display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#fff;position: relative;}
+.room_index .h_left {display:-webkit-box;display:-ms-flexbox;display:flex;}
+.room_index .h_left img {display:block;margin-right:7px;}
+.room_index .h_right {display:-webkit-box;display:-ms-flexbox;display:flex;}
+.room_index .h_right img {}
+.room_index .hr_left {font-size:14px;margin-right:10px;}
+.room_index .hrl_top {text-align:right;}
+.room_index .hrl_bottom {font-size:12px;}
+.room_index .hr_right img {width:40px;height:40px;border-radius:50%;}
+.room_index .room_list a{color:#000;}
