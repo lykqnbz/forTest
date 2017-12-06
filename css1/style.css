@@ -47,7 +47,7 @@ ul,ol {list-style:none;}
 .half_live .money{margin-right: 1.5%;margin-top: -20px;;display: -webkit-box;;display: -ms-flexbox;;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;-webkit-box-align: center;-ms-flex-align: center;align-items: center;line-height: 40px;}
 .half_live .catch_list{background:#fff;border-radius: 2%; margin:8% 0px 8% 0px;overflow: hidden;}
 .half_live .catch_list_top{display: -webkit-box;display: -ms-flexbox;display: flex;-ms-flex-pack:distribute;justify-content:space-around;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
-.catch_list_top div{width: 20%;text-align: center;height: 45px;line-height: 45px;color: #444}
+.half_live .catch_list_top div{width: 20%;text-align: center;height: 45px;line-height: 45px;color: #444}
 .half_live .catch_list_li{display: block;}
 .half_live .catch_list_li li{border-top: 1px solid #fafafa;height: 60px;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;padding:0 3%;-webkit-box-align: center;-ms-flex-align: center;align-items: center; }
 .half_live .catch_li_left{display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
