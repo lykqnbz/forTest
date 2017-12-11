@@ -26,9 +26,16 @@ footer {
 }
 
 main {
-    margin-top: 50px;
-    margin-bottom: 34px;
-    height: 2000px
+    /* main绝对定位，进行内部滚动 */
+    position: absolute;
+    top: 50px;
+    bottom: 34px;
+    /* 使之可以滚动 */
+    overflow-y: scroll;
+}
+
+main .content {
+    height: 2000px;
 }
 
 </style>
@@ -40,9 +47,11 @@ main {
 		<header></header>
 		
 		<main>
-			1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>
-			1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>
-			1<br/>
+				<div class="content">
+				1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>
+				1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>
+				1<br/>
+			</div>
 		</main>
 		
 		<footer>
