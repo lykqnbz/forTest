@@ -18,7 +18,7 @@
 
 <body>
 
-	<button id="dd3" onclick="cl11()">33</button>
+	<button id="dd3" onclick="cl11()">dddd</button>
 <div class="header">
 	<div class="search_txt"><input type="text" placeholder="请输入你要搜索的内容" /></div>
     <div class="search_submit"><input type="submit" value="搜索" /></div>
@@ -29,7 +29,7 @@
 	function cl11(){
 		setTimeout(function(){
 			$(".header").css("display","block");
-			$(".search_txt input").focus();
+			$(".search_txt input")[0].focus();
 		},500);
 	}
 </script>
