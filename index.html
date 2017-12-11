@@ -28,26 +28,6 @@
         }
     </style>
     <script src="js/jquery.js"></script>
-    <script>
-        !function () {
-            function changeFontSize() {
-                document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + "px";
-            }
-            var resizeTimer = null;
-            window.addEventListener("resize", function () {
-                if (resizeTimer) {
-                    clearTimeout(resizeTimer);
-                }
-                resizeTimer = setTimeout(changeFontSize, 300);
-            }, false);
-            changeFontSize();
-        }(window);
-    </script>
-    <script>
-        $(function(){
-            $(".container").height(window.innerHeight);
-        })
-    </script>
 </head>
 <body>
 
@@ -119,5 +99,28 @@
 <input type="text" placeholder="请输入...">
 
 </body>
+
+<script>
+    !function () {
+        function changeFontSize() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + "px";
+        }
+        var resizeTimer = null;
+        window.addEventListener("resize", function () {
+            if (resizeTimer) {
+                clearTimeout(resizeTimer);
+            }
+            resizeTimer = setTimeout(changeFontSize, 300);
+        }, false);
+        changeFontSize();
+    }(window);
+</script>
+<script>
+    $(function(){
+        $(".container").height(window.innerHeight);
+
+        
+    })
+</script>
 </html>
 
