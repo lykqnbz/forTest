@@ -18,7 +18,7 @@
 
 <body>
 
-	<button id="dd3" onclick="cl11()">b1add</button>
+	<button id="dd3" onclick="cl11()">c</button>
 	<button id="dd2" onclick="cl12()">a2</button>
 <div class="header">
 	<div class="search_txt"><input type="text" placeholder="请输入你要搜索的内容" /></div>
@@ -29,7 +29,7 @@
 <script>
 	function cl11(){
 		$(".header").css("display","block");
-		document.body.scrollTop = document.body.scrollHeight;
+		document.body.scrollTop = document.body.scrollHeight+40;
 		$(".search_txt input")[0].focus();
 	}
 	function cl12(){
