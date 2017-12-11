@@ -29,8 +29,11 @@
 </body>
 <script>
 	function cl11(){
+		alert(11)
+		$("body").scrollTop(10);
 		$(".header").css("display","block");
-		document.body.scrollTop = document.body.scrollHeight;
+		alert($('body').scrollHeight )
+		$('body').scrollTop( $('body').scrollHeight );
 	}
 	function cl12(){
 		$(".header").css("display","none");
