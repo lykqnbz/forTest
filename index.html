@@ -11,6 +11,13 @@
 .header .search_submit{position:absolute;right:10px;top:10px;width:70px;height:40px;}
 .header .search_submit input{height:40px;width:70px;border:none;background:#f60;color:#fff;}
 
+.header1{display:none;position: absolute;;height:40px;line-height:40px;padding:10px 0;left:0;bottom:0;width:100%;background:#fff;z-index:3;}
+.header1 .search_txt{margin-left:10px;margin-right:90px;border:1px solid #e6e6e6;padding:0 10px;background:#fafafa;}
+.header1 .search_txt input{width:100%;border:none;height:38px;line-height:38px;background:none;}
+.header1 .search_submit{position:absolute;right:10px;top:10px;width:70px;height:40px;}
+.header1 .search_submit input{height:40px;width:70px;border:none;background:#f60;color:#fff;}
+
+
 </style>
 
 <script src="js/jquery.js"></script>
@@ -18,22 +25,27 @@
 
 <body>
 
-	<button id="dd3" onclick="cl11()">c</button>
+	<button id="dd3" onclick="cl11()">ca</button>
 	<button id="dd2" onclick="cl12()">a2</button>
 <div class="header">
 	<div class="search_txt"><input type="text" placeholder="请输入你要搜索的内容" /></div>
     <div class="search_submit"><input type="submit" value="搜索" /></div>
 </div>
-
+<div class="header1">
+		<div class="search_txt"><input type="text" placeholder="请输入你要搜索的内容" /></div>
+		<div class="search_submit"><input type="submit" value="搜索" /></div>
+</div>
 </body>
 <script>
 	function cl11(){
 		$(".header").css("display","block");
+		$(".header1").css("display","block");
 		document.body.scrollTop = document.body.scrollHeight+40;
 		$(".search_txt input")[0].focus();
 	}
 	function cl12(){
 		$(".header").css("display","none");
+		$(".header1").css("display","none");
 	}
 </script>
 </html>
