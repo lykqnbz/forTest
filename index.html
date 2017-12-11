@@ -21,9 +21,10 @@
 .footerFixed{ position: absolute !important;}
     </style>
 </head>
-<body>
+<body>     
+    
     <div class="chat_input">
-        <div class="chat_con">
+     <div class="chat_con">
           <input type="text" maxlength="25" placeholder="最多输入25个字"  >
           <div class="chat_send">
             <img src="comein.png" >
@@ -32,15 +33,11 @@
       </div>
 </body>
 <script>
-    $(function(){
-        $(".chat_con input").focus(function(){
-            $(".chat_input").addClass("footerFixed");//原生的写法
-        });
-
-        $(".chat_con input").blur(function(){
-            $(".chat_input").removeClass("footerFixed");//原生的写法
-        });
-
-    })
+        window.onscroll=function(){
+        $(".chat_input").css("top",$(window).scrollTop());
+        $(".chat_input").css("top",$(window).scrollTop()+$(window).height());}
 </script>
 </html>
+
+
+
