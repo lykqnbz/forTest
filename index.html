@@ -28,9 +28,11 @@
 </body>
 <script>
 	function cl11(){
-		$(".header").css("display","block");
+		setTimeout(function(){
+			$(".header").css("display","block");
+			$(".search_txt input")[0].focus();
+		},500);
 		
-		$(".search_txt input")[0].focus();
 	}
 	function cl12(){
 		$(".header").css("display","none");
