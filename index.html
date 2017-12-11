@@ -31,13 +31,7 @@ a,a:hover,a:active,a:visited{text-decoration:none;color:#333;}
 .header .search_submit input{height:40px;width:70px;border:none;background:#f60;color:#fff;}
 
 
-.item{position:absolute;top:0px;left:0;right:0;bottom:0;
-	/* 使之可以滚动 */
-    overflow-y: scroll;
-    /* 增加该属性，可以增加弹性 */
-    -webkit-overflow-scrolling: touch;
-}
-.item p{height:40px;line-height:40px;padding:0 10px;border-bottom:1px solid #e6e6e6;background:#fff;}
+
 </style>
 </head>
 
@@ -48,24 +42,5 @@ a,a:hover,a:active,a:visited{text-decoration:none;color:#333;}
     <div class="search_submit"><input type="submit" value="搜索" /></div>
 </div>
 
-<!-- 数据容器 -->
-
-<div class="item">
-</div>
-
-
-<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script>
-var scrollh=0;//保存滚动条的位置
-$(function(){
-	//填充数据
-	var itemhtml="";
-	for(var i=0;i<50;i++)
-	{
-		itemhtml+="<p>我是第"+  parseInt(i+1)+"条数据</p>";
-	}
-	$(".item").html(itemhtml);	
-});
- </script>
 </body>
 </html>
