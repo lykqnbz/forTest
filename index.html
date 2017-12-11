@@ -32,7 +32,10 @@
 	function cl11(){
 		$(".header").css("display","block");
 		$(".search_txt input").focus();
-		$('#ddd').scrollTop(99999);
+		setTimeout(function(){
+			alert("ge")
+			$('#ddd').scrollTop(99999);
+        },1000);
 	}
 	function cl12(){
 		$(".header").css("display","none");
