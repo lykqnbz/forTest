@@ -12,28 +12,47 @@
     <title>大神攻略</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <style>
-        *{
-            padding: 0px;
-            margin: 0px;
-            -webkit-user-select:none;
-            -webkit-touch-callout:none;
-        }
-        img{
-            width: 100%;
-            padding: 0px;
-            margin: 0px;
-            margin-top:-5px;
-        }
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    .container{
+        background-color: aqua;
+        font-size: 0.8rem;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    input{
+        /* position: fixed; */
+    position: absolute;
+
+        bottom: 0;
+        width: 100%;
+        height: 1.5rem;
+        background-color:#fff;
+        color: #000;
+        font-size: 0.64rem;
+    }
     </style>
 </head>
 <body>
-    <img src="1.jpg"  >
-    <img src="2.jpg"  >
-    <img src="3.jpg"  >
-    <img style="margin-bottom:-5px;" src="4.jpg" >
+    <div class="container">
+        <ul style="padding-bottom:2rem;">
+            <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li>
+            <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li>
+            <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li>
+            <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li>
+            <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li>
+            <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li>
+            <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li> <li>LISS@12321</li>
+        </ul>
+    </div>
+    <input type="text" placeholder="Hey"> 
 </body>
 <script>
-    
+    $(function(){
+        $(".container").height(window.innerHeight)
+    })
 
 </script>
 </html>
