@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
         }
+       
         .container {
             background-color: aqua;
             font-size: 0.6rem;
@@ -25,6 +26,7 @@
             background-color: #fff;
             color: #000;
             font-size: 0.64rem;
+            display: none;
         }
     </style>
     <script src="js/jquery.js"></script>
@@ -37,6 +39,7 @@
         <li>List Item 2</li>
         <li>List Item 3</li>
         <li>List Item 4</li>
+        <button style="width:300px;height:100px;"  onclick="test()">342</button>
         <li>List Item 5</li>
         <li>List Item 6</li>
         <li>List Item 7</li>
@@ -118,15 +121,19 @@
 <script>
     $(function(){
         $(".container").height(window.innerHeight);
-
-        setTimeout(test(),2000); 
-        function test() 
-        { 
-            alert(33)
-            $(".container").height(window.innerHeight);
-            $("input").css("bottom","70px");
-        } 
+     
     })
+    function test(){
+            setTimeout(test(),2000); 
+            function test() 
+            { 
+                $("input").css("display","block");
+                $("input").focus();
+                alert(33)
+                $(".container").height(window.innerHeight);
+                $("input").css("bottom","70px");
+            } 
+        }
 </script>
 </html>
 
