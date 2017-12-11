@@ -5,42 +5,30 @@
 <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport"/>
 <title>解决ios 微信 input 获取焦点时fixed失效 | 方法2 -幸凡学习网</title>
 <style>
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;vertical-align:baseline;}
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
-body,html{color:#333;}
-html{font-size:20px;}
-h1,h2,h3,h4,h5,h6,h7{font-size:16px;font-weight:normal;}
-b{font-weight:normal;}
-ol,ul{list-style:none;}
-blockquote,q{quotes:none;}
-blockquote:before,blockquote:after,q:before,q:after{content:''content:none;}
-input,textarea{outline:0;resize:none;padding:0;}
-body,html,input,textarea,select{font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif;}
-select{appearance:none;-moz-appearance:none; /* Firefox */-webkit-appearance:none; /* Safari 和 Chrome */font-size:14px;background:url(../images/arrow_dowm2_ico.png) no-repeat right center;background-size:18px auto;}
-i,em,b{font-style:normal;font-weight:normal;}
-body{background:#eee;font-size:0.7rem;}
-.clearfix:after{content:'.'height:0;display:block;clear:both;visibility:hidden;}
-.clearfix{*zoom:1;}
-a,a:hover,a:active,a:visited{text-decoration:none;color:#333;}
-
-
-.header{position: absolute;;height:40px;line-height:40px;padding:10px 0;left:0;bottom:0;width:100%;background:#fff;z-index:3;margin-bottom: 30px}
+.header{display:none;position: absolute;;height:40px;line-height:40px;padding:10px 0;left:0;bottom:0;width:100%;background:#fff;z-index:3;margin-bottom: 30px}
 .header .search_txt{margin-left:10px;margin-right:90px;border:1px solid #e6e6e6;padding:0 10px;background:#fafafa;}
 .header .search_txt input{width:100%;border:none;height:38px;line-height:38px;background:none;}
 .header .search_submit{position:absolute;right:10px;top:10px;width:70px;height:40px;}
 .header .search_submit input{height:40px;width:70px;border:none;background:#f60;color:#fff;}
 
-
-
 </style>
+
+<script src="js/jquery.js"></script>
 </head>
 
 <body>
-<!-- 置顶搜索框 -->
+
+	<button id="dd3" onclick="cl11()">11111</button>
 <div class="header">
 	<div class="search_txt"><input type="text" placeholder="请输入你要搜索的内容" /></div>
     <div class="search_submit"><input type="submit" value="搜索" /></div>
 </div>
 
 </body>
+<script>
+	function cl11(){
+		$(".header").css("display","block");
+		$(".search_txt input").focus()
+	}
+</script>
 </html>
