@@ -1,67 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport"/>
-<title>解决ios 微信 input 获取焦点时fixed失效 | 方法2 -幸凡学习网</title>
-<style>
-header, footer, main {
-    display: block;
-}
-
-header {
-    position: fixed;
-    height: 50px;
-    left: 0;
-    right: 0;
-    top: 0;
-}
-
-footer {
-    position: fixed;
-    height: 34px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-main {
-    /* main绝对定位，进行内部滚动 */
-    position: absolute;
-    top: 50px;
-    bottom: 34px;
-    /* 使之可以滚动 */
-    overflow-y: scroll;
-    /* 增加该属性，可以增加弹性 */
-    -webkit-overflow-scrolling: touch;
-}
-
-main .content {
-    height: 2000px;
-}
-
-</style>
-
-<script src="js/jquery.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="cleartype" content="on">
+    <title>大神攻略</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        img{
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            margin-top:-5px;
+        }
+    </style>
 </head>
-
-<body class="layout-fixed">
-		<header></header>
-		
-		<main>
-				<div class="content">
-				1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>
-				1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>
-				1<br/>
-			</div>
-		</main>
-		
-		<footer>
-			<input type="text" placeholder="Footer..."/>
-			<button class="submit">提交</button>
-		</footer>
-	</body>
+<body>
+    <img src="1.jpg"  ontouchstart="return false;">
+    <img src="2.jpg"  ontouchstart="return false;">
+    <img src="3.jpg"  ontouchstart="return false;">
+    <img style="margin-bottom:-5px;" src="4.jpg"  ontouchstart="return false;">
+</body>
 <script>
-	
+    
+
 </script>
 </html>
