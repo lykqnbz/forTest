@@ -24,17 +24,15 @@
 </head>
 
 <body>
-
-	<button id="dd3" onclick="cl11()">ca</button>
-	<button id="dd2" onclick="cl12()">a2</button>
-<div class="header">
-	<div class="search_txt"><input type="text" placeholder="请输入你要搜索的内容" /></div>
-    <div class="search_submit"><input type="submit" value="搜索" /></div>
-</div>
-<div class="header1">
-		<div class="search_txt"><input type="text" placeholder="请输入你要搜索的内容" /></div>
-		<div class="search_submit"><input type="submit" value="搜索" /></div>
-</div>
+	<footer>
+		<div class="fixed">
+			<div class="wrap flex">
+				<a href="#"><span class="glyphicon glyphicon-picture"></span></a>
+				<a href="#"><span class="glyphicon glyphicon-film"></span></a>
+				<a href="#"><span class="glyphicon glyphicon-qrcode"></span></a>
+			</div>
+		</div>
+	</footer>
 </body>
 <script>
 	function cl11(){
@@ -47,5 +45,8 @@
 		$(".header").css("display","none");
 		$(".header1").css("display","none");
 	}
+	window.onresize(function(){
+		alert(333);
+	})
 </script>
 </html>
