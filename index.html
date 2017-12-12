@@ -122,24 +122,32 @@
 <script>
     $(function(){
         $(".container").height(window.innerHeight);
-     
     })
     function test(){
+        var u = navigator.userAgent;
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
             setTimeout(test(),2000); 
             function test() 
             { 
                 $("input").css("display","block");
                 $("input").focus();
-                $("input").css("bottom","70px");
+                if(isiOS){
+                    alert(333)
+                     $("input").css("bottom","70px");
+                }
             } 
         }
     function test1(){
+        var u = navigator.userAgent;
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
         setTimeout(test(),2000); 
         function test() 
         { 
             $("input").css("display","none");
             $("input").focus();
-            $("input").css("bottom","70px");
+            if(isiOS){
+                    $("input").css("bottom","0px");
+            }
         } 
     }
 </script>
