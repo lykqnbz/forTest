@@ -52,7 +52,7 @@
     </ul>
 </div>
 
-<input type="text" placeholder="请输入...">
+<input id="d3" type="text" placeholder="请输入...">
 
 </body>
 
@@ -64,11 +64,17 @@
     function test(){
             $("input").css("display","block");
             $("input").focus();
-            document.body.scrollTop = document.body.scrollHeight;
         }
     function test1(){
         $("input").css("display","none");
     }
+
+    $("#d3").on('focus',function(){
+        var _this=this;
+        setTimeout(function(){
+            _this.scrollIntoView(true);
+            _this.scrollIntoViewIfNeeded();
+        },600)
+    })
 </script>
 </html>
-
