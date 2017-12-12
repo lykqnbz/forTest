@@ -124,29 +124,24 @@
         $(".container").height(window.innerHeight);
     })
     function test(){
-        var u = navigator.userAgent;
-        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-            setTimeout(test5(),2000); 
+            setTimeout(test5(),1000); 
             function test5() 
             { 
                 $("input").css("display","block");
                 $("input").focus();
-                if(isiOS){
-                    //  $("input").css("bottom","70px");
-                }
+            } 
+            setTimeout(test2(),1000); 
+            function test2() 
+            { 
+                $("input").css("display","block");
+                $("input").focus();
             } 
         }
     function test1(){
-        var u = navigator.userAgent;
-        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-        setTimeout(test7(),2000); 
-        function test7() 
+        setTimeout(test51(),1000); 
+        function test51() 
         { 
             $("input").css("display","none");
-            $("input").focus();
-            if(isiOS){
-                    $("input").css("bottom","0px");
-            }
         } 
     }
 </script>
