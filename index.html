@@ -6,105 +6,87 @@
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui"/>
     <title></title>
     <style>
-       header, footer, main {
-        display: block;
-    }
-    
-    header {
-        position: fixed;
-        height: 50px;
-        left: 0;
-        right: 0;
-        top: 0;
-    }
-    
-    footer {
-        position: fixed;
-        height: 34px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-    
-    main {
-/* main绝对定位，进行内部滚动 */
-position: absolute;
-top: 50px;
-bottom: 34px;
-/* 使之可以滚动 */
-overflow-y: scroll;
-/* 增加该属性，可以增加弹性 */
--webkit-overflow-scrolling: touch;
-    }
-    
-    main .content {
-        height: 2000px;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+       
+        .container {
+            background-color: aqua;
+            font-size: 0.6rem;
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+        input {
+            /*position: fixed;*/
+            position:absolute;
+            bottom: 0;
+            width: 100%;
+            height: 1.5rem;
+            background-color: #fff;
+            color: #000;
+            font-size: 0.64rem;
+            display: none;
+        }
     </style>
     <script src="js/jquery.js"></script>
 </head>
 <body>
-    <body class="layout-scroll-fixed">
-        <!-- fixed定位的头部 -->
-        <header>
-            
-        </header>
-        
-        <!-- 可以滚动的区域 -->
-        <main>
-            <div class="content">
-            <!-- 内容在这里... -->
-            <div style="width:100px;height:100px;" id="dd_comment_btn">
-                321321312312
-            </div>
-            </div>
-        </main>
-        
-        <!-- fixed定位的底部 -->
-        <footer id="gd_bottom_fixed_menu">
-            <input type="text" id="comment" placeholder="Footer..."/>
-            <button class="submit">提交</button>
-        </footer>
-    </body>
+
+<div class="container">
+    <ul style="padding-bottom: 2rem;">
+        <li>List Item 1</li>
+        <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li><li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li><li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li><li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li><li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li> 
+
+        <button style="width:300px;height:22px;"  onclick="test()" >d</button>
+        <li>List Item 5</li>
+        <button style="width:300px;height:22pxx;"  onclick="test1()" >342</button>
+        <li>List Item 9</li>
+        <li>List Item 10</li>        <li>List Item 3</li>
+        <li>List Item 4</li>
+    </ul>
+</div>
+
+<input type="text" placeholder="请输入...">
+
 </body>
 
 <script>
+    !function () {
+        function changeFontSize() {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + "px";
+        }
+        var resizeTimer = null;
+        window.addEventListener("resize", function () {
+            if (resizeTimer) {
+                clearTimeout(resizeTimer);
+            }
+            resizeTimer = setTimeout(changeFontSize, 300);
+        }, false);
+        changeFontSize();
+    }(window);
+</script>
+<script>
     $(function(){
-            //点击发评论
-            var isANW = isAndroidNewWechat();
-            $("#dd_comment_btn,#dd_comment").click(function () {
-                var This = $("#comment-box-bt");
-                This.toggleClass("hide");
-                if (!This.hasClass("hide")) {
-                    if (navigator.userAgent.indexOf('iPhone') > -1) {//修复iphone bug
-                        $("#gd_bottom_fixed_menu").css("position", "absolute");
-                    }else if (isANW) {//修复新版微信浏览器bug
-                        $("#gd_bottom_fixed_menu").css("bottom", $(window).height() / 2 + "px");
-                    }
-                    This.find("#comment").focus();
-                } else {
-                    if (navigator.userAgent.indexOf('iPhone') > -1) {//修复iphone bug
-                        $("#gd_bottom_fixed_menu").css("position", "fixed");
-                    } else if (isANW) {//修复新版微信浏览器bug
-                        $("#gd_bottom_fixed_menu").css("bottom", 0);
-                    }
-                }
-            });
-            $("#comment").focus(function () {
-                if (isANW) {//修复新版微信浏览器bug
-                    $("#gd_bottom_fixed_menu").css("bottom", $(window).height() / 2 + "px");
-                }
-            });
-            $("#comment").blur(function () {//修复iphone bug
-               setTimeout(function () {
-                    if (navigator.userAgent.indexOf('iPhone') > -1) {
-                        $("#gd_bottom_fixed_menu").css("position", "fixed");
-                    } else if (isANW) {//修复新版微信浏览器bug
-                        $("#gd_bottom_fixed_menu").css("bottom", 0);
-                    }
-               }, 100);
-            });
+        $(".container").height(window.innerHeight);
     })
+    function test(){
+            setTimeout(function () {
+                $("input").css("display","block");
+                $("input").focus();
+
+                setTimeout(function () {
+                    $("input").css("display","block");
+                    $("input").focus();
+                }, 1000);
+            }, 1000);
+            $("input").focus();
+          
+           
+        }
+    function test1(){
+        $("input").css("display","none");
+    }
 </script>
 </html>
 
