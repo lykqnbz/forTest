@@ -63,18 +63,19 @@
     })
     function test(){
             $("input").css("display","block");
-            $("input").focus();
+            $("input").focus(function test(){
+                setTimeout(function(){
+                    $("#d3").scrollIntoView(true);
+                    $("#d3").scrollIntoViewIfNeeded();
+                },600)
+            });
         }
     function test1(){
         $("input").css("display","none");
     }
 
     $("#d3").on('focus',function(){
-        var _this=this;
-        setTimeout(function(){
-            _this.scrollIntoView(true);
-            _this.scrollIntoViewIfNeeded();
-        },600)
+       
     })
 </script>
 </html>
