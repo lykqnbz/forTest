@@ -35,15 +35,9 @@
 
 <div class="container">
     <ul style="padding-bottom: 2rem;">
-        <li>List Item 1</li>
-        <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li><li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li><li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li><li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li><li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li> 
-
-        <button style="width:300px;height:22px;"  onclick="test()" >d</button>
-        <li>List Item 5</li>
-        <button style="width:300px;height:22pxx;"  onclick="test1()" >342</button>
-        <li>List Item 9</li>
-        <li>List Item 10</li>        <li>List Item 3</li>
-        <li>List Item 4</li>
+        <button style="width:100px;height:22px;"  onclick="test()" >开启聊天</button>
+        <button style="width:100px;height:22pxx;"  onclick="test1()" >关闭聊天</button>
+ 
     </ul>
 </div>
 
@@ -71,18 +65,9 @@
         $(".container").height(window.innerHeight);
     })
     function test(){
-            setTimeout(function () {
-                $("input").css("display","block");
-                $("input").focus();
-
-                setTimeout(function () {
-                    $("input").css("display","block");
-                    $("input").focus();
-                }, 1000);
-            }, 1000);
+            $("input").css("display","block");
             $("input").focus();
           
-           
         }
     function test1(){
         $("input").css("display","none");
