@@ -54,12 +54,15 @@ overflow-y: scroll;
         <main>
             <div class="content">
             <!-- 内容在这里... -->
+            <div style="width:100px;height:100px;" id="dd_comment_btn">
+
+            </div>
             </div>
         </main>
         
         <!-- fixed定位的底部 -->
-        <footer>
-            <input type="text" placeholder="Footer..."/>
+        <footer id="gd_bottom_fixed_menu">
+            <input type="text" id="comment" placeholder="Footer..."/>
             <button class="submit">提交</button>
         </footer>
     </body>
@@ -67,46 +70,41 @@ overflow-y: scroll;
 
 <script>
     $(function(){
-
-        if (navigator.userAgent.match(/iPhone|iPod|iPad/i)) {//只要把position设为absolute就可以了
-              $("footer").css("position","absolute");
-        }
-
-        var content = document.querySelector('main');
-        var startY;
-
-        content.addEventListener('touchstart', function (e) {
-            startY = e.touches[0].clientY;
-        });
-
-        content.addEventListener('touchmove', function (e) {
-            // 高位表示向上滚动
-            // 底位表示向下滚动
-            // 1容许 0禁止
-            var status = '11';
-            var ele = this;
-
-            var currentY = e.touches[0].clientY;
-
-            if (ele.scrollTop === 0) {
-                // 如果内容小于容器则同时禁止上下滚动
-                status = ele.offsetHeight >= ele.scrollHeight ? '00' : '01';
-            } else if (ele.scrollTop + ele.offsetHeight >= ele.scrollHeight) {
-                // 已经滚到底部了只能向上滚动
-                status = '10';
-            }
-
-            if (status != '11') {
-                // 判断当前的滚动方向
-                var direction = currentY - startY > 0 ? '10' : '01';
-                // 操作方向和当前允许状态求与运算，运算结果为0，就说明不允许该方向滚动，则禁止默认事件，阻止滚动
-                if (!(parseInt(status, 2) & parseInt(direction, 2))) {
-                    stopEvent(e);
+            //点击发评论
+            var isANW = isAndroidNewWechat();
+            $("#dd_comment_btn,#dd_comment").click(function () {
+                var This = $("#comment-box-bt");
+                This.toggleClass("hide");
+                if (!This.hasClass("hide")) {
+                    if (navigator.userAgent.indexOf('iPhone') > -1) {//修复iphone bug
+                        $("#gd_bottom_fixed_menu").css("position", "absolute");
+                    }else if (isANW) {//修复新版微信浏览器bug
+                        $("#gd_bottom_fixed_menu").css("bottom", $(window).height() / 2 + "px");
+                    }
+                    This.find("#comment").focus();
+                } else {
+                    if (navigator.userAgent.indexOf('iPhone') > -1) {//修复iphone bug
+                        $("#gd_bottom_fixed_menu").css("position", "fixed");
+                    } else if (isANW) {//修复新版微信浏览器bug
+                        $("#gd_bottom_fixed_menu").css("bottom", 0);
+                    }
                 }
-            }
-    });
+            });
+            $("#comment").focus(function () {
+                if (isANW) {//修复新版微信浏览器bug
+                    $("#gd_bottom_fixed_menu").css("bottom", $(window).height() / 2 + "px");
+                }
+            });
+            $("#comment").blur(function () {//修复iphone bug
+               setTimeout(function () {
+                    if (navigator.userAgent.indexOf('iPhone') > -1) {
+                        $("#gd_bottom_fixed_menu").css("position", "fixed");
+                    } else if (isANW) {//修复新版微信浏览器bug
+                        $("#gd_bottom_fixed_menu").css("bottom", 0);
+                    }
+               }, 100);
+            });
     })
-   
 </script>
 </html>
 
