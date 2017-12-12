@@ -60,6 +60,15 @@
     $(function(){
         $("body").height(innerHeight);
         $(".container").height(window.innerHeight);
+        
+
+        //微信内置浏览器浏览H5页面弹出的键盘遮盖文本框的解决办法 
+            window.addEventListener("resize", function () {
+            if (document.activeElement.tagName == "INPUT" || document.activeElement.tagName == "TEXTAREA") {
+            window.setTimeout(function () {
+            document.activeElement.scrollIntoViewIfNeeded();
+            }, 0);
+            }
     })
     function test(){
             $("input").css("display","block");
@@ -68,7 +77,7 @@
                     $("#d3").scrollIntoView(true);
                     $("#d3").scrollIntoViewIfNeeded();
                     window.scrollTo(0,document.body.offsetHeight);
-                },600)
+                },3000)
             });
         }
     function test1(){
