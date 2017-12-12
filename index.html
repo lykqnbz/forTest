@@ -71,25 +71,21 @@
         $(".container").height(window.innerHeight);
     })
     function test(){
-            setTimeout(test5(),1000); 
-            function test5() 
-            { 
+            setTimeout(function () {
                 $("input").css("display","block");
                 $("input").focus();
-            } 
-            setTimeout(test2(),1000); 
-            function test2() 
-            { 
-                $("input").css("display","block");
-                $("input").focus();
-            } 
+
+                setTimeout(function () {
+                    $("input").css("display","block");
+                    $("input").focus();
+                }, 1000);
+            }, 1000);
+            
+          
+           
         }
     function test1(){
-        setTimeout(test51(),1000); 
-        function test51() 
-        { 
-            $("input").css("display","none");
-        } 
+        $("input").css("display","none");
     }
 </script>
 </html>
