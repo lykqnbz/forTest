@@ -67,6 +67,11 @@ overflow-y: scroll;
 
 <script>
     $(function(){
+
+        if (navigator.userAgent.match(/iPhone|iPod|iPad/i)) {//只要把position设为absolute就可以了
+              $("footer").css("position","absolute");
+        }
+
         var content = document.querySelector('main');
         var startY;
 
