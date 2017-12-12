@@ -6,87 +6,102 @@
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui"/>
     <title></title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-       
-        .container {
-            background-color: aqua;
-            font-size: 0.6rem;
-            overflow: scroll;
-            -webkit-overflow-scrolling: touch;
-        }
-        input {
-            /*position: fixed;*/
-            position:absolute;
-            bottom: 0;
-            width: 100%;
-            height: 1.5rem;
-            background-color: #fff;
-            color: #000;
-            font-size: 0.64rem;
-            display: none;
-        }
+       header, footer, main {
+        display: block;
+    }
+    
+    header {
+        position: fixed;
+        height: 50px;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+    
+    footer {
+        position: fixed;
+        height: 34px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    main {
+/* main绝对定位，进行内部滚动 */
+position: absolute;
+top: 50px;
+bottom: 34px;
+/* 使之可以滚动 */
+overflow-y: scroll;
+/* 增加该属性，可以增加弹性 */
+-webkit-overflow-scrolling: touch;
+    }
+    
+    main .content {
+        height: 2000px;
+    }
     </style>
     <script src="js/jquery.js"></script>
 </head>
 <body>
-
-<div class="container">
-    <ul style="padding-bottom: 2rem;">
-        <li>List Item 1</li>
-        <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li><li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li><li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li><li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li><li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li>  <li>List Item 2</li> 
-
-        <button style="width:300px;height:22px;"  onclick="test()" >d</button>
-        <li>List Item 5</li>
-        <button style="width:300px;height:22pxx;"  onclick="test1()" >342</button>
-        <li>List Item 9</li>
-        <li>List Item 10</li>        <li>List Item 3</li>
-        <li>List Item 4</li>
-    </ul>
-</div>
-
-<input type="text" placeholder="请输入...">
-
+    <body class="layout-scroll-fixed">
+        <!-- fixed定位的头部 -->
+        <header>
+            
+        </header>
+        
+        <!-- 可以滚动的区域 -->
+        <main>
+            <div class="content">
+            <!-- 内容在这里... -->
+            </div>
+        </main>
+        
+        <!-- fixed定位的底部 -->
+        <footer>
+            <input type="text" placeholder="Footer..."/>
+            <button class="submit">提交</button>
+        </footer>
+    </body>
 </body>
 
 <script>
-    !function () {
-        function changeFontSize() {
-            document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + "px";
-        }
-        var resizeTimer = null;
-        window.addEventListener("resize", function () {
-            if (resizeTimer) {
-                clearTimeout(resizeTimer);
-            }
-            resizeTimer = setTimeout(changeFontSize, 300);
-        }, false);
-        changeFontSize();
-    }(window);
-</script>
-<script>
     $(function(){
-        $(".container").height(window.innerHeight);
-    })
-    function test(){
-            setTimeout(function () {
-                $("input").css("display","block");
-                $("input").focus();
+        var content = document.querySelector('main');
+        var startY;
 
-                setTimeout(function () {
-                    $("input").css("display","block");
-                    $("input").focus();
-                }, 1000);
-            }, 1000);
-            $("input").focus();
-          
-           
-        }
-    function test1(){
-        $("input").css("display","none");
-    }
+        content.addEventListener('touchstart', function (e) {
+            startY = e.touches[0].clientY;
+        });
+
+        content.addEventListener('touchmove', function (e) {
+            // 高位表示向上滚动
+            // 底位表示向下滚动
+            // 1容许 0禁止
+            var status = '11';
+            var ele = this;
+
+            var currentY = e.touches[0].clientY;
+
+            if (ele.scrollTop === 0) {
+                // 如果内容小于容器则同时禁止上下滚动
+                status = ele.offsetHeight >= ele.scrollHeight ? '00' : '01';
+            } else if (ele.scrollTop + ele.offsetHeight >= ele.scrollHeight) {
+                // 已经滚到底部了只能向上滚动
+                status = '10';
+            }
+
+            if (status != '11') {
+                // 判断当前的滚动方向
+                var direction = currentY - startY > 0 ? '10' : '01';
+                // 操作方向和当前允许状态求与运算，运算结果为0，就说明不允许该方向滚动，则禁止默认事件，阻止滚动
+                if (!(parseInt(status, 2) & parseInt(direction, 2))) {
+                    stopEvent(e);
+                }
+            }
+    });
+    })
+   
 </script>
 </html>
 
