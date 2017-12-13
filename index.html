@@ -10,82 +10,38 @@
             margin: 0;
             padding: 0;
         }
-       button{
-           border-radius: 5px;
-           background: bisque;
-           box-shadow: none;
-           width: 48%;
-           height: 70px;
-           font-size: 20px;
-       }
-        .container {
-            background-color: aqua;
-            font-size: 0.6rem;
-            overflow: scroll;
-            -webkit-overflow-scrolling: touch;
-            overflow: hidden;
-        }
-        input {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            height: 1.5rem;
-            background-color: #fff;
-            color: #000;
-            font-size: 0.64rem;
-            display: none;
-            height: 60px;
-            line-height: 60px;
-            font-size: 20px;
-        }
+        .dd{display:none;}
+        .chat_input {border-radius: 10px;z-index: 33;width:61%;height:8.6rem;background:#73CB5A;transform:translate(-50%,-50%);position:fixed;left:50%;top:20%;display:-webkit-box;display:-ms-flexbox;display:flex;flex-direction: column;}
+        .chat_input .chat_con {position: relative;margin-top: 2%;box-sizing: border-box;border-top-right-radius: 10px;border-top-left-radius: 10px;;background:#fff;width:96%;margin-left:2%;height:6rem;-webkit-box-sizing:border-box;box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;overflow:hidden;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
+        .chat_input .chat_send {display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;height:2.6rem;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;font-size: 1.13rem;color: #fff;}
+        .chat_input textarea {resize:none;width:90%;margin-left: 5%;margin-top:3%;height:5.2rem;-webkit-box-sizing:border-box;box-sizing:border-box;font-size:1rem;border:none;padding-left:1%;border-right:1px solid #efefef}
+        .chat_input .chat_con p{font-size: 12px;position: absolute;bottom: 5%;right: 3%;color: #aaa;transform: scale(0.9)}
+
     </style>
     <script src="js/jquery.js"></script>
 </head>
 <body>
+    <div class="dd">
+<div class="chat_input" >
+    <div class="chat_con">
+    <textarea type="text" maxlength="25" placeholder="说点什么吧.."></textarea>
+    <p>最多25个字</p>
+    </div>
+    <div class="chat_send">
+        发送弹幕
+    </div>
+</div></div>
 
-<div class="container">
-    <ul style="padding-bottom: 2rem;">
-        <button  onclick="test()" >开启1聊天</button>
-        <button  onclick="test1()" >关闭聊天</button>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>内容<br/><br/><br/><br/><br/><br/><br/><br/>内容<br/><br/><br/><br/>
-        内容<br/><br/><br/>内容<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>内容<br/><br/><br/><br/><br/><br/>内容<br/><br/>
-    </ul>
-</div>
-
-<input id="d3" type="text" placeholder="请输入...">
-
+<button style="width:100px;height:100px;"  onclick="test()">开启 </button>
 </body>
-
 <script>
-    $(function(){
-        $("body").height(innerHeight);
-        $(".container").height(window.innerHeight);
-        
+     $(function(){
+         
+     })
+     function test(){
+        $(".dd").css("display","block");
+        $(".chat_input textarea").focus();
 
-        //微信内置浏览器浏览H5页面弹出的键盘遮盖文本框的解决办法 
-            window.addEventListener("resize", function () {
-            if (document.activeElement.tagName == "INPUT" || document.activeElement.tagName == "TEXTAREA") {
-            window.setTimeout(function () {
-            document.activeElement.scrollIntoViewIfNeeded();
-            }, 0);
-            }
-    })
-    function test(){
-            $("input").css("display","block");
-            $("input").focus(function test(){
-                setTimeout(function(){
-                    $("#d3").scrollIntoView(true);
-                    $("#d3").scrollIntoViewIfNeeded();
-                    window.scrollTo(0,document.body.offsetHeight);
-                },3000)
-            });
-        }
-    function test1(){
-        $("input").css("display","none");
-    }
-
-    $("#d3").on('focus',function(){
-       
-    })
+     }
 </script>
 </html>
