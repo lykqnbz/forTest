@@ -146,14 +146,7 @@
     $(".catch_list").css("max-height",screen.height*0.7+"px");
     $(".catch_list_li").css("max-height",screen.height*0.7-47+"px");
 
-    document.querySelector('body').addEventListener('touchmove', function(e) {
-    if (!document.querySelector('.menu_ready').contains(e.target)) {
-        e.preventDefault();
-    }
-    if (!document.querySelector('.menu_in').contains(e.target)) {
-        e.preventDefault();
-    }
-})
+    $('body').on('touchmove',function(event){event.preventDefault();})
 
     function dede(){
         $(".wrap").css("display","none")
