@@ -91,10 +91,8 @@
 /**
  * 禁止浏览器下拉回弹
  */
- document.querySelector('body').addEventListener('touchmove', function(e) {
-    if (!document.querySelector('.bottom').contains(e.target)) {
-        e.preventDefault();
-    }
+$('body').on('touchmove',function(event){
+    event.preventDefault();
 })
 </script>
 </html>
