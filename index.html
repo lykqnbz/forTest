@@ -12,87 +12,147 @@
     <title>抓娃娃机界面</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <script src="js/jquery.js"></script>
-    <link rel="stylesheet" href="css1/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body >
-    <div class="half_live" style="background: #72CB5D;padding: 0% 3.5%;" >
-        <header class="header">   
-                <div class="h_left" onclick="window.open('machine_list.html','_self')"><img src="images/return.png" style="width:10px;height:18px;margin-top:3px;">返回</div>
-                <div class="h_right">
-                    <div class="hr_left">
-                        <div class="hrl_top">5人</div>
-                        <div class="hrl_bottom">在房间</div>
-                    </div>
-                    <div class="hr_right">
-                        <img src="images/icon.png">
-                    </div>
+<body>
+    <div class="room_n">
+        <div class="wrap">
+            <img class="exit" src="images/exit.png">
+            <div class="aboutroom">
+                <div class="hr_left">
+                    <div class="hrl_top">5人</div>
+                    <div class="hrl_bottom">在房间</div>
                 </div>
-        </header>
-        <section class="liveimage" style="background:red">
-            <img src="images/topCartoon.png"  style="z-index: 22; position: absolute;top: -42px;left: 50%;margin-left:-37.5px;width: 75px; height: 50px;">
+                <div class="hr_right">
+                    <img src="images/icon.png">
+                </div>
+            </div>
             <div class="userimage">
                 <img class="userimg" src="images/userimage.png">
                 <p class="username">阿尔德里奇</p>
             </div>
-            <img class="rotate_img" src="images/selectView.png" style="width:52px;height:47px;">
-            <img class="details_img" src="images/details.png" style="width:52px;height:47px;">
-            
-            <ul class="talk hidden">
+            <ul class="talk">
                 <li><span><font class="talk_name">三天打鱼两天打完：</font><font class="talk_content">小姐姐教教我啊，我好久都没玩了。</font></span></li>
                 <li><span><font class="talk_name">得过且过：</font><font class="talk_content">厉害了，这都可以！</font></span></li>
                 <li><span><font class="talk_name">娃娃鱼：</font><font class="talk_content">牛逼</font></span></li>
                 <li><span><font class="talk_name">娃娃鱼：</font><font class="talk_content">牛逼</font></span></li>
             </ul>
             <img class="talk_img" src="images/openBarrage.png" >
-        </section>
-        <footer class="menu_ready hidden" >
-            <section class="menu">
+            <img class="rotate_img" src="images/selectView.png">
+            <img  id="dede" onclick="dede()"  class="detailed_img" src="images/details.png">
+
+            <div class="menu_see hidden" >
+                <img class="talk_button" src="images/toSpeak.png" >
+                <div class="begin_button">
+                    <p>19币/次</p>
+                </div>
+                <div class="money_button">
+                    <p>58币</p>
+                </div>
+            </div>
+
+            <div class="menu_in">
                 <div class="directiion_button">
                     <img class="upkey" src="images/buttonToDelete@3x.png" >
                     <img class="leftkey" src="images/buttonToLeft@3x.png">
                     <img class="rightkey" src="images/buttonToRight@3x.png">
                     <img class="downkey" src="images/underButton@3x.png">
                 </div>
-                <div class="time"><div>18S</div></div>
                 <div class="catch_button">
-                    <img src="images/seize.png" style="width:105px;height:49px;">
+                    <p>剩余 18 S</p>
                 </div>
-            </section>
-        </footer>
-        <footer class="menu_in">
-            <section class="menu">
-                <div class="talk_button">
-                    <img src="images/sendBarrage.png" style="width:51px;height:51px;">
+            </div>
+
+            <video> </video>
+        </div>
+
+        <div class="wrap_other">
+            <header class="header" >
+                <div class="h_left" onclick="dede1()" ><img src="images/return.png" >返回</div>
+            </header>
+            <div class="catch_list">
+                <img src="images/topCartoon.png" style="z-index:999;position:absolute;top:-52px;left:50%;margin-left:-42.5px;width:85px;height:60px;">    
+                <div class="catch_list_top">
+                    <div class="clt_left">
+                        娃娃详情
+                    </div>
+                    <div class="clt_right catch_active">
+                        抓中记录
+                    </div>
                 </div>
-                <div class="begin_button">
-                    <img src="images/startGame.png" style="width:135px;height:57px;">
-                    <p>萌萌咕咕鸡 19币/次</p>
-                </div>
-                <div class="money">
-                    <p>余额：58币</p>
-                    <img src="images/top-up.png" style="width:59px;height:20px;">
-                </div>
-            </section>
-        </footer>
+                <ul class="catch_list_li" style="overflow: auto;-webkit-overflow-scrolling:touch">
+                   <li>
+                        <div class="catch_li_left"><img src="images/icon.png"> <span>得过且过</span></div>
+                        <div class="catch_li_right"> <span>16:20</span> </div>
+                    </li>
+                    <li>
+                        <div class="catch_li_left"><img src="images/icon.png"> <span>得过且过</span></div>
+                        <div class="catch_li_right"> <span>16:20</span> </div>
+                    </li>
+                    <li>
+                        <div class="catch_li_left"><img src="images/icon.png"> <span>得过且过</span></div>
+                        <div class="catch_li_right"> <span>16:20</span> </div>
+                    </li>
+                    <li>
+                        <div class="catch_li_left"><img src="images/icon.png"> <span>得过且过</span></div>
+                        <div class="catch_li_right"> <span>16:20</span> </div>
+                    </li>
+                    <li>
+                        <div class="catch_li_left"><img src="images/icon.png"> <span>得过且过</span></div>
+                        <div class="catch_li_right"> <span>16:20</span> </div>
+                    </li>
+                    <li>
+                        <div class="catch_li_left"><img src="images/icon.png"> <span>得过且过</span></div>
+                        <div class="catch_li_right"> <span>16:20</span> </div>
+                    </li>
+                    <li>
+                        <div class="catch_li_left"><img src="images/icon.png"> <span>得过且过</span></div>
+                        <div class="catch_li_right"> <span>16:20</span> </div>
+                    </li>
+                    <li>
+                        <div class="catch_li_left"><img src="images/icon.png"> <span>得过且过</span></div>
+                        <div class="catch_li_right"> <span>16:20</span> </div>
+                    </li>
+                    <li>
+                        <div class="catch_li_left"><img src="images/icon.png"> <span>得过且过</span></div>
+                        <div class="catch_li_right"> <span>16:20</span> </div>
+                    </li>
+                    <li>
+                        <div class="catch_li_left"><img src="images/icon.png"> <span>得过且过</span></div>
+                        <div class="catch_li_right"> <span>16:20</span> </div>
+                    </li>
+                    <li>
+                        <div class="catch_li_left"><img src="images/icon.png"> <span>得过且过</span></div>
+                        <div class="catch_li_right"> <span>16:20</span> </div>
+                    </li>
+                </ul>
+                <ul class="catch_img hidden">
+                    <img src="images/faceFailure.png" style="margin:90px;width:187px;height:118px; ">
+                </ul>
+            </div>
+        </div>
     </div>
 
 </body>
-<script src="js/js.js"></script>
 <script>
+    $(".wrap").css("height",innerHeight+"px");
+    $(".wrap").css("width",screen.width+"px");
+    $(".wrap_other").css("height",innerHeight+"px");
+    $(".wrap_other").css("width",screen.width+"px");
+    $(".wrap video").css("height",innerHeight+"px");
+    $(".wrap video").css("width",screen.width+"px");
+    $(".talk").css("height",screen.height*0.19+"px");
+    $(".header").css("height",screen.height*0.07+"px");    
+    $(".catch_list").css("max-height",screen.height*0.7+"px");
+    $(".catch_list_li").css("max-height",screen.height*0.7-47+"px");
 
-    $(".half_live").css('height',innerHeight+"px");
-    $(".liveimage").css("height",innerHeight*0.7+"px");
-    $(".header").css("height",screen.height*0.07+"px");
-    $(".menu").css('height',innerHeight*0.17+"px")
-    $(".directiion_button").css("height",screen.height*0.17+"px");
-
-    $(".talk").css("height",innerHeight*0.19+"px");
-
-/**
- * 禁止浏览器下拉回弹
- */
-$('body').on('touchmove',function(event){
-    event.preventDefault();
-})
+    function dede(){
+        $(".wrap").css("display","none")
+        $(".wrap_other").css("display","block")
+    } 
+    function dede1(){
+        $(".wrap_other").css("display","none")
+        $(".wrap").css("display","block")
+    } 
 </script>
 </html>
