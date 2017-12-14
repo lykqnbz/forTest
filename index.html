@@ -148,6 +148,12 @@
     /**
     * 禁止浏览器下拉回弹
     */
+    $(function(){
+        orient();
+    });
+    $(window).bind( 'orientationchange', function(e){
+        orient();
+    });
     function stopDrop() {
         var lastY;//最后一次y坐标点
         $(document.body).on('touchstart', function(event) {
@@ -164,7 +170,22 @@
     
         });
     }
-    stopDrop();
+    function orient() {
+        //;
+        if (window.orientation == 0 || window.orientation == 180) {
+            $("body").attr("class", "portrait");  //当竖屏的时候为body增加一个class
+            orientation = 'portrait';
+            return false;
+        }
+        else if (window.orientation == 90 || window.orientation == -90) {
+            $("body").attr("class", "landscape"); //当横屏的时候为body移除这个class
+            orientation = 'landscape';
+   
+            return false;
+        }
+    }
+
+    
     function dede(){
         $(".wrap").css("display","none")
         $(".wrap_other").css("display","block")
