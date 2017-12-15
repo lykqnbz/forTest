@@ -164,6 +164,7 @@ ul,ol {list-style:none;}
    全屏直播页面 live/index
    更新时间 2017.11.24  12:47
  */
+.room_n{position: fixed;top: 0px;left: 0px;}
 .room_n .wrap {position:relative;}
 .room_n .wrap video {z-index:1;}
 .room_n .exit{position: absolute;top: 2%;left: 5%;width: 48px;height: 48px;z-index: 999;}
