@@ -15,25 +15,56 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <style>
-    p{
-        font-size: 18px;
-        margin-left: 100px;;
-        font-family:PingFangSC;
+    .div_1{
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%,-50%);
+        background: gainsboro;
+        width: 600px;
+        height: 300px;
+    }
+    img{
+        position: absolute;
+        left: 50%;
+        bottom: 0px;
+        margin-left: -36px;
+        width: 72px;
+        height: 72px;
+        animation: 6.5s Jump infinite;
+    }
+    img{
+    }
+    @keyframes Jump {   
+    0% {bottom: 0px;height:72px;  }
+    0.44734% {bottom: 0px;height:64.8px;  }
+    0.8968% {bottom: 0px;height:57.6px;  }
+    1.34202% {bottom: 0px;height:50.4px;  }
+    1.78936% {bottom: 0px;height:43.2px;  }
+    2.2367% {bottom: 0px;height:36px;  }
+    2.8404% {bottom: 0px;height:43.2px;  }
+    3.3138% {bottom: 0px;height:50.4px;  }
+    3.7872% {bottom: 0px;height:57.6px;  }
+    4.2606% {bottom: 0px;height:64.8px;  }
+    4.734% {bottom:0px;height: 72px;}
+    13.0185% {bottom: 30px;}
+    14.3855% {bottom: 29.7px;}
+    15.3855% {bottom: 28.8px;}
+    16.3855% {bottom: 27.4px;}
+    17.3855% {bottom: 25.2px;}
+    18.3855% {bottom: 22.5px;}
+    19.3855% {bottom: 19.2px;}
+    20.3855% {bottom: 15.3px;}
+    21.3855% {bottom: 10.8px;}
+    22.3855% {bottom: 6.7px;}
+    23.67% {bottom:0px;}
+    100% {bottom:0px;}
     }
 </style>
 <body>
-
-    <p style="margin-top:100px;">我     R</p>
-    <p style="font-weight: 100;">我     R</p>
-    <p style="font-weight: 200;">我     R</p>
-    <p style="font-weight: 300;">我     R</p>
-    <p style="font-weight: 400;">我     R</p>
-    <p style="font-weight: 500;">我     R</p>
-    <p style="font-weight: 600;">我     R</p>
-    <p style="font-weight: 700;">我     R</p>
-    <p style="font-weight: 800;">我     R</p>
-    <p style="font-weight: 900;">我     R</p>
-    <p style="font-weight: 1000;">我     R</p>
+    <div class="div_1">
+        <img src="ph_1@3x.png">
+    </div>
 
 </body>
 </html>
