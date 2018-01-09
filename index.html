@@ -1,70 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="cleartype" content="on">
-    <title>抓娃娃机界面</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <script src="js/jquery.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<style>
-    .div_1{
-        position: absolute;
-        left: 50%;
-        top: 40%;
-        transform: translate(-50%,-50%);
-        background: gainsboro;
-        width: 600px;
-        height: 300px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Document</title>
+  <style>
+    #box{
+      position: relative;
+      width: 300px;
+      margin: 0 auto;
     }
-    img{
-        position: absolute;
-        left: 50%;
-        bottom: 0px;
-        margin-left: -36px;
-        width: 72px;
-        height: 72px;
-        animation: 6.5s Jump infinite;
-    }
-    img{
-    }
-    @keyframes Jump {   
-    0% {bottom: 0px;height:72px;  }
-    0.44734% {bottom: 0px;height:64.8px;  }
-    0.8968% {bottom: 0px;height:57.6px;  }
-    1.34202% {bottom: 0px;height:50.4px;  }
-    1.78936% {bottom: 0px;height:43.2px;  }
-    2.2367% {bottom: 0px;height:36px;  }
-    2.8404% {bottom: 0px;height:43.2px;  }
-    3.3138% {bottom: 0px;height:50.4px;  }
-    3.7872% {bottom: 0px;height:57.6px;  }
-    4.2606% {bottom: 0px;height:64.8px;  }
-    4.734% {bottom:0px;height: 72px;}
-    13.0185% {bottom: 30px;}
-    14.3855% {bottom: 29.7px;}
-    15.3855% {bottom: 28.8px;}
-    16.3855% {bottom: 27.4px;}
-    17.3855% {bottom: 25.2px;}
-    18.3855% {bottom: 22.5px;}
-    19.3855% {bottom: 19.2px;}
-    20.3855% {bottom: 15.3px;}
-    21.3855% {bottom: 10.8px;}
-    22.3855% {bottom: 6.7px;}
-    23.67% {bottom:0px;}
-    100% {bottom:0px;}
-    }
-</style>
-<body>
-    <div class="div_1">
-        <img src="ph_1@3x.png">
-    </div>
 
+    #face{
+      background-image: url(face.png);
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+      position: absolute;
+    }
+
+    #eyeLeft{
+      background-image: url(eye.png);
+      background-size: cover;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 90px;
+      left: 100px;
+    }
+
+    #eyeRight{
+      background-image: url(eye.png);
+      background-size: cover;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 90px;
+      left: 190px;
+    }
+
+    #glass{
+      background-image: url(glass.png);
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <div id="face"></div>
+    <div id="eyeLeft"></div>
+    <div id="eyeRight"></div>
+    <div id="glass"></div>
+    <div id="log"></div>
+  </div>
+<script>
+'use strict';
+
+var eyeLeftPosition = {
+  start: [70, 78],
+  end: [100, 110]
+};
+
+var eyeRightPosition = {
+  start: [150, 78],
+  end: [190, 110]
+};
+
+var eyeLeftCenterPosition = {
+  x: (eyeLeftPosition.end[0] - eyeLeftPosition.start[0]) / 2 + eyeLeftPosition.start[0],
+  y: (eyeLeftPosition.end[1] - eyeLeftPosition.start[1]) / 2 + eyeLeftPosition.start[1]
+};
+
+var eyeRightCenterPosition = {
+  x: (eyeRightPosition.end[0] - eyeRightPosition.start[0]) / 2 + eyeRightPosition.start[0],
+  y: (eyeRightPosition.end[1] - eyeRightPosition.start[1]) / 2 + eyeRightPosition.start[1]
+};
+
+var r = 20;
+
+var eyeLeft = document.querySelector('#eyeLeft');
+var eyeRight = document.querySelector('#eyeRight');
+
+if (window.DeviceOrientationEvent) {
+
+  window.addEventListener('deviceorientation', function (event) {
+
+    let {alpha, beta, gamma} = event;
+
+    eyeLeft.style.left = eyeLeftCenterPosition.x + gamma / 90 * r + 'px';
+    eyeRight.style.left = eyeRightCenterPosition.x + gamma / 90 * r + 'px';
+    eyeLeft.style.top = eyeRight.style.top 
+                      = eyeLeftCenterPosition.y + beta / 180 * r + 'px';
+
+    eyeRight.style.transform = eyeLeft.style.transform 
+                         = eyeRight.style.WebkitTransform 
+                         = eyeLeft.style.WebkitTransform 
+                         = 'rotate(' + beta + 'deg)';
+  }, false);
+} else {
+  document.querySelector('body').innerHTML = '浏览器不支持DeviceOrientationEvent';
+}
+</script>
 </body>
 </html>
