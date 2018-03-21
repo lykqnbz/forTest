@@ -1,5 +1,6 @@
 (function (exports) {
 
+	
 	// Singleton
 	var Key = {};
 	exports.Key = Key;
@@ -25,6 +26,7 @@
 	var onKeyDown = function (event) {
 		var code = KEY_CODES[event.keyCode];
 		Key[code] = true;
+		console.warn(Key);
 		if (window.STAGE == 4) return;
 		event.stopPropagation();
 		event.preventDefault();
@@ -38,7 +40,6 @@
 	}
 	window.addEventListener("keydown", onKeyDown, false);
 	window.addEventListener("keyup", onKeyUp, false);
-
 
 	nc_left.onclick = function (event) {
 		console.warn('111')
@@ -338,4 +339,7 @@
 		event.preventDefault();
 	}
 
+	function aaa(){
+		console.log(222)
+	}
 })(window);

@@ -39,7 +39,7 @@
 	</style>
 </head>
 
-<body>
+<body id="boddy">
 
 	<div id="loading">
 		<div>LOADING</div>
@@ -50,7 +50,7 @@
 		<!--span style="display:none"-->
 		<div id="screen_one" >
 			<canvas id="canvas_intro"></canvas>
-			<div id="NewControl">
+			<div id="NewControl"  hidden>
 				<img id="nc_left" src="assets/left.png">
 				<img id="nc_right" src="assets/right.png">
 				<img id="nc_top" src="assets/top.png">
@@ -64,7 +64,7 @@
 				<canvas id="canvas_1" width="300" height="380"></canvas>
 				<canvas id="canvas_2" width="300" height="380"></canvas>
 				<canvas id="canvas_3" width="300" height="380" style="margin:0"></canvas>
-				<div id="NewControl1">
+				<div id="NewControl1" hidden>
 					<img id="nc_left1" src="assets/left.png">
 					<img id="nc_right1" src="assets/right.png">
 					<img id="nc_top1" src="assets/top.png">
@@ -132,11 +132,57 @@
 
 </html>
 
+<script src="js/nipplejs.js" charset="utf-8"></script>
 <script src="js/Key.js"></script>
 <script src="js/game.js"></script>
 <script src="js/popup.js"></script>
 <script src="js/soundjs-0.6.0.min.js"></script>
-
 <script>
+	var Key = {};
+	var tid; var c = 0;
+	var KEY_CODES = {
+		37: "left", 38: "up", 39: "right", 40: "down",
+		65: "left", 87: "up", 68: "right", 83: "down",
+		16: "slow",
+		32: "action", 13: "action",
+		27: "pause", 80: "pause"
+	};
+
+
+	var joystickL = nipplejs.create({
+		zone: document.getElementById('boddy'),
+		mode: 'static',
+		position: { right: '20%', bottom: '30%' },
+		color: 'gray',
+		size: 200
+	});
+	
+	joystickL.on('start end',function(evt,data){
+		if(evt.type=='start'){
+			
+		}else{
+			Key['left'] = false;Key['right'] = false;Key['up'] = false;Key['down'] = false;if (window.STAGE == 4) return;
+		}
+	}).on('move',function(e,data){
+		if(data.direction!=undefined){
+			let angle =data.direction.angle;
+			let distance =data.distance;
+				switch(angle){
+					case 'left': 
+					// console.log(angle);break;			
+					var code = KEY_CODES[37];Key[code] = true;Key['right'] = false;Key['up'] = false;Key['down'] = false;if (window.STAGE == 4) return;break;
+					case 'right':
+					// console.log(angle);break;
+					var code = KEY_CODES[39];Key[code] = true;Key['left'] = false;Key['up'] = false;Key['down'] = false;if (window.STAGE == 4) return;break;
+					case 'up': 
+					// console.log(angle);break;			
+					var code = KEY_CODES[38];Key[code] = true;Key['right'] = false;Key['left'] = false;Key['down'] = false;if (window.STAGE == 4) return;break;
+					case 'down':
+					// console.log(angle);break;
+					var code = KEY_CODES[40];Key[code] = true;Key['right'] = false;Key['up'] = false;Key['left'] = false;if (window.STAGE == 4) return;break;
+				}	
+		}
+	})
+
 //STAGE = 4;
 </script>
