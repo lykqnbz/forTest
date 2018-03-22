@@ -39,8 +39,8 @@
 	</style>
 </head>
 
-<body id="boddy">
-
+<body  >
+	<div  id="boddy" ></div>
 	<div id="loading">
 		<div>LOADING</div>
 	</div>
@@ -48,33 +48,30 @@
 	<div id="whole_container">
 
 		<!--span style="display:none"-->
-		<div id="screen_one" >
-			<canvas id="canvas_intro"></canvas>
-			<div id="NewControl"  hidden>
-				<img id="nc_left" src="assets/left.png">
-				<img id="nc_right" src="assets/right.png">
-				<img id="nc_top" src="assets/top.png">
-				<img id="nc_down" src="assets/down.png">
+		<div id="screen_one" >      
+			<div id="Newfirst">
+				<img src="assets/key.gif">
 			</div>
+			<canvas id="canvas_intro"></canvas>
+
 		</div>
 
 		<div id="screen_two">
+			<img id="NewSaying"  src="assets/text1.png"/>
 			<div id="canvas_container">
-
 				<canvas id="canvas_1" width="300" height="380"></canvas>
 				<canvas id="canvas_2" width="300" height="380"></canvas>
 				<canvas id="canvas_3" width="300" height="380" style="margin:0"></canvas>
-				<div id="NewControl1" hidden>
-					<img id="nc_left1" src="assets/left.png">
-					<img id="nc_right1" src="assets/right.png">
-					<img id="nc_top1" src="assets/top.png">
-					<img id="nc_down1" src="assets/down.png">
-				</div>
+
 				<div id="valentines_text"></div>
 				<div id="rewind_text">rewinding...</div>
 				<div id="replay_text">playing back...</div>
-				
-				</div>
+			</div>
+			<div id="NewButZ">
+				<input type="text" id="NewInput"  placeholder="在这里输入定制文字转发给好友（可不填）"/>
+				<div id="NewButFirend">转发给好友</div>
+				<div id="NewButMore">更多好玩</div>
+			</div>
 		</div>
 		<!--/span-->
 
@@ -152,7 +149,7 @@
 	var joystickL = nipplejs.create({
 		zone: document.getElementById('boddy'),
 		mode: 'static',
-		position: { right: '20%', bottom: '30%' },
+		position: { left: '50%', bottom: '30%' },
 		color: 'gray',
 		size: 200
 	});

@@ -345,7 +345,6 @@ function DoorKey(config,level){
 }
 
 function Door(config,level){
-
 	var self = this;
 	self.level = level;
 
@@ -364,7 +363,6 @@ function Door(config,level){
 			var distance = Math.sqrt(dx*dx/25 + dy*dy);
 			if(distance<6){
 				if(level.isIntro){
-					
 					document.getElementById("whole_container").style.top = "-100%";
 
 					createjs.Sound.play("ding");
@@ -422,12 +420,11 @@ function Door(config,level){
 }
 
 //////////////
-
+ 
 function Peep(config,level){
 
 	var self = this;
 	self.level = level;
-
 	self.x = config.x;
 	self.y = config.y;
 	self.vel = {x:0,y:0};
@@ -581,6 +578,7 @@ window.onload = function(){
 	addAsset("clock","assets/clock.png");
 
 	createjs.Sound.alternateExtensions = ["ogg"];
+	
 	// addSound("ding","audio/ding.mp3");
 	// addSound("rewind","audio/rewind.mp3");
 	// addSound("jazz","audio/jazz.mp3");
@@ -599,6 +597,7 @@ window.onload = function(){
 		//////////
 
 		var frameDirty = false;
+	
 		function update(){
 
 			if(STAGE==0 || STAGE==1){
@@ -695,11 +694,21 @@ var STAGE = 0;
 
 function next(){
 	CURRENT_LEVEL++;
+	if(CURRENT_LEVEL==1){	document.getElementById("NewSaying").src='assets/text2.png'}
+	if(CURRENT_LEVEL==2){	document.getElementById("NewSaying").src='assets/text3.png'}
+	if(CURRENT_LEVEL==3){	document.getElementById("NewSaying").src='assets/text4.png'
+	document.getElementById("boddy").style.width='0px';
+	document.getElementById("boddy").style.height='0px';
+	document.getElementsByClassName("back")[0].style.display='none';
+	document.getElementsByClassName("front")[0].style.display='none';
+	}
+
 	if(CURRENT_LEVEL<LEVEL_CONFIG.length){
 
 		createjs.Sound.play("ding");
 
 		var lvl = new Level(LEVEL_CONFIG[CURRENT_LEVEL]);
+
 		levelObjects[CURRENT_LEVEL] = lvl;
 		window.level = null;
 		setTimeout(function(){
@@ -729,6 +738,12 @@ function next(){
 
 function iHeartYou(){
 	
+	document.getElementById("NewSaying").src='assets/text5.png'
+
+	setTimeout(function(){
+		document.getElementById("NewButZ").style.display='flex'
+	},5000);
+	
 	for(var i=0; i<levelObjects.length; i++) {
 		levelObjects[i].onlyPath();
 	}
@@ -752,12 +767,13 @@ function iHeartYou(){
 
 	// After 9 seconds, swipe down to CREDITS.
 	// No replay. Fuck it.
-	setTimeout(function(){
-		document.getElementById("whole_container").style.top = "-200%";
-	},7300);
-	setTimeout(function(){
-		yourMessage.focus();
-	},8500);
+
+	// setTimeout(function(){
+	// 	document.getElementById("whole_container").style.top = "-200%";
+	// },7300);
+	// setTimeout(function(){
+	// 	yourMessage.focus();
+	// },8500);
 
 }
 
@@ -933,6 +949,20 @@ window.LEVEL_CONFIG = [
 		],
 		countdown: 130
 	}
-
+	
 ];
+document.getElementById("Newfirst").onclick=function(){
+	document.getElementById("whole_container").style.top = "-100%";
 
+	createjs.Sound.play("ding");
+
+	CURRENT_LEVEL = 0;
+	var lvl = new Level(LEVEL_CONFIG[CURRENT_LEVEL]);
+	levelObjects[CURRENT_LEVEL] = lvl;
+	window.level = null;
+	setTimeout(function(){
+		window.level = lvl;
+	},1200);
+
+	return "END_LEVEL";
+}
