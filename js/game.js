@@ -757,7 +757,7 @@ function iHeartYou(){
 	if(window.location.hash){
 		vtext.textContent = encryptString(decodeURIComponent(window.location.hash).substring(1));
 	}else{
-		vtext.textContent = "a lovely message from me to you <3";
+		vtext.textContent = "这是一条来自于我的消息 <3";
 	}
 
 	setTimeout(function(){
