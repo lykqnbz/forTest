@@ -3,9 +3,8 @@ body{
 
 	font-family: Helvetica, Arial, sans-serif;
 	font-weight: 100;
-
 	overflow: hidden;
-
+	height: 100%;width: 100%;
 }
 canvas{
 	float:left;
