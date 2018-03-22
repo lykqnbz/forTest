@@ -883,6 +883,10 @@ function socialShare(event,type){
 
 }
 
+document.getElementById("NewButFirend").onclick=function(){
+	wx.miniProgram.onShareAppMessage();
+}
+
 
 ///////////////////////////////////////////////////////////////////
 
