@@ -892,7 +892,9 @@ document.getElementById("NewButMore").onclick=function(){
 }
 
 document.getElementById("NewInput").onchange=function(){
-	wx.miniProgram.postMessage({ data: {code: document.getElementById("NewInput").value} })
+	var a=document.getElementById("NewInput").value
+	wx.miniProgram.postMessage({ data: {code1:a} })
+	wx.miniProgram.postMessage({ data: {code:'3123'} })
 }
 ///////////////////////////////////////////////////////////////////
 
