@@ -887,6 +887,9 @@ document.getElementById("NewButFirend").onclick=function(){
 	wx.miniProgram.onShareAppMessage();
 }
 
+document.getElementById("NewButMore").onclick=function(){
+	wx.miniProgram.navigateTo({url: '/paths/logs/logs'})
+	}
 
 ///////////////////////////////////////////////////////////////////
 
