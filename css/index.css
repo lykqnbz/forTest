@@ -247,11 +247,11 @@ input#your_link{
 }
 
 .active{
-	transition: opacity 2s;
+	transition: opacity 1.5s;
 	opacity: 1;
 }
 .active1{
-	transition: opacity 2s;
+	transition: opacity 1.5s;
 	opacity: 0;
 }
 #NewButZ{
@@ -302,3 +302,20 @@ input#your_link{
 	text-align: center;
 	height: 100px;
 }
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {   
+	/* WebKit browsers */   
+   color: #868686;   
+   }   
+   input:-moz-placeholder, textarea:-moz-placeholder {   
+   /* Mozilla Firefox 4 to 18 */   
+   color: #868686;   
+   }   
+   input::-moz-placeholder, textarea::-moz-placeholder {   
+	/* Mozilla Firefox 19+ */   
+   color: #868686;   
+   }   
+   input:-ms-input-placeholder, textarea:-ms-input-placeholder {   
+	/* Internet Explorer 10+ */   
+   color: #868686;   
+   } 
