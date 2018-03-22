@@ -884,13 +884,16 @@ function socialShare(event,type){
 }
 
 document.getElementById("NewButFirend").onclick=function(){
-	wx.miniProgram.onShareAppMessage();
+	
 }
 
 document.getElementById("NewButMore").onclick=function(){
-	wx.miniProgram.navigateTo({url: '/paths/logs/logs'})
-	}
+	wx.miniProgram.navigateTo({url: '/pages/more/more'})
+}
 
+document.getElementById("NewInput").onchange=function(){
+	wx.miniProgram.postMessage({ data: {code: document.getElementById("NewInput").value} })
+}
 ///////////////////////////////////////////////////////////////////
 
 
