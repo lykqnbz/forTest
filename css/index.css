@@ -236,15 +236,24 @@ input#your_link{
 	transform: translateX(-50%)
 }
 
-#NewSaying{
+.NewSaying{
 	position: absolute;
 	font-size: 45px;
 	color: #fff;
 	left: 50%;
 	transform: translateX(-50%);
 	top: 20%;
+	opacity: 0;
 }
 
+.active{
+	transition: opacity 2s;
+	opacity: 1;
+}
+.active1{
+	transition: opacity 2s;
+	opacity: 0;
+}
 #NewButZ{
 	width: 85%;
 	display: flex;

@@ -694,9 +694,9 @@ var STAGE = 0;
 
 function next(){
 	CURRENT_LEVEL++;
-	if(CURRENT_LEVEL==1){	document.getElementById("NewSaying").src='assets/text2.png'}
-	if(CURRENT_LEVEL==2){	document.getElementById("NewSaying").src='assets/text3.png'}
-	if(CURRENT_LEVEL==3){	document.getElementById("NewSaying").src='assets/text4.png'
+	if(CURRENT_LEVEL==1){  document.getElementsByClassName("NewSaying")[0].className = 'NewSaying active1'; setTimeout(function(){document.getElementsByClassName("NewSaying")[1].className = 'NewSaying active'},2000);}
+	if(CURRENT_LEVEL==2){  document.getElementsByClassName("NewSaying")[1].className = 'NewSaying active1'; setTimeout(function(){document.getElementsByClassName("NewSaying")[2].className = 'NewSaying active'},2000);}
+	if(CURRENT_LEVEL==3){  document.getElementsByClassName("NewSaying")[2].className = 'NewSaying active1'; setTimeout(function(){document.getElementsByClassName("NewSaying")[3].className = 'NewSaying active'},2000);
 	document.getElementById("boddy").style.width='0px';
 	document.getElementById("boddy").style.height='0px';
 	document.getElementsByClassName("back")[0].style.display='none';
@@ -738,8 +738,7 @@ function next(){
 
 function iHeartYou(){
 	
-	document.getElementById("NewSaying").src='assets/text5.png'
-
+	document.getElementsByClassName("NewSaying")[3].className = 'NewSaying active1'; setTimeout(function(){document.getElementsByClassName("NewSaying")[4].className = 'NewSaying active'},2000)
 	setTimeout(function(){
 		document.getElementById("NewButZ").style.display='flex'
 	},5000);
@@ -953,7 +952,7 @@ window.LEVEL_CONFIG = [
 ];
 document.getElementById("Newfirst").onclick=function(){
 	document.getElementById("whole_container").style.top = "-100%";
-
+	document.getElementsByClassName("NewSaying")[0].className = 'NewSaying active';
 	createjs.Sound.play("ding");
 
 	CURRENT_LEVEL = 0;
