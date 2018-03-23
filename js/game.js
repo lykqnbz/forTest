@@ -883,18 +883,16 @@ function socialShare(event,type){
 
 }
 
-document.getElementById("NewButFirend").onclick=function(){
-	
+document.getElementById("NewButAgain").onclick=function(){
+	history.go(0)
 }
 
 document.getElementById("NewButMore").onclick=function(){
 	wx.miniProgram.navigateTo({url: '/pages/more/more'})
 }
 
-document.getElementById("NewInput").onchange=function(){
-	var a=document.getElementById("NewInput").value
-	wx.miniProgram.postMessage({ data: {code1:a} })
-	wx.miniProgram.postMessage({ data: {code:'3123'} })
+document.getElementById("NewButFirend").onchange=function(){
+	wx.miniProgram.navigateTo({url: '/pages/share/share'})
 }
 ///////////////////////////////////////////////////////////////////
 
