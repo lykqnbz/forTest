@@ -81,7 +81,7 @@
 		</div>
 		<!--/span-->
 
-		<div id="screen_three">
+		<div id="screen_three"  style="display:none;">
 
 			<div id="bottom">
 				<a href="https://twitter.com/ncasenmare">made by @ncasenmare</a>
@@ -169,26 +169,56 @@
 			Key['left'] = false;Key['right'] = false;Key['up'] = false;Key['down'] = false;if (window.STAGE == 4) return;
 		}
 	}).on('move',function(e,data){
+		// console.log(e)
+		// console.log(data)
 		if(data.direction!=undefined){
 			let angle =data.direction.angle;
 			let distance =data.distance;
-				switch(angle){
-					case 'left': 
-					// console.log(angle);break;			
-					var code = KEY_CODES[37];Key[code] = true;Key['right'] = false;Key['up'] = false;Key['down'] = false;if (window.STAGE == 4) return;break;
-					case 'right':
-					// console.log(angle);break;
-					var code = KEY_CODES[39];Key[code] = true;Key['left'] = false;Key['up'] = false;Key['down'] = false;if (window.STAGE == 4) return;break;
-					case 'up': 
-					// console.log(angle);break;			
-					var code = KEY_CODES[38];Key[code] = true;Key['right'] = false;Key['left'] = false;Key['down'] = false;if (window.STAGE == 4) return;break;
-					case 'down':
-					// console.log(angle);break;
-					var code = KEY_CODES[40];Key[code] = true;Key['right'] = false;Key['up'] = false;Key['left'] = false;if (window.STAGE == 4) return;break;
-				}	
+			let aoe=data.angle.degree;
+				console.log(aoe)
+				if(aoe>337.5||aoe<22.5){
+					// 
+					Key['left'] = false;Key['right'] = true;Key['up'] = false;Key['down'] = false;if (window.STAGE == 4) return;
+				}
+				else if(22.5<aoe&&aoe<67.5){
+					Key['left'] = false;Key['right'] = true;Key['up'] = true;Key['down'] = false;if (window.STAGE == 4) return;
+				}
+				else if(67.5<aoe&&aoe<112.5){
+					Key['left'] = false;Key['right'] = false;Key['up'] = true;Key['down'] = false;if (window.STAGE == 4) return;
+				}
+				else if(112.5<aoe&&aoe<157.5){
+					Key['left'] = true;Key['right'] = false;Key['up'] = true;Key['down'] = false;if (window.STAGE == 4) return;
+				}
+				else if(157.5<aoe&&aoe<202.5){
+					// 
+					Key['left'] = true;Key['right'] = false;Key['up'] = false;Key['down'] = false;if (window.STAGE == 4) return;
+				}
+				else if(202.5<aoe&&aoe<247.5){
+					Key['left'] = true;Key['right'] = false;Key['up'] = false;Key['down'] = true;if (window.STAGE == 4) return;
+				}
+				else if(247.5<aoe&&aoe<292.5){
+					Key['left'] = false;Key['right'] = false;Key['up'] = false;Key['down'] = true;if (window.STAGE == 4) return;
+				}
+				else{
+					Key['left'] = false;Key['right'] = true;Key['up'] = false;Key['down'] = true;if (window.STAGE == 4) return;
+				}
+			
+				// switch(angle){
+				// 	case 'left': 
+				// 	// console.log(angle);break;			
+				// 	var code = KEY_CODES[37];Key[code] = true;Key['right'] = false;Key['up'] = false;Key['down'] = false;if (window.STAGE == 4) return;break;
+				// 	case 'right':
+				// 	// console.log(angle);break;
+				// 	var code = KEY_CODES[39];Key[code] = true;Key['left'] = false;Key['up'] = false;Key['down'] = false;if (window.STAGE == 4) return;break;
+				// 	case 'up': 
+				// 	// console.log(angle);break;			
+				// 	var code = KEY_CODES[38];Key[code] = true;Key['right'] = false;Key['left'] = false;Key['down'] = false;if (window.STAGE == 4) return;break;
+				// 	case 'down':
+				// 	// console.log(angle);break;
+				// 	var code = KEY_CODES[40];Key[code] = true;Key['right'] = false;Key['up'] = false;Key['left'] = false;if (window.STAGE == 4) return;break;
+				// }	
 		}
 	})
 
 	document.querySelector("body").addEventListener("touchstart",function(e){e.preventDefault();})
-//STAGE = 4;
 </script>

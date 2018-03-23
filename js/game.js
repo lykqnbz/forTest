@@ -374,7 +374,7 @@ function Door(config, level) {
 					setTimeout(function () {
 						window.level = lvl;
 					}, 1200);
-
+					document.getElementsByClassName("NewSaying")[0].className = 'NewSaying active';
 					return "END_LEVEL";
 				} else {
 					next();
@@ -963,17 +963,18 @@ window.LEVEL_CONFIG = [
 
 ];
 document.getElementById("Newfirst").onclick = function () {
-	document.getElementById("whole_container").style.top = "-100%";
-	document.getElementsByClassName("NewSaying")[0].className = 'NewSaying active';
-	createjs.Sound.play("ding");
+	document.getElementById("Newfirst").style.display='none'
+	// document.getElementById("whole_container").style.top = "-100%";
+	// document.getElementsByClassName("NewSaying")[0].className = 'NewSaying active';
+	// createjs.Sound.play("ding");
 
-	CURRENT_LEVEL = 0;
-	var lvl = new Level(LEVEL_CONFIG[CURRENT_LEVEL]);
-	levelObjects[CURRENT_LEVEL] = lvl;
-	window.level = null;
-	setTimeout(function () {
-		window.level = lvl;
-	}, 1200);
+	// CURRENT_LEVEL = 0;
+	// var lvl = new Level(LEVEL_CONFIG[CURRENT_LEVEL]);
+	// levelObjects[CURRENT_LEVEL] = lvl;
+	// window.level = null;
+	// setTimeout(function () {
+	// 	window.level = lvl;
+	// }, 1200);
 
-	return "END_LEVEL";
+	// return "END_LEVEL";
 }
