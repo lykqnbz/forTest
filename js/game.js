@@ -757,9 +757,9 @@ function iHeartYou() {
 	vtext.style.display = "block";
 	if (window.location.hash) {
 		// vtext.textContent = encryptString(decodeURIComponent(window.location.hash).substring(1));
-		vtext.textContent=window.location.hash.substring(1);
+		vtext.textContent=decodeURIComponent(window.location.hash.substring(1));
 	} else {
-		vtext.textContent = "这是一条来自于我的消息 <3";
+		vtext.textContent = "这是一条来自于我的消息 :D";
 	}
 
 	setTimeout(function () {
