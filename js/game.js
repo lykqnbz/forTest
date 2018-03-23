@@ -757,7 +757,7 @@ function iHeartYou() {
 	vtext.style.display = "block";
 	if (window.location.hash) {
 		// vtext.textContent = encryptString(decodeURIComponent(window.location.hash).substring(1));
-		vtext.textContent=window.location.hash
+		vtext.textContent=window.location.hash.substring(1);
 	} else {
 		vtext.textContent = "这是一条来自于我的消息 <3";
 	}
@@ -894,6 +894,7 @@ document.getElementById("NewButMore").onclick = function () {
 }
 
 document.getElementById("NewButFirend").onchange = function () {
+	console.log("bg")
 	wx.miniProgram.navigateTo({ url: '/pages/share/share' })
 }
 ///////////////////////////////////////////////////////////////////
