@@ -893,8 +893,7 @@ document.getElementById("NewButMore").onclick = function () {
 	wx.miniProgram.navigateTo({ url: '/pages/more/more' })
 }
 
-document.getElementById("NewButFirend").onchange = function () {
-	console.log("bg")
+document.getElementById("NewButFirend").onclick = function () {
 	wx.miniProgram.navigateTo({ url: '/pages/share/share' })
 }
 ///////////////////////////////////////////////////////////////////
