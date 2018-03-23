@@ -233,7 +233,8 @@ input#your_link{
 	position: absolute;
 	bottom: 20%;
 	left: 50%;
-	transform: translateX(-50%)
+	transform: translateX(-50%);
+	width: 15%;
 }
 
 .NewSaying{
