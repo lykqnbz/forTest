@@ -886,7 +886,7 @@ function socialShare(event, type) {
 }
 
 document.getElementById("NewButAgain").onclick = function () {
-	history.go(0)
+	window.location.reload()
 }
 
 document.getElementById("NewButMore").onclick = function () {
