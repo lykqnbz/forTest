@@ -837,7 +837,7 @@ yourLink.onclick = function () {
 function socialShare(event, type) {
 
 	var link = yourLink.value;
-	var title = "it's a(door)able";
+	var title = "秘密门";
 	var url = "";
 	var width = 640;
 	var height = 480;
