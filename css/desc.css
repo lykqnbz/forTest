@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+/*统一样式*/
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,th,td {margin:0;padding:0;font-family:Microsoft YaHei,PingFangSC,Helvetica;}
+a {text-decoration:none;color: #000}
+a:hover {text-decoration:underline;}
+ul,ol {list-style:none;}
+a,img,input,div {-webkit-tap-highlight-color:rgba(255,255,255,0);}
+.hidden {display:none !important;}
+.bold{font-weight: 600}
+@media screen and (min-width:1024px){html{font-size:20px;}}/* PC */
+@media screen and (max-width:800px){html{font-size:18px;}} /* 普通平板 */
+@media screen and (max-width:414px){html{font-size:17px;}} /* 苹果6P7P8P */
+@media screen and (max-width:375px){html{font-size:15px;}} /* 苹果678 */
+@media screen and (max-width:360px){html{font-size:14px;}} /* 三星S5 */
+@media screen and (max-width:320px){html{font-size:12px;}} /* 苹果5 */
+/*禁止ios微信端长按出现*/
+* {
+  -webkit-touch-callout:none;
+  -moz-touch-callout:none;
+  -ms-touch-callout:none;
+  touch-callout:none;
+}
+
+.view{
+    width: 100%;
+}
+
+
+.title{
+    height: 55px;
+    width: 100%;
+    background-color: #f98600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    }
+
+
+.title>.titleLeft{
+    width: 20px;
+    height: 30px;
+    margin-left: 20px;
+    position: absolute;
+    top: 15px;
+    left:0
+
+}
+
+.title>.titleLeft>img{
+    width: 11px;
+    height: 19px;
+}
+
+.title>.titleRight{
+    width: 100%;
+    text-align: center;
+    color:#fff;
+    font-size: 18px;
+    font-weight: 700
+}
+
+.section >ul{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.section >ul >li{
+    display: flex;
+    align-content: center;
+    width: 90%;
+    box-sizing: border-box;
+     font-size: 14px;
+    padding:10px 0;
+    margin: 0 10px;
+}
+.section >ul >.subject{
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 16px;
+    padding:20px 0 10px 0;
+    margin-bottom: 10px;
+}
+
+
+
+.section>ul >li>img{
+    width: 15px;
+    height: 16px;
+    margin-right: 10px;
+
+}
+
+.section>ul >li>span{
+     margin-right: 8px;
+}
+
+.section>ul >.statu{
+    position: absolute;
+    top:50%;
+    margin-top: -40px;
+    right: 30px;
+}
+
+
+.section>ul >.statu>img{
+    width: 80px;
+    height: 80px;
+}
