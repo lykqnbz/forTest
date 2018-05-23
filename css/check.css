@@ -136,13 +136,15 @@ div {
     display: flex;
     flex-direction: row;
    border-bottom: 1px solid #e6e6e6;
+   background: red;
 }
 
 .titlewraper>span{
     display: flex;
     align-items: center;
-    width: 18px;
+    width: 10%;
     height: 2.6rem;
+    background: green;
 }
 
 .titlewraper >span>.return{
@@ -158,6 +160,7 @@ div {
     text-align: center;
     width: 90%;
     height: 2.6rem;
+    background: gold;
 }
 
 select{
