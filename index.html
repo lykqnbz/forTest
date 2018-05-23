@@ -1,81 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Swiper demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="css/swiper.css">
-
-  <!-- Demo styles -->
-  <style>
-    html, body {
-      position: relative;
-      height: 100%;
-    }
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color:#000;
-      margin: 0;
-      padding: 0;
-    }
-    .swiper-container {
-      width: 100%;
-      height: 100%;
-    }
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-
-      /* Center slide text vertically */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>查看课表</title>
+    <link rel="stylesheet" href="css/check.css">
 </head>
+
 <body>
-  <!-- Swiper -->
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
-      <div class="swiper-slide">Slide 10</div>
+    <div class="view">
+        <div class="title">
+            <div class="titlewraper">
+                    <span>
+                            <img class="return" src="icon/return@3x.png" alt="">
+                    </span>
+                    
+                    <div class="slDiv">
+              
+                            <img class="loudou" id="loudou" src="icon/shaixuan@3x.png" alt="">
+                      
+                                <select name="" id="">
+                                        <option value="">选择老师</option>
+                                        <option value="">张老师</option>
+                                        <option value="">张老师</option>
+                                        <option value="">张老师</option>
+                                    </select>
+                        
+                            <img class="sanjiao" id="sanjiao" src="icon/sanjiao@3x.png" alt="">
+                        </div>
+            </div>
+               
+    
+
+
+            <div class="week">
+
+                <div>上一周
+                    <label></label>
+                </div>
+                <div>本周
+                    <label></label>
+                </div>
+                <div class="now">下一周
+                    <label></label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section">
+            <ul>
+                <li class="time">6月14（周一）</li>
+                <li>
+                    <div class="descTop">
+                        <img src="icon/班级@3x.png">
+                        <label>校道交运全年B班</label>
+                        <div class="method">一对一</div>
+
+                    </div>
+                    <div class="descBottom">
+                        <div class="time">
+                            <img src="icon/时间@3x.png">
+                            <label>时间:</label>
+                            <span>10:00-11:00</span>
+
+                        </div>
+                        <div class="people">
+                            <img src="icon/人数@3x.png">
+                            <label>15</label>人
+                        </div>
+                    </div>
+                    <div class="camps">
+                        <img src="icon/camps@3x.png">
+                        <label>校区:</label>
+                        <label>泉州鲤城区南环路大学校区</label>
+                    </div>
+
+
+                </li>
+                <li>
+                    <div class="descTop">
+                        <img src="icon/班级@3x.png">
+                        <label>校道交运全年B班</label>
+                        <div class="method">一对一</div>
+
+                    </div>
+                    <div class="descBottom">
+                        <div class="time">
+                            <img src="icon/时间@3x.png">
+                            <label>时间:</label>
+                            <span>10:00-11:00</span>
+
+                        </div>
+                        <div class="people">
+                            <img src="icon/人数@3x.png">
+                            <label>15</label>人
+                        </div>
+                    </div>
+                    <div class="camps">
+                        <img src="icon/老师@3x.png">
+                        <label>校区</label>
+                        <label>泉州鲤城区南环路大学校区</label>
+                    </div>
+
+
+                </li>
+                <li>
+                    <div class="descTop">
+                        <img src="icon/班级@3x.png">
+                        <label>校道交运全年B班</label>
+                        <div class="method">一对一</div>
+                    </div>
+                    <div class="descBottom">
+                        <div class="time">
+                            <img src="icon/时间@3x.png">
+                            <label>时间:</label>
+                            <span>10:00-11:00</span>
+
+                        </div>
+                        <div class="people">
+                            <img src="icon/人数@3x.png">
+                            <label>15</label>人
+                        </div>
+                    </div>
+                    <div class="camps">
+                        <img src="icon/老师@3x.png">
+                        <label>校区</label>
+                        <label>泉州鲤城区南环路大学校区</label>
+                    </div>
+
+                </li>
+            </ul>
+
+
+
+            <ul>
+                <li class="time">6月15（周二）</li>
+                <li>暂无课程安排</li>
+            </ul>
+            <ul>
+                <li class="time">6月15（周二）</li>
+                <li>暂无课程安排</li>
+            </ul>
+            <ul>
+                <li class="time">6月15（周二）</li>
+                <li>暂无课程安排</li>
+            </ul>
+
+
+
+
+
+        </div>
     </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-  </div>
 
-  <!-- Swiper JS -->
-  <script src="js/swiper.js"></script>
 
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper('.swiper-container', {
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    });
-  </script>
+    <script src="js/js.js"></script>
+    <script src="js/jquery.js"></script>
+    <!-- <script src="js/picker.min.js"></script> -->
+
+    <script>
+        $('select').on('click', function (evt) {
+            evt.stopPropagation();
+            // $('.sanjiao').addClass('toggleSanjiao');
+
+        });
+        $('select').on('change', function () {
+            $('.loudou').attr("src", "icon/老师@3x.png");
+           // $('.sanjiao').remove('toggleSanjiao');
+           // $(".sanjiao").toggleClass("toggleSanjiao");
+
+        });
+     
+
+
+</script>
+
+<!-- 
+    <script>
+        //仿ios滚动
+        var data = [{ text: '全部', value: 1 },
+        { text: "张老师", value: 2 },
+        { text: "李老师", value: 3 },
+        { text: "刘老师", value: 4 },
+        ];
+
+        var picker1El = document.getElementById("picker1");
+        var imageSrc = document.getElementById("loudou");
+        var sanjiao = document.getElementById("sanjiao");
+        var picker1 = new Picker({
+            data: [data]
+        });
+
+        picker1.on('picker.select', function (selectedVal, selectedIndex) {
+            picker1El.innerText = data[selectedIndex[0]].text;
+            imageSrc.src = "icon/老师@3x.png";
+            sanjiao.classList.remove("toggleSanjiao");
+        });
+
+        picker1.on('picker.change', function (index, selectedIndex) {
+            console.log(index);
+        });
+
+        picker1.on('picker.valuechange', function (selectedVal, selectedIndex) {
+            console.log(selectedVal);
+        });
+        picker1El.addEventListener('click', function () {
+            picker1.show();
+            sanjiao.classList.add("toggleSanjiao");
+        });  -->
+<!-- 
+    //缓存还没有实现
+//     $(document).on('touchstart',function(evt){
+//     var scroll = $(this).scrollTop();
+//     sessionStorage.setItem("scrolltop_id", scroll);
+//     console.log(scrolltop_id);
+//   }) -->
+
+   
 </body>
+
 </html>

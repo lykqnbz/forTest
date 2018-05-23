@@ -1,102 +1,230 @@
 @charset "utf-8";
 
 /*统一样式*/
-body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,th,td {margin:0;padding:0;font-family:Microsoft YaHei,PingFangSC,Helvetica;}
-a {text-decoration:none;color: #000}
-a:hover {text-decoration:underline;}
-ul,ol {list-style:none;}
-a,img,input,div {-webkit-tap-highlight-color:rgba(255,255,255,0);}
-.hidden {display:none !important;}
-.bold{font-weight: 600}
-@media screen and (min-width:1024px){html{font-size:20px;}}/* PC */
-@media screen and (max-width:800px){html{font-size:18px;}} /* 普通平板 */
-@media screen and (max-width:414px){html{font-size:17px;}} /* 苹果6P7P8P */
-@media screen and (max-width:375px){html{font-size:15px;}} /* 苹果678 */
-@media screen and (max-width:360px){html{font-size:14px;}} /* 三星S5 */
-@media screen and (max-width:320px){html{font-size:12px;}} /* 苹果5 */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+fieldset,
+lengend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    font-family: Microsoft YaHei, PingFangSC, Helvetica;
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a,
+img,
+input,
+div {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.bold {
+    font-weight: 600
+}
+
+@media screen and (min-width:1024px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+
+/* PC */
+
+@media screen and (max-width:800px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+
+/* 普通平板 */
+
+@media screen and (max-width:414px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+
+/* 苹果6P7P8P */
+
+@media screen and (max-width:375px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+
+/* 苹果678 */
+
+@media screen and (max-width:360px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+
+/* 三星S5 */
+
+@media screen and (max-width:320px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+
+/* 苹果5 */
+
+
 /*禁止ios微信端长按出现*/
+
 * {
-  -webkit-touch-callout:none;
-  -moz-touch-callout:none;
-  -ms-touch-callout:none;
-  touch-callout:none;
+    -webkit-touch-callout: none;
+    -moz-touch-callout: none;
+    -ms-touch-callout: none;
+    touch-callout: none;
 }
 
-
-.view{
+.view {
     width: 100%;
+    overflow: hidden;
 }
-
-
 .title{
-    height: 55px;
     width: 100%;
-    background-color: #f98600;
-    position: relative;
+}
+
+.titlewraper{
+    display: flex;
+    flex-direction: row;
+   border-bottom: 1px solid #e6e6e6;
+}
+
+.titlewraper>span{
     display: flex;
     align-items: center;
-    position: fixed;
-    top:0;
-    left:0
-    }
-
-
-.title>.titleLeft{
-    width: 20px;
-    height: 30px;
-    margin-left: 20px;
-    position: absolute;
-    top: 15px;
-    left:0
-
+    width: 18px;
+    height: 2.6rem;
 }
 
-.title>.titleLeft>img{
-    width: 11px;
-    height: 19px;
+.titlewraper >span>.return{
+  height: 14px;
+  width: 7.5px;
+  padding-left: 15px;
 }
 
-.title>.titleRight{
-    width: 100%;
-    text-align: center;
-    color:#fff;
-    font-size: 18px;
-    font-weight: 700
-}
-
-.week{
-    width: 100%;
-    height: 39px;
-    color: #c0c0c0;
+.slDiv {
     display: flex;
     justify-content: center;
-    border-bottom: 5px solid #e6e6e6;
-    font-size: 12px;
-    line-height: 25px;
-   margin-top: 55px;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    height: 2.6rem;
 }
 
-.week >div{
+select{
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none; 
+    outline: none;
+    height: 100%;
+    border: none; 
+    padding: 0 4%;
+    background-color: #fff;
+}
+
+
+
+
+
+
+.slDiv>.loudou{
+    width: 1rem;
+    height: 1rem;
+    margin-right: 1rem;
+}
+
+
+.slDiv>.sanjiao{
+    width: 11px;
+    height: 9px;
+    margin-left: 1rem;
+}
+.slDiv .toggleSanjiao {
+    transform: rotate(180deg);
+}
+
+/* 修改 */
+.week {
+    width: 100%;
+    height: 2.6rem;
+    color: #c0c0c0;
+    display: flex;
+    justify-content: center;;
+    border-bottom: 5px solid #e6e6e6;
+    font-size: 0.8rem;
+    line-height: 25px;
+}
+
+.week>div {
     width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.week >.now{
+.week>.now {
     display: flex;
     flex-direction: column;
-    color:#686868;
-    font-size: 14px;
+    color: #686868;
+    font-size: 0.9rem;
 }
 
-.week >.now >label{
+.week>.now>label {
     width: 20px;
     height: 3px;
     background-color: #f98600;
 }
 
-.section >ul{
+.section>ul {
     width: 100%;
     display: flex;
     align-items: center;
@@ -105,104 +233,131 @@ a,img,input,div {-webkit-tap-highlight-color:rgba(255,255,255,0);}
     border-bottom: 5px solid #e6e6e6;
 }
 
-.section >ul >li{
+.section>ul>li {
     display: flex;
     flex-direction: column;
     align-content: center;
     width: 90%;
     box-sizing: border-box;
     border-bottom: 1px solid #e6e6e6;
-    font-size: 14px;
-    padding:10px 0;
+    font-size: 0.9rem;
+    padding: 10px 0;
     margin: 0 10px;
 }
-.section >ul >li:last-child{
+
+.section>ul>li:last-child {
     border: none;
 }
 
-.section >ul >.time{
-font-size: 18px;
-padding:20px 0 10px 0;
-}
-
-.section >ul >li>.descTop{
-    display: flex;
-    width: 100%;
-}
-
-.section >ul >li>.descTop>img{
- width: 15px;
- height: 15px;
- margin-right: 10px
- ;
-}
-
-.section >ul >li>.descTop>label{
-    display: flex;
-    align-items: center;
-    width: 120px;
-    height: 15px;
-    line-height: 15px;
+/* 修改 */
+.section>ul>.time {
     text-align: center;
+    font-size: 1.2rem;
+    padding: 15px 0;
+}
 
-   }
+.section>ul>li>.descTop,
+.section>ul>li>.descBottom,
+.section>ul>li>.camps {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    height: 20px;
+    margin-top: 5px;
+}
 
-   .section >ul >li>.descTop>div{
+.section>ul>li>*>img,
+.section>ul>li>*>*>img {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+}
+
+.section>ul>li>*>label,
+.section>ul>li>*>*>label {
+    display: flex;
+    align-items: baseline;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.section>ul>li>.descTop>.method {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1px 7px;
-    font-size: 12px;
+    font-size: 0.8rem;
     color: #fff;
-    background-color: #00b1ff;
+    background-color: rgba(235, 107, 0, 0.8);
     font-weight: 700;
+    border-radius: 10px;
 }
 
-.section >ul >li>.descTop>.camps{
-    margin-left: 10px;
-}
-
-
-.section >ul >li>.descBottom{
+.section>ul>li>.descBottom>.time {
     display: flex;
+    align-items: baseline;
+    width: 80%;
+}
+
+.section>ul>li>.descBottom>.people {
+    display: flex;
+    align-items: baseline;
+    width: 20%;
+}
+
+.sectionDesc>ul {
+    position: relative;
     width: 100%;
-height: 50%;
-margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-
-.section >ul >li>.descBottom>.time{
-width: 85%;
-height: 20px;
-display: flex;
-align-items: center;
-
+.sectionDesc>ul>li {
+    display: flex;
+    align-content: center;
+    width: 90%;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    padding: 10px 0;
+    margin: 0 10px;
 }
 
-.section >ul >li>.descBottom>.time>img{
+.sectionDesc>ul>.subject {
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 1rem;
+    padding: 20px 0 10px 0;
+    margin-bottom: 10px;
+}
+
+.sectionDesc>ul>li>img {
     width: 15px;
-    height: 15px;
+    height: 1rem;
     margin-right: 10px;
+    margin-top: 2px;
+}
+
+.sectionDesc>ul>li>span {
+    margin-right: 8px;
+}
+
+.sectionDesc>ul>.statu {
+    position: absolute;
+    top: 55%;
+    margin-top: -40px;
+    right: 30px;
+}
+
+.sectionDesc>ul>.statu>img {
+    width: 80px;
+    height: 80px;
 }
 
 
-.section >ul >li>.descBottom>.time>label{
-display: flex;
-align-items: center;
-margin-right: 5px;
-}
 
-
-
-
-.section >ul >li>.descBottom>.people{
-    width: 15%;
-    height: 20px;
-    }
-
-    .section >ul >li>.descBottom>.people>img{
-        width: 12px;
-        height: 15px;
-
-    }
 
