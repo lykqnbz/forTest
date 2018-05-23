@@ -157,21 +157,29 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     width: 90%;
     height: 2.6rem;
     background: gold;
 }
 
 select{
+    
     appearance:none;
     -moz-appearance:none;
     -webkit-appearance:none; 
     outline: none;
     height: 100%;
     border: none; 
-    padding: 0 4%;
     background-color: #fff;
+    display: flex;
+    width: 55px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+    box-sizing: content-box !important;
+}
+option{
+    text-align: center;
 }
 
 
