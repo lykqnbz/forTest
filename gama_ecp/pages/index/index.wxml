@@ -1,0 +1,5 @@
+<view class="container">
+    <image class='index_1' src='/assets/sprite/index_1.png' />
+    <image class='index_2' src='/assets/sprite/index_2.png' />
+    <image class='index_3' bindtap='bindToP' src='/assets/sprite/index_3.png' />
+</view>

@@ -1,0 +1,77 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.1.0",
+	"appid": "wxfe6ce2488d9f2785",
+	"projectname": "gama_ecp",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": -1,
+					"name": "pass",
+					"pathName": "pages/pass/pass",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "level_1",
+					"pathName": "pages/level/level_1/index",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "level_2",
+					"pathName": "pages/level/level_2/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "level_3",
+					"pathName": "pages/level/level_3/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cur",
+					"pathName": "pages/level/cur/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "level_4",
+					"pathName": "pages/level/level_4/index",
+					"query": ""
+				}
+			]
+		}
+	}
+}

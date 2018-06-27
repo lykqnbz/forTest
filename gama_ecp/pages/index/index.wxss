@@ -1,0 +1,22 @@
+.index_1{
+  width: 600rpx;
+  height: 165rpx;
+  position: absolute;
+  top: 200rpx;
+  left: 75rpx;
+}
+
+.index_2{
+  width: 580rpx;
+  height: 273rpx;
+  position: absolute;
+  top: 450rpx;
+  left: 85rpx;
+}
+.index_3{
+  width: 400rpx;
+  height: 85rpx;
+  position: absolute;
+  top: 900rpx;
+  right: 0rpx;
+}

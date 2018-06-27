@@ -1,0 +1,9 @@
+<template name="winPage">
+  <view class='shadow_layer' wx:if="{{gameState==1}}">
+    <image class='win' src='/assets/texture/win.png' />
+    <view class='chooseList'>
+      <image class='replay' bindtap='replay' src='/assets/texture/replay.png' />
+      <image class='otherPass' bindtap='playOther' src='/assets/texture/otherPass.png' />
+    </view>
+  </view>
+</template>

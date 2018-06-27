@@ -1,0 +1,27 @@
+<view class="container">
+  <swiper class='p_swpier' indicator-dots="true" indicator-active-color="#fff">
+    <swiper-item class="p_swpierItem">
+      <image class='pass_1' src='/assets/sprite/pass_1.png' bindtap='bindToI' />
+      <image class='pass_2' src='/assets/sprite/pass_2.png' />
+      <view class='pass_ineC'>
+        <view class='pass_ineItem' wx:for="{{test}}" wx:key="index" wx:if="{{index<12}}" bindtap="pass" data-index="{{index+1}}">
+          <image class='pass_3' src='/assets/sprite/pass_3.png' />
+          <label>{{index+1}}</label>
+          <image class='pass_4' src='/assets/sprite/pass_4.png' />
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item class="p_swpierItem">
+      <image class='pass_1' src='/assets/sprite/pass_1.png' bindtap='bindToI' />
+      <image class='pass_2' src='/assets/sprite/pass_2.png' />
+      <view class='pass_ineC'>
+        <view class='pass_ineItem' wx:for="{{test}}" wx:key="index" wx:if="{{index>=12}}">
+          <image class='pass_3' src='/assets/sprite/pass_3.png' />
+          <label>{{index+1}}</label>
+          <image class='pass_4' src='/assets/sprite/pass_4.png' />
+        </view>
+      </view>
+      <image class='pass_5' src='/assets/sprite/pass_5.png' />
+    </swiper-item>
+  </swiper>
+</view>

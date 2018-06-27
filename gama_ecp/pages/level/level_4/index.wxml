@@ -1,0 +1,58 @@
+<import src="../../template/win/index.wxml" />
+<import src="../../template/fail/index.wxml" />
+<import src="../../template/getprop/index.wxml" />
+<import src="../../template/loading/index.wxml" />
+<import src="../../template/menu/index.wxml" />
+<swiper class='containerL' indicator-dots="{{true}}" bindchange="bindChange" current='{{current}}' indicator-active-color="#fff">
+  <swiper-item class="con_item ">
+    <image class='level_1_1' src='/assets/sprite/level_1_1.png' />
+    <!--老板  -->
+    <image class='level_1_13' bindtap='gameFail' src='/assets/sprite/level_1_13.png' />
+    <!--同事  -->
+    <image class='level_1_12' src='/assets/sprite/level_1_12.png' />
+  </swiper-item>
+  <swiper-item class="con_item">
+    <image class='level_1_3' src='/assets/sprite/level_1_3.png' />
+    <!--门  -->
+    <image class='level_1_7' wx:if="{{sprite.door.status==0}}" src='/assets/sprite/level_1_7.png' />
+    <image class='level_1_6' bindtap='gameWin' wx:else src='/assets/sprite/level_1_6.png' />
+    <!-- 黄色同事  -->
+    <image class='level_4_1'  src='/assets/sprite/level_4_1.png' />
+    <image class='level_4_2'  src='/assets/sprite/level_4_2.png' />
+
+  </swiper-item>
+  <swiper-item class="con_item">
+    <image class='level_1_3' src='/assets/sprite/level_2_2.png' />
+    <!--厕所  -->
+    <image class='level_4_3'  src='/assets/sprite/level_4_3.png' />
+    <image class='level_4_3'  src='/assets/sprite/level_4_4.png' />
+    <image class='level_4_4'  src='/assets/sprite/level_4_3.png' />
+    <image class='level_4_4'  src='/assets/sprite/level_4_4.png' />
+    <!--香蕉  -->
+    <image class='level_4_5'  src='/assets/sprite/level_4_5.png' />
+    <image class='level_4_6'  src='/assets/sprite/level_4_5.png' />
+    <image class='level_4_7'  src='/assets/sprite/level_4_5.png' />
+    <!--蚁力神  -->
+    <image class='level_4_8'  src='/assets/sprite/level_4_6.png' />
+  </swiper-item>
+</swiper>
+<view class='bottom'>
+  <image class='bottom_bg' src='/assets/sprite/level_1_2.png' />
+  <!-- 道具栏 -->
+  <view class='prop_con' wx:for="{{prop}}" wx:key="{{index}}">
+    <image wx:if="{{item.status==1}}" class='prop' src="{{item.url}}" style="left:{{item.x}}rpx;top:{{item.y}}rpx;" data-prop="{{index}}" bindtouchmove="moveEvent" bindtouchend="moveOver" />
+  </view>
+
+</view>
+<image class='menu' bindtap='meneChange' src='/assets/texture/menu.png' />
+
+<view class='mask_layer' wx:if="{{layerState}}"></view>
+<!--胜利亦失败-->
+<template is="failPage" data="{{gameState}}"></template>
+<template is="winPage" data="{{gameState}}"></template>
+<!--获取道具  -->
+<template is="getProp" data="{{getProp}}"></template>
+<!--拟加载 -->
+<template is="loading" data="{{loadingMap}}"></template>
+<!--菜单栏 -->
+<template is="menu" data="{{menuShow}}"></template>

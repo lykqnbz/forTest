@@ -1,0 +1,55 @@
+.mask_layer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.propCon {
+  width: 530rpx;
+  height: 590rpx;
+  background: #c7eaff;
+  border-radius: 30rpx;
+  border: 8rpx solid #2989c6;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-content: flex-start;
+}
+.propCon>label{
+  color: #3c3c78;
+  font-size: 48rpx;
+  font-weight: 600;
+  margin-left: 40rpx;
+  margin-top: 40rpx;
+}
+.propCon>view{
+  width: 370rpx;
+  height: 370rpx;
+  background: #fff;
+  border-radius: 30rpx;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.propCon>text{
+  width: 300rpx;
+  height: 80rpx;
+  border-radius: 25rpx;
+  position: absolute;
+  background: #47a5e3;
+  top: 450rpx;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -150rpx;
+  color: #fff;
+  font-size: 40rpx;
+}
+.propCon>view>image{
+  width: 230rpx;
+  height: 230rpx;
+}

@@ -1,0 +1,29 @@
+.loading{
+  background: #95D2F9;
+  z-index: 99;
+}
+
+.loading>text{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 240rpx;
+  color: #fff;
+  font-size: 70rpx;
+}
+.loading>image{
+  width: 338rpx;
+  height: 360rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 500rpx;
+}
+.loading>label{
+  position: absolute;
+  right: 40rpx;
+  top: 1000rpx;
+  color: #fff;
+  font-size: 46rpx;
+  font-weight: 600;
+}

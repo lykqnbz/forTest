@@ -1,0 +1,21 @@
+.shadow_layer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-content: flex-start;
+}
+.win{
+  width: 661rpx;
+  height: 1041rpx;
+  margin-top: 140rpx;
+}
+.chooseList{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+}
+.chooseList>image{
+  width: 290rpx;
+  height: 87rpx;
+}

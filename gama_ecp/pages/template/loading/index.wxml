@@ -1,0 +1,7 @@
+<template name="loading">
+  <view class='mask_layer loading' wx:if="{{loadingMap.ifShow}}">
+    <text>关卡{{loadingMap.level}}</text>
+    <image src='/assets/texture/loadingMan.png' />
+    <label>Now Loading......</label>
+  </view>
+</template>

@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/pass/pass",
+    "pages/level/level_1/index",
+    "pages/template/win/index",
+    "pages/template/fail/index",
+    "pages/template/getprop/index",
+    "pages/template/loading/index",
+    "pages/template/menu/index",
+    "pages/level/level_2/index",
+    "pages/level/level_3/index",
+    "pages/level/cur/index",
+    "pages/level/level_4/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "white",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "逃离公司",
+    "navigationBarTextStyle": "white",
+    "disableScroll": true,
+    "navigationStyle": "custom"
+  }
+}

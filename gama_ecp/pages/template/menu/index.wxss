@@ -1,0 +1,35 @@
+.menuCon {
+  width: 600rpx;
+  height: 450rpx;
+  background: #c7eaff;
+  border-radius: 30rpx;
+  border: 4rpx solid #2989c6;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-content: flex-start;
+}
+.shareImg{
+  width: 500rpx;
+  height: 190rpx;
+  margin-top: 80rpx;
+}
+.menuCon>view{
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50rpx;
+}
+.menuCon>view>image{
+  width: 240rpx;
+  height: 72rpx;
+}
+.exit{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: -20rpx;
+  right: -20rpx;
+}
