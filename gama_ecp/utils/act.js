@@ -18,7 +18,7 @@ class Act extends Sprite {
           "url": ""
         },
         menuShow: false,
-        layerState:false
+        layerState: false
       }
       resolve(obj);
     })
@@ -31,21 +31,26 @@ class Act extends Sprite {
     var touchs = e.touches[0];
     var pageX = touchs.pageX * scale;
     var pageY = touchs.pageY * scale;
-    var event = init.prop[prop].event[eventIn];
+    var event = false;
+    if (eventIn != "") {
+      event = init.prop[prop].event[eventIn];
+    }
     var initX = init.prop[prop].initX;
     var initY = init.prop[prop].initY;
-    var toWho = event.toWho;
 
     var x = pageX - (30 * scale);
     var y = pageY - (30 * scale);
 
     // wholeStatus为有值且为0时表示 物品互动为获取动作，值为1时，表示为事件触发
     return new Promise((resolve, reject) => {
-      if (pageX > event.leftX && pageX < event.rightX && pageY > event.topY && pageY < event.bottomY && current == event.current) {
+      if (event && pageX > event.leftX && pageX < event.rightX && pageY > event.topY && pageY < event.bottomY && current == event.current && result != -1) {
+        var toWho = event.toWho;
         if (result == 0) {
           var obj = {
             ['prop.' + prop + '.x']: initX,
             ['prop.' + prop + '.y']: initY,
+            ['prop.' + prop + '.curX']: x - (155 * index),
+            ['prop.' + prop + '.curY']: y - 1200,
             ['sprite.' + toWho + '.status']: 1,
             wholeStatus: 0
           }
@@ -141,19 +146,21 @@ class Act extends Sprite {
   }
 
   // 游戏胜利
-  gameWin() {
+  gameWin(index) {
     return new Promise((resolve, reject) => {
       var obj = {
         gameState: 1,
+        gameSuccessImg: index
       }
       resolve(obj);
     })
   }
   // 游戏失败
-  gameFail() {
+  gameFail(index) {
     return new Promise((resolve, reject) => {
       var obj = {
         gameState: 2,
+        gameFailImg: index
       }
       resolve(obj);
     })

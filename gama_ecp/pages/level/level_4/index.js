@@ -8,9 +8,10 @@ Page({
     current: 0,
     gameState: 0,
     loadingMap: {
-      "ifShow": false,
+      "ifShow": true,
       "level": ""
     },
+    level4Event: 0,
   },
   onLoad: function(options) {
     var self = this;
@@ -36,11 +37,23 @@ Page({
   },
   moveEvent(e) {
     var prop = e.currentTarget.dataset.prop;
-    var event = "openDoor";
     var current = this.data.current;
     var scale = this.data.scale;
+    var pageX = e.touches[0].pageX * scale;
+    var pageY = e.touches[0].pageY * scale;
+    var event = "";
+    var result = "";
+    for (var findEvent in this.data.prop[prop].event) {
+      if (pageX > this.data.prop[prop].event[findEvent].leftX && pageX < this.data.prop[prop].event[findEvent].rightX && pageY > this.data.prop[prop].event[findEvent].topY && pageY < this.data.prop[prop].event[findEvent].bottomY && current == this.data.prop[prop].event[findEvent].current) {
+        event = findEvent;
+      }
+    }
     var index = 0;
-    var result = this.data.prop[prop].event[event].result;
+    if (event == "") {
+      result = -1;
+    } else {
+      result = this.data.prop[prop].event[event].result;
+    }
     for (var key in this.data.prop) {
       if (this.data.prop[key].status == 1) {
         if (prop == key) {
@@ -64,13 +77,58 @@ Page({
           });
         });
       } else if (res.wholeStatus == 1) {
-        this.setData(res, () => {
-          setTimeout(() => {
+
+        // 第四关特别事件 喂食动作
+        if (event == "giveWorkerG") {
+          this.setData({
+            ['sprite.workerGrey.status']: 2,
+            layerState: true
+          })
+        } else if (event == "giveWorkerY") {
+          this.setData({
+            ['sprite.workerYellow.status']: 2,
+            layerState: true
+          })
+        } else {
+          this.setData({
+            ['sprite.boss.status']: 2,
+            layerState: true
+          })
+        }
+        setTimeout(() => {
+          if (event == "giveWorkerG") {
             this.setData({
-              ['prop.' + prop + '.status']: 3,
+              ['sprite.workerGrey.status']: 1,
+              layerState: false
             })
-          }, 300);
-        });
+          } else if (event == "giveWorkerY") {
+            this.setData({
+              ['sprite.workerYellow.status']: 1,
+              layerState: false
+            })
+          } else {
+            this.setData({
+              ['sprite.boss.status']: 1,
+            })
+            if (this.data.sprite.workerYellow.status == 1 && this.data.sprite.workerGrey.status == 1) {
+              this.setData({
+                ['sprite.door.status']: 1,
+                layerState: false
+              })
+            } else {
+              setTimeout(() => {
+                this.gameFail(1);
+              }, 1000)
+            }
+          }
+          this.setData(res, () => {
+            setTimeout(() => {
+              this.setData({
+                ['prop.' + prop + '.status']: 3,
+              })
+            }, 300);
+          });
+        }, 1000);
       } else {
         this.setData(res)
       }
@@ -108,19 +166,47 @@ Page({
 
   //弹出提示的获取道具后
   spriteChangeGet(e) {
-    console.log(e)
     var sprite = e.currentTarget.dataset.sprite;
     act.spriteChangeGet(level, sprite).then((res) => {
       this.setData(res)
+      if (sprite == "redBull") {
+        this.setData({
+          level4Event: 1
+        })
+        setTimeout(() => {
+          this.setData({
+            level4Event: 2
+          })
+          setTimeout(() => {
+            this.setData({
+              level4Event: 3
+            })
+            setTimeout(() => {
+              this.gameFail(2);
+              this.setData({
+                level4Event: 0
+              })
+            }, 1000)
+          }, 1000)
+        }, 1000)
+      }
     });
   },
-  gameWin() {
-    act.gameWin().then((res) => {
+  gameWin(e) {
+    var index = e;
+    if (e.currentTarget && e.currentTarget.dataset.index) {
+      index = e.currentTarget.dataset.index;
+    }
+    act.gameWin(index).then((res) => {
       this.setData(res)
     });
   },
-  gameFail() {
-    act.gameFail().then((res) => {
+  gameFail(e) {
+    var index = e;
+    if (e.currentTarget && e.currentTarget.dataset.index) {
+      index = e.currentTarget.dataset.index;
+    }
+    act.gameFail(index).then((res) => {
       this.setData(res)
     });
   },
@@ -138,6 +224,7 @@ Page({
     this.setData({
       menuShow: !this.data.menuShow
     })
-  }
+  },
+
 
 })

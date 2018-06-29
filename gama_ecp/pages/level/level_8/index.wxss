@@ -1,0 +1,94 @@
+@import '../../template/win/index.wxss';
+@import '../../template/fail/index.wxss';
+@import '../../template/getprop/index.wxss';
+@import '../../template/loading/index.wxss';
+@import '../../template/menu/index.wxss';
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.level_1_1 {
+  width: 750rpx;
+  height: 1333rpx;
+}
+
+.level_1_3 {
+  width: 750rpx;
+  height: 1333rpx;
+}
+
+.level_1_11 {
+  position: absolute;
+  top: 370rpx;
+  left: 35rpx;
+  width: 300rpx;
+  height: 244rpx;
+}
+
+.level_1_12 {
+  position: absolute;
+  top: 505rpx;
+  left: 70rpx;
+  width: 136rpx;
+  height: 180rpx;
+}
+
+.level_1_13 {
+  position: absolute;
+  top: 515rpx;
+  left: 315rpx;
+  width: 136rpx;
+  height: 170rpx;
+}
+
+/* ------------基础CSS----------------  */
+
+.level_8_1 {
+  position: absolute;
+  top: 215rpx;
+  left: 255rpx;
+  width: 107rpx;
+  height: 124rpx;
+}
+
+.level_8_2 {
+  position: absolute;
+  top: 215rpx;
+  left: 255rpx;
+  width: 192rpx;
+  height: 355rpx;
+}
+
+.level_8_4 {
+  position: absolute;
+  top: 515rpx;
+  left: 195rpx;
+  width: 294rpx;
+  height: 108rpx;
+}
+
+.level_8_5 {
+  position: absolute;
+  top: 215rpx;
+  left: 264rpx;
+  width: 213rpx;
+  height: 298rpx;
+}
+
+.level_8_6 {
+  position: absolute;
+  top: 215rpx;
+  left: 245rpx;
+  width: 227rpx;
+  height: 419rpx;
+}
+
+.level_8_7 {
+  position: absolute;
+  top: 255rpx;
+  left: 285rpx;
+  width: 171rpx;
+  height: 198rpx;
+}

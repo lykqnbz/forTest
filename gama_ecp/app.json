@@ -11,7 +11,13 @@
     "pages/level/level_2/index",
     "pages/level/level_3/index",
     "pages/level/cur/index",
-    "pages/level/level_4/index"
+    "pages/level/level_4/index",
+    "pages/level/level_5/index",
+    "pages/level/level_6/index",
+    "pages/level/level_7/index",
+    "pages/level/level_8/index",
+    "pages/level/level_9/index",
+    "pages/level/level_10/index"
   ],
   "window": {
     "backgroundTextStyle": "white",

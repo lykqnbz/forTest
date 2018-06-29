@@ -158,6 +158,7 @@ page {
   width: 100rpx;
   height: 100rpx;
 }
+
 .level_4_8 {
   position: absolute;
   top: 970rpx;
@@ -166,3 +167,47 @@ page {
   height: 80rpx;
 }
 
+.level_4_8 {
+  position: absolute;
+  top: 970rpx;
+  left: 130rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.level_4_9 {
+  position: absolute;
+  top: 300rpx;
+  left: 530rpx;
+  width: 189rpx;
+  height: 352rpx;
+}
+
+.level_4_10 {
+  position: absolute;
+  top: 280rpx;
+  left: 200rpx;
+  width: 158rpx;
+  height: 352rpx;
+}
+
+.level_4_11 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 526rpx;
+  height: 583rpx;
+  transform: translate(-50%, -50%);
+}
+
+.level_4_12 {
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+.level_4_13 {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.level_4_14 {
+  background: rgba(0, 0, 0, 0.7) !important;
+}

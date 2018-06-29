@@ -17,9 +17,9 @@ Page({
   pass(e) {
     var index = e.currentTarget.dataset.index;
     var url = "/pages/level/level_" + index + "/index"
-    if(index>3){
+    if (index > 10) {
       api.bindTo("nav", '/pages/level/cur/index')
-    }else{
+    } else {
       api.bindTo("nav", url)
     }
   }

@@ -1,0 +1,62 @@
+<import src="../../template/win/index.wxml" />
+<import src="../../template/fail/index.wxml" />
+<import src="../../template/getprop/index.wxml" />
+<import src="../../template/loading/index.wxml" />
+<import src="../../template/menu/index.wxml" />
+<swiper class='containerL' indicator-dots="{{true}}" bindchange="bindChange" current='{{current}}' indicator-active-color="#fff">
+  <swiper-item class="con_item ">
+    <image class='level_1_1' src='/assets/sprite/level_1_1.png' />
+    <!--同事  -->
+    <image class='level_1_12' src='/assets/sprite/level_1_12.png' />
+
+    <!--鱼竿  -->
+    <image class='level_2_1' wx:if="{{sprite.pole.status==0}}" bindtap='spriteChangeHifi' data-sprite="pole" src='/assets/sprite/level_2_1.png' />
+
+  </swiper-item>
+  <swiper-item class="con_item">
+    <image class='level_1_3' src='/assets/sprite/level_1_3.png' />
+    <!--门  -->
+    <image class='level_1_7' wx:if="{{sprite.door.status==0}}" src='/assets/sprite/level_1_7.png' />
+    <image class='level_1_6' bindtap='gameWin' data-index="1" wx:else src='/assets/sprite/level_1_6.png' />
+
+    <!-- 蒙娜丽莎 -->
+    <view class='level_5_6'></view>
+    <image class='level_5_1' wx:if="{{sprite.paintLeft.status==0}}" bindtap='spriteChangeHifi' data-sprite="paintLeft" src='/assets/sprite/level_5_1.png' />
+
+  </swiper-item>
+  <swiper-item class="con_item">
+    <image class='level_1_3' src='/assets/sprite/level_2_2.png' />
+    <view class='level_5_7'></view>
+    <image class='level_5_8' wx:if="{{sprite.paintRight.status==1}}" src='/assets/sprite/level_5_1.png' />
+
+    <!--老板  -->
+    <image class='level_5_9' wx:if="{{sprite.bossFront.status==0}}" bindtap='gameFail' data-index="1" src='/assets/sprite/level_5_3.png' />
+    <image class='level_5_10 {{sprite.bossBack.status==1?"bossMove":""}}' wx:if="{{sprite.bossBack.status==1}}" bindtap='level5Event1' src='/assets/sprite/level_5_4.png' />
+    <image class='level_5_11' wx:if="{{sprite.bossBack.status==2}}" src='/assets/sprite/level_5_5.png' />
+    <!--钥匙  -->
+    <image class='level_5_12 {{sprite.bossBack.status==1||sprite.bossBack.status==2?"keyMove":""}}' bindtap='level5Event1'  wx:if="{{sprite.key.status==2}}" src='/assets/sprite/level_1_5.png ' />
+    <!--钓鱼动作  -->
+    <image class='level_2_4 ' wx:if="{{sprite.movePole.status==1}}" src='/assets/sprite/level_2_4.png ' />
+
+  </swiper-item>
+</swiper>
+<view class='bottom '>
+  <image class='bottom_bg ' src='/assets/sprite/level_1_2.png ' />
+  <!-- 道具栏 -->
+  <view class='prop_con ' wx:for="{{prop}}" wx:key="{{index}}" wx:if="{{item.status==1}}">
+    <image class='prop ' src="{{item.url}}" style="left:{{item.x}}rpx;top:{{item.y}}rpx;" data-prop="{{index}}" bindtouchmove="moveEvent" bindtouchend="moveOver" />
+  </view>
+
+</view>
+<image class='menu ' bindtap='meneChange' src='/assets/texture/menu.png ' />
+
+<view class='mask_layer ' wx:if="{{layerState}}"></view>
+<!--胜利亦失败-->
+<template is="failPage" data="{{gameState,gameFailImg}}"></template>
+<template is="winPage" data="{{gameState,gameSuccessImg}}"></template>
+<!--获取道具  -->
+<template is="getProp" data="{{getProp}}"></template>
+<!--拟加载 -->
+<template is="loading" data="{{loadingMap}}"></template>
+<!--菜单栏 -->
+<template is="menu" data="{{menuShow}}"></template>

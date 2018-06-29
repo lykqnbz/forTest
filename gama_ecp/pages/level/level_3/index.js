@@ -8,7 +8,7 @@ Page({
     current: 0,
     gameState: 0,
     loadingMap: {
-      "ifShow": false,
+      "ifShow": true,
       "level": ""
     },
   },
@@ -108,19 +108,26 @@ Page({
 
   //弹出提示的获取道具后
   spriteChangeGet(e) {
-    console.log(e)
     var sprite = e.currentTarget.dataset.sprite;
     act.spriteChangeGet(level, sprite).then((res) => {
       this.setData(res)
     });
   },
-  gameWin() {
-    act.gameWin().then((res) => {
+  gameWin(e) {
+    var index = e;
+    if (e.currentTarget && e.currentTarget.dataset.index) {
+      index = e.currentTarget.dataset.index;
+    }
+    act.gameWin(index).then((res) => {
       this.setData(res)
     });
   },
-  gameFail() {
-    act.gameFail().then((res) => {
+  gameFail(e) {
+    var index = e;
+    if (e.currentTarget && e.currentTarget.dataset.index) {
+      index = e.currentTarget.dataset.index;
+    }
+    act.gameFail(index).then((res) => {
       this.setData(res)
     });
   },
@@ -148,7 +155,7 @@ Page({
         layerState: true
       })
       setTimeout(() => {
-        this.gameFail();
+        this.gameFail(1);
       }, 1300);
     });
 

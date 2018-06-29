@@ -7,49 +7,57 @@
   <swiper-item class="con_item ">
     <image class='level_1_1' src='/assets/sprite/level_1_1.png' />
     <!--老板  -->
-    <image class='level_1_13' bindtap='gameFail' src='/assets/sprite/level_1_13.png' />
+    <image class='level_1_13' wx:if="{{sprite.boss.status==0}}" bindtap='gameFail' data-index="1" src='/assets/sprite/level_1_13.png' />
+    <image class='level_4_9' wx:if="{{sprite.boss.status==2}}" src='/assets/sprite/level_4_9.png' />
     <!--同事  -->
-    <image class='level_1_12' src='/assets/sprite/level_1_12.png' />
+    <image class='level_1_12' wx:if="{{sprite.workerGrey.status==0}}" src='/assets/sprite/level_1_12.png' />
+    <image class='level_4_10' wx:if="{{sprite.workerGrey.status==2}}" src='/assets/sprite/level_4_10.png' />
   </swiper-item>
   <swiper-item class="con_item">
     <image class='level_1_3' src='/assets/sprite/level_1_3.png' />
     <!--门  -->
     <image class='level_1_7' wx:if="{{sprite.door.status==0}}" src='/assets/sprite/level_1_7.png' />
-    <image class='level_1_6' bindtap='gameWin' wx:else src='/assets/sprite/level_1_6.png' />
+    <image class='level_1_6' bindtap='gameWin' data-index="1" wx:else src='/assets/sprite/level_1_6.png' />
     <!-- 黄色同事  -->
-    <image class='level_4_1'  src='/assets/sprite/level_4_1.png' />
-    <image class='level_4_2'  src='/assets/sprite/level_4_2.png' />
+    <image class='level_4_1' wx:if="{{sprite.workerYellow.status==0}}" src='/assets/sprite/level_4_1.png' />
+    <image class='level_4_2' wx:if="{{sprite.workerYellow.status==2}}" src='/assets/sprite/level_4_2.png' />
 
   </swiper-item>
   <swiper-item class="con_item">
     <image class='level_1_3' src='/assets/sprite/level_2_2.png' />
     <!--厕所  -->
-    <image class='level_4_3'  src='/assets/sprite/level_4_3.png' />
-    <image class='level_4_3'  src='/assets/sprite/level_4_4.png' />
-    <image class='level_4_4'  src='/assets/sprite/level_4_3.png' />
-    <image class='level_4_4'  src='/assets/sprite/level_4_4.png' />
+    <image class='level_4_3' wx:if="{{sprite.workerYellow.status==1||sprite.workerGrey.status==1}}" src='/assets/sprite/level_4_4.png' />
+    <image class='level_4_3' wx:else src='/assets/sprite/level_4_3.png' />
+    <image class='level_4_4' wx:if="{{sprite.workerYellow.status==1&&sprite.workerGrey.status==1}}" src='/assets/sprite/level_4_4.png' />
+    <image class='level_4_4' wx:else src='/assets/sprite/level_4_3.png' />
     <!--香蕉  -->
-    <image class='level_4_5'  src='/assets/sprite/level_4_5.png' />
-    <image class='level_4_6'  src='/assets/sprite/level_4_5.png' />
-    <image class='level_4_7'  src='/assets/sprite/level_4_5.png' />
+    <image class='level_4_5' wx:if="{{sprite.banana1.status==0}}" bindtap='spriteChangeHifi' data-sprite="banana1" src='/assets/sprite/level_4_5.png' />
+    <image class='level_4_6' wx:if="{{sprite.banana2.status==0}}" bindtap='spriteChangeHifi' data-sprite="banana2" src='/assets/sprite/level_4_5.png' />
+    <image class='level_4_7' wx:if="{{sprite.banana3.status==0}}" bindtap='spriteChangeHifi' data-sprite="banana3" src='/assets/sprite/level_4_5.png' />
     <!--蚁力神  -->
-    <image class='level_4_8'  src='/assets/sprite/level_4_6.png' />
+    <image class='level_4_8' wx:if="{{sprite.redBull.status==0}}" bindtap='spriteChangeHifi' data-sprite="redBull" src='/assets/sprite/level_4_6.png' />
   </swiper-item>
 </swiper>
 <view class='bottom'>
   <image class='bottom_bg' src='/assets/sprite/level_1_2.png' />
   <!-- 道具栏 -->
-  <view class='prop_con' wx:for="{{prop}}" wx:key="{{index}}">
-    <image wx:if="{{item.status==1}}" class='prop' src="{{item.url}}" style="left:{{item.x}}rpx;top:{{item.y}}rpx;" data-prop="{{index}}" bindtouchmove="moveEvent" bindtouchend="moveOver" />
+  <view class='prop_con' wx:for="{{prop}}" wx:key="{{index}}" wx:if="{{item.status==1}}">
+    <image class='prop' src="{{item.url}}" style="left:{{item.x}}rpx;top:{{item.y}}rpx;" data-prop="{{index}}" bindtouchmove="moveEvent" bindtouchend="moveOver" />
   </view>
 
 </view>
 <image class='menu' bindtap='meneChange' src='/assets/texture/menu.png' />
+<!--加班层  -->
+<view class='mask_layer {{level4Event==1?"level_4_12":level4Event==2?"level_4_13":level4Event==3?"level_4_14":""}}' wx:if="{{level4Event!=0}}">
+  <image class='level_4_11' wx:if="{{level4Event==1||level4Event==2||level4Event==3}}" src='/assets/sprite/level_4_11.png' />
+  <image class='level_4_11' wx:if="{{level4Event==2||level4Event==3}}" src='/assets/sprite/level_4_12.png' />
+  <image class='level_4_11' wx:if="{{level4Event==3}}" src='/assets/sprite/level_4_13.png' />
+</view>
 
 <view class='mask_layer' wx:if="{{layerState}}"></view>
 <!--胜利亦失败-->
-<template is="failPage" data="{{gameState}}"></template>
-<template is="winPage" data="{{gameState}}"></template>
+<template is="failPage" data="{{gameState,gameFailImg}}"></template>
+<template is="winPage" data="{{gameState,gameSuccessImg}}"></template>
 <!--获取道具  -->
 <template is="getProp" data="{{getProp}}"></template>
 <!--拟加载 -->

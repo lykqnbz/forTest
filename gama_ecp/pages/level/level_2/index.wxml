@@ -7,7 +7,7 @@
   <swiper-item class="con_item ">
     <image class='level_1_1' src='/assets/sprite/level_1_1.png' />
     <!--老板  -->
-    <image class='level_1_13' bindtap='gameFail' src='/assets/sprite/level_1_13.png' />
+    <image class='level_1_13' bindtap='gameFail' data-index="1" src='/assets/sprite/level_1_13.png' />
     <!--同事  -->
     <image class='level_1_12' src='/assets/sprite/level_1_12.png' />
     <!--鱼竿  -->
@@ -17,7 +17,7 @@
     <image class='level_1_3' src='/assets/sprite/level_1_3.png' />
     <!--门  -->
     <image class='level_1_7' wx:if="{{sprite.door.status==0}}" src='/assets/sprite/level_1_7.png' />
-    <image class='level_1_6' bindtap='gameWin' wx:else src='/assets/sprite/level_1_6.png' />
+    <image class='level_1_6' bindtap='gameWin' data-index="1" wx:else src='/assets/sprite/level_1_6.png' />
   </swiper-item>
   <swiper-item class="con_item">
     <image class='level_2_2' src='/assets/sprite/level_2_2.png' />
@@ -50,8 +50,8 @@
 
 <view class='mask_layer' wx:if="{{layerState}}"></view>
 <!--胜利亦失败-->
-<template is="failPage" data="{{gameState}}"></template>
-<template is="winPage" data="{{gameState}}"></template>
+<template is="failPage" data="{{gameState,gameFailImg}}"></template>
+<template is="winPage" data="{{gameState,gameSuccessImg}}"></template>
 <!--获取道具  -->
 <template is="getProp" data="{{getProp}}"></template>
 <!--拟加载 -->

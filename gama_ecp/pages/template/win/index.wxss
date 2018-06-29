@@ -19,3 +19,11 @@
   width: 290rpx;
   height: 87rpx;
 }
+.winItem{
+  width: 575rpx;
+  height: 555rpx;
+  position: absolute;
+  top: 300rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}

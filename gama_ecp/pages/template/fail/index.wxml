@@ -1,6 +1,12 @@
 <template name="failPage">
   <view class='shadow_layer' wx:if="{{gameState==2}}">
     <image class='fail' src='/assets/texture/fail.png' />
+
+    <image class='failItem' wx:if="{{gameFailImg==1}}" src='/assets/texture/fail_1.png' />
+    <image class='failItem' wx:if="{{gameFailImg==2}}" src='/assets/texture/fail_2.png' />
+    <image class='failItem' wx:if="{{gameFailImg==3}}" src='/assets/texture/fail_3.png' />
+    <image class='failItem' wx:if="{{gameFailImg==4}}" src='/assets/texture/fail_4.png' />
+
     <button class='share' open-type='share'></button>
     <view class='chooseList'>
       <image class='replay' bindtap='replay' src='/assets/texture/replay.png' />

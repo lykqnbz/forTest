@@ -67,7 +67,7 @@ Page({
         // 第二关特别事件 鱼竿动作
         this.setData({
           ['sprite.movePole.status']: 1,
-          layerState:true
+          layerState: true
         })
         setTimeout(() => {
           this.setData({
@@ -85,7 +85,7 @@ Page({
               });
             });
           });
-        }, 2000);
+        }, 1500);
 
 
       } else if (res.wholeStatus == 1) {
@@ -138,13 +138,21 @@ Page({
       this.setData(res)
     });
   },
-  gameWin() {
-    act.gameWin().then((res) => {
+  gameWin(e) {
+    var index = e;
+    if (e.currentTarget && e.currentTarget.dataset.index) {
+      index = e.currentTarget.dataset.index;
+    }
+    act.gameWin(index).then((res) => {
       this.setData(res)
     });
   },
-  gameFail() {
-    act.gameFail().then((res) => {
+  gameFail(e) {
+    var index = e;
+    if (e.currentTarget && e.currentTarget.dataset.index) {
+      index = e.currentTarget.dataset.index;
+    }
+    act.gameFail(index).then((res) => {
       this.setData(res)
     });
   },
@@ -196,7 +204,7 @@ Page({
                     ['sprite.moveMan.status']: 8,
                   })
                   setTimeout(() => {
-                    this.gameFail();
+                    this.gameFail(3);
                   }, 1000);
                 }, 250);
               }, 250);

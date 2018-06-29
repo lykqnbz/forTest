@@ -7,7 +7,7 @@
   <swiper-item class="con_item ">
     <image class='level_1_1' src='/assets/sprite/level_1_1.png' />
     <!--老板  -->
-    <image class='level_1_13' bindtap='gameFail' src='/assets/sprite/level_1_13.png' />
+    <image class='level_1_13' bindtap='gameFail' data-index="1" src='/assets/sprite/level_1_13.png' />
     <!--同事  -->
     <image class='level_1_12' src='/assets/sprite/level_1_12.png' />
     <!--挂福树  -->
@@ -25,14 +25,14 @@
     <image class='level_1_9' src='/assets/sprite/level_1_9.png' />
     <!--门  -->
     <image class='level_1_7' wx:if="{{sprite.door.status==0}}" src='/assets/sprite/level_1_7.png' />
-    <image class='level_1_6' bindtap='gameWin' wx:else src='/assets/sprite/level_1_6.png' />
+    <image class='level_1_6' bindtap='gameWin' data-index="1" wx:else src='/assets/sprite/level_1_6.png' />
   </swiper-item>
 </swiper>
 <view class='bottom'>
   <image class='bottom_bg' src='/assets/sprite/level_1_2.png' />
   <!-- 道具栏 -->
-  <view class='prop_con' wx:for="{{prop}}" wx:key="{{index}}">
-    <image wx:if="{{item.status==1}}" class='prop' src="{{item.url}}" style="left:{{item.x}}rpx;top:{{item.y}}rpx;" data-prop="{{index}}"  bindtouchmove="moveEvent" bindtouchend="moveOver" />
+  <view class='prop_con' wx:for="{{prop}}" wx:key="{{index}}"  wx:if="{{item.status==1}}">
+    <image class='prop' src="{{item.url}}" style="left:{{item.x}}rpx;top:{{item.y}}rpx;" data-prop="{{index}}"  bindtouchmove="moveEvent" bindtouchend="moveOver" />
   </view>
 
 </view>
@@ -40,8 +40,8 @@
 
 <view class='mask_layer' wx:if="{{layerState}}"></view>
 <!--胜利亦失败-->
-<template is="failPage" data="{{gameState}}"></template>
-<template is="winPage" data="{{gameState}}"></template>
+<template is="failPage" data="{{gameState,gameFailImg}}"></template>
+<template is="winPage" data="{{gameState,gameSuccessImg}}"></template>
 <!--获取道具  -->
 <template is="getProp" data="{{getProp}}"></template>
 <!--拟加载 -->
