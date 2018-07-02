@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="cleartype" content="on">
+    <title>抢元宝</title>
+    <link rel="stylesheet" href="../css/qiangyuanbao.css">
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css"> -->
+
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/weui.min.css">
+</head>
+
+<body>
+
+
+    <!--音乐播放-->
+    <div>
+        <audio id="bgMusic" src="" autoplay="true" loop="true"></audio>
+    </div>
+
+    <div class="header">
+        <span>快来抢元宝</span>
+        <img src="../img/caishen.png" alt="">
+        <img class="music" src="../icon/musicOn@3x.png" alt="" onclick="music(this)">
+    </div>
+
+    <div class="button" id="qiangyuanbao">
+        <img src="../icon/button@3x.png" alt="">
+        <span>点击抢元宝</span>
+    </div>
+
+    <div class="actionEnrollBG">
+        <div class="actionEnroll">
+            <div class="actionEnrollTitle">
+                <span id="delete">x</span>
+                活动报名
+            </div>
+            <div class="contentInput">
+                <input type="text" placeholder="请输入姓名">
+                <input type="text" placeholder="请输入手机号">
+                <div class="outter " id="chooseSchoolOver">
+                        <div class="inner chooseButton" id="subAction">
+                            <label> 提交 </label>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="time">
+        <div class="beginTime">2018.5.20</div>
+        <span>到</span>
+        <div class="endTime">2018.5.25</div>
+
+    </div>
+
+
+
+
+
+    <div class="edit rules ">
+
+        <div class="editHeader">
+            <img class="editHeaderImg" src="../icon/title@3x.png" alt="">
+            <span class="editHeaderlabel">活动规则</span>
+
+            <div class="editRules">
+                <div class="contentTitle"></div>
+
+                <div class="contentInput">
+
+                    这里是活动规则，有很多很多的规则啊啊啊啊
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="gifts edit">
+
+        <div class="editHeader">
+            <img class="editHeaderImg" src="../icon/title@3x.png" alt="">
+            <span class="editHeaderlabel">奖品信息</span>
+
+            <div class="editGifts">
+                <div class="gift">
+                    <div class="contentTitle giftName center">
+                        <span>奖品一</span>
+                    </div>
+
+                    <div class="contentInput center">
+                        <span>奖品共</span>
+                        <span>10</span>
+                        <span>份</span>
+                    </div>
+                    <div class="contentInput center">
+                        <span>活动时间内抢到</span>
+                        <span>100</span>
+                        <span>个元宝</span>
+                    </div>
+
+                    <div class="contentInput center">
+                        <span>即可</span>
+                        <span>免费获得奖品</span>
+                    </div>
+
+                    <div class="contentInput center">
+                        <span style="font-weight: 700">新东方英语6节课</span>
+                       
+                    </div>
+
+
+                    <div class="giftsImg">
+                        <img id="inputImg" class="inputImg" src="../img/1.png" alt="">
+
+                    </div>
+                </div>
+
+
+
+                <div class="gift">
+                        <div class="contentTitle giftName center">
+                            <span>奖品一</span>
+                        </div>
+    
+                        <div class="contentInput center">
+                            <span>奖品共</span>
+                            <span>10</span>
+                            <span>份</span>
+                        </div>
+                        <div class="contentInput center">
+                            <span>活动时间内抢到</span>
+                            <span>100</span>
+                            <span>个元宝</span>
+                        </div>
+    
+                        <div class="contentInput center">
+                            <span>即可</span>
+                            <span>免费获得奖品</span>
+                        </div>
+    
+                        <div class="contentInput center">
+                            <span style="font-weight: 700">新东方英语3节课</span>
+                           
+                        </div>
+    
+    
+                        <div class="giftsImg">
+                            <img id="inputImg" class="inputImg" src="../img/1.png" alt="">
+    
+                        </div>
+                    </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+    </div>
+    <!-- 领奖信息 -->
+    <div class="message edit">
+
+        <div class="editHeader">
+            <img class="editHeaderImg" src="../icon/title@3x.png" alt="">
+            <span class="editHeaderlabel">领奖信息</span>
+
+
+            <div class="editRules">
+                <div class="contentTitle"></div>
+
+                <div class="contentInput">
+                    <span style="font-weight: 700">领奖时间：</span>
+                    <span>2018.5.25</span>
+                </div>
+
+                <div class="contentInput">
+                    <span style="font-weight: 700">领奖地址：</span>
+                    <span>福建泉州</span>
+                </div>
+
+                <div class="contentInput">
+                    <span style="font-weight: 700">领奖电话：</span>
+                    <span>18611111234</span>
+                </div>
+
+                <div class="contentInput">
+                    <span style="font-weight: 700">兑奖校区：</span>
+                    <div class="contentInput ">
+                        <div>福建校区</div>
+                        <div>
+                            <span>地址：</span>
+                            <span>福建鼓楼</span>
+                        </div>
+                        <div>
+                            <span>联系方式：</span>
+                            <span>18611111234</span>
+                        </div>
+                    </div>
+                    <div class="contentInput">
+                        <div>泉州校区</div>
+                        <div>
+                            <span>地址：</span>
+                            <span>福建鼓楼</span>
+                        </div>
+                        <div>
+                            <span>联系方式：</span>
+                            <span>18611111234</span>
+                        </div>
+                    </div>
+                    <div class="contentInput">
+                        <div>江西校区</div>
+                        <div>
+                            <span>地址：</span>
+                            <span>福建鼓楼</span>
+                        </div>
+                        <div>
+                            <span>联系方式：</span>
+                            <span>18611111234</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 机构介绍 -->
+    <div class="org edit">
+
+        <div class="editHeader">
+            <img class="editHeaderImg" src="../icon/title@3x.png" alt="">
+            <span class="editHeaderlabel">机构介绍</span>
+
+
+            <div class="editOrg">
+                <div class="contentTitle"></div>
+                <div class="contentInput">
+                    <div class="showContent">
+                        <span>我们机构很好很牛逼很好很牛逼很牛逼很牛逼</span>
+                    </div>
+                    <div class="showPic">
+                        <div class="">
+                            <img class="showImage" src="../img/1.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="showPic">
+                        <div class="">
+                            <img class="showImage" src="../img/1.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="showPic">
+                        <div class="">
+                            <img class="showImage" src="../img/1.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!-- 排行榜 -->
+    <div class="ranking edit">
+
+        <div class="editHeader">
+            <img class="editHeaderImg" src="../icon/title@3x.png" alt="">
+            <span class="editHeaderlabel">排行榜</span>
+
+            <div class="editRanking ">
+                <div class="contentTitle">
+                </div>
+                <div class="contentInput">
+                    <div class="rankingTitle">
+                        <div class="rank">排名</div>
+                        <div class="name">姓名</div>
+                        <div class="count">分数</div>
+                        <div class="finishTime">完成时间</div>
+                    </div>
+
+                    <div class="rankingContent">
+                        <div class="data">
+                            <div class="rank">01</div>
+                            <div class="name">张三</div>
+                            <div class="count">100</div>
+                            <div class="finishTime">2018/5/28</div>
+                        </div>
+                        <div class="data">
+                            <div class="rank">01</div>
+                            <div class="name">张三</div>
+                            <div class="count">100</div>
+                            <div class="finishTime">2018/5/28</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <img src="../img/yuanbao@3x.png" alt="">
+    </div>
+
+
+
+
+
+
+
+    <!-- <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/swiper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/city-picker.min.js"></script> -->
+   <script src="../js/jquery-2.1.4.js"></script>
+   <script src="../js/jquery-weui.min.js"></script>
+   <script src="../js/swiper.min.js"></script>     
+    <script src="../js/city-picker.min.js"></script>
+
+    <script src="../js/yuanbao.js"></script>
+
+
+</body>
+
+</html>

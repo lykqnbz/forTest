@@ -1,0 +1,262 @@
+@charset "utf-8";
+
+/*统一样式*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+fieldset,
+lengend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    font-family: PingFangSC, Helvetica;
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a,
+img,
+input,
+div {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.bold {
+    font-weight: 600
+}
+
+@media screen and (min-width:1024px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+
+/* PC */
+
+@media screen and (max-width:800px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+
+/* 普通平板 */
+
+@media screen and (max-width:414px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+
+/* 苹果6P7P8P */
+
+@media screen and (max-width:375px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+
+/* 苹果678 */
+
+@media screen and (max-width:360px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+
+/* 三星S5 */
+
+@media screen and (max-width:320px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+
+/* 苹果5 */
+
+
+/*禁止ios微信端长按出现*/
+
+* {
+    -webkit-touch-callout: none;
+    -moz-touch-callout: none;
+    -ms-touch-callout: none;
+    touch-callout: none;
+}
+
+.myActive {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.nav {
+    height: 3rem;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    display: -webkit-flex;
+    border-bottom: 1px solid #e5e5e5;
+    background: #f5f4f4e7;
+}
+
+.nav label {
+    width: 25%;
+    height: 3rem;
+    border-left: 1px solid #e5e5e5;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6e6c6c81;
+}
+
+.active {
+    background-color: #ff3907;
+    color: #fff !important;
+}
+
+.swiper-container {
+    width: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sec>ul {
+    width: 96%;
+    margin-left: 4%;
+}
+
+.sec>ul>li {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.sec .secLeft {
+    width: 4.4rem;
+    height: 3rem;
+    margin-right: 20px;
+}
+
+.sec .secLeft>img {
+    width: 4.4rem;
+    height: 3rem;
+}
+
+.sec .secRight {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    flex: 1;
+    height: 5rem;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.secRight>label {
+    font-size: 1.2rem;
+}
+
+.secRight>span {
+    font-size: 0.86rem;
+    color: #999;
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.sec .more {
+    height: 2rem;
+    width: 90%;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    font-size: 0.94rem;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    background: #F36442;
+}
+
+.sec .warm {
+    margin-top: 20px;
+    color: #f7c354;
+    font-size: 0.78rem;
+}
+
+.personal>.bottom>ul {
+    width: 100%;
+}
+
+.personal>.bottom>ul>li {
+    font-size: 0;
+    margin-left: -4px;
+    margin-bottom: -4px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 33.3%;
+    height: 100px;
+    border-bottom: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+}
+
+.personal>.bottom>ul>li.active {
+    background: black;
+}
