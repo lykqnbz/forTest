@@ -24,7 +24,7 @@
     <nav class="mynav" style="margin-bottom: 20px;">
         <ul>
             <li>
-                <a id="xdy" onclick="xdyLogin()">校道云登录</a>
+                <a id="xdy" onclick="xdyLogin()">校道云登录1</a>
             </li>
             <li>
                 <a id="tel" onclick="telLogin()">手机号登录</a>
@@ -138,11 +138,12 @@ var referer_url = $('#referer_url').val();
 var url_index = referer_url .lastIndexOf("\/");
 var referer_url_ext  = referer_url .substring(url_index + 1, referer_url .length);
 var oldHeight = window.innerHeight;
+console.log(oldHeight)
 
 $("input").focus(function(){
-    $("body").height=oldHeight;
+    // $("body").height=oldHeight;
 });
-
+$(".backgroundImg").eq(0).css('height',oldHeight+'px' );
 function login() {
         var login_type = $('#login_type').val();
 
