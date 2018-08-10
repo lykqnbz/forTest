@@ -1,0 +1,177 @@
+.shareBG {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+
+.background-img {
+    width: 100%;
+    padding: 20px 0 10px 0;
+    background: url(../img/personalBG.png) no-repeat;
+    background-size: 100%;
+    flex-direction: column;
+}
+
+.personal-avat {
+    width: 85px;
+    height: 85px;
+    z-index: 10;
+}
+
+.personal-avat>img {
+    width: 81px;
+    height: 81px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.personal-username {
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.editPersonal {
+    display: block;
+    color: #f88601;
+    font-weight: 600;
+    background-color: #fff;
+    border-radius: 60px;
+    padding: 0px 20px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.setting {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+}
+
+.streanline {
+    margin: 0 30px;
+    border-right: 1px solid #fff;
+    height: 1.5rem;
+    position: relative;
+    top: 5px;
+}
+
+.button-sp-area {
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 60%;
+}
+
+.mini-btn {
+    margin-right: 5px;
+}
+
+.page__bd_spacing {
+    width: 88%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.weui-btn {
+    width: 100%;
+}
+
+.page_pt {
+    padding-top: 40px;
+}
+
+.detail {
+    display: flex;
+    color: blue;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.em {
+    width: 6px;
+    height: 6px;
+    border-top: 1px solid blue;
+    border-left: 1px solid blue;
+    transform: rotateZ(135deg);
+}
+
+.submit-button-primary {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 2.55555556;
+    border-radius: 5px;
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    background-color: #18ac18;
+    color: #fff;
+}
+
+.submit-button-other {
+    border: 1px solid #d3d3d3;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 2.55555556;
+    border-radius: 5px;
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    color: #000000;
+    background-color: #F8F8F8;
+    margin-top: 15px;;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.card{
+    width: 160px;
+    height: 168px;
+    margin-top: 20px;
+    box-shadow: 0 0 5px 0 #e6e5e3;
+}
+.card img{
+    width: 160px;
+    height: 97px;
+    ;
+}
+.cardflex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.cardadd{
+    display: flex;
+    align-items: center;
+}

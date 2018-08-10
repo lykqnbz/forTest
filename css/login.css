@@ -1,0 +1,250 @@
+.backgroundImg {
+    width: 100%;
+    height: 100vh;
+    background: url(../img/loginBG.png) no-repeat center;
+    background-size: 100% 100vh;
+    z-index: -1;
+}
+
+.backgroundImg>img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    z-index: -1;
+}
+
+.title {
+    margin-bottom: 29px;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.chooseLogin {
+    width: 80%;
+}
+
+.loginmethod {
+    width: 90%;
+    height: 22px;
+    padding: 5px;
+    border-radius: 3px;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    background-color: #f88601;
+    color: #fff;
+    -webkit-align-items: center;
+    align-items: center;
+    margin: 10px;
+    ;
+}
+
+.loginmethod-right {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    top: -2px;
+}
+
+.input-style {
+    width: 70%;
+    padding: 7px;
+    margin-bottom: 14px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    color: #000;
+    text-align: center;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    font-size: 1rem;
+}
+
+/* ::-webkit-input-placeholder { 
+    color: #9a9a9a;
+}
+
+:-moz-placeholder {
+    color: #9a9a9a;
+}
+
+::-moz-placeholder {
+    color: #9a9a9a;
+}
+
+:-ms-input-placeholder {
+    color: #9a9a9a;
+   
+} */
+
+.code-wraper {
+    width: 74%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 1px;
+}
+
+.code-wraper>.input-style {
+    width: 68%;
+}
+
+.codeuseable {
+    background-color: #00b1ff !important;
+    color: #fff !important;
+}
+
+.code {
+    z-index:100;
+    padding: 0px 4px;
+    width: 20%;
+    background-color: #dadada;
+    color: #000;
+    text-align: center;
+    border-radius: 30px;
+    margin-bottom: 14px;
+    opacity: 0.8;
+    line-height: 0.8rem;
+    font-size: 0.8rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.unused{
+    pointer-events: none;
+}
+
+.hyperlink {
+    display: flex;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    ;
+}
+
+.hyperlink>a,
+.hyperlink>div {
+    color: #fff;
+    font-size: 1rem;
+    margin-right: 14px;
+    margin-top: 0.9rem;
+}
+
+.submit-button {
+    border: none;
+    outline: none;
+    width: 70%;
+    text-align: center;
+    border-radius: 30px;
+    margin-top: 30px;
+    background-color: #f88601;
+    color: #fff;
+    font-size: 1rem;
+    padding: 7px;
+}
+
+.submit-button::after {
+    border: none;
+}
+
+.submit-button::before {
+    border: none;
+}
+
+.telLogin {
+    width: 100%;
+}
+
+.xdyLogin {
+    display: none;
+}
+
+.login-tab {
+    background-color: #fff;
+    width: 80%;
+    border-radius: 10px 10px 0 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+}
+
+.login-tab-active {
+    border: 1px solid #f88601;
+    background-color: #c3c3c3;
+}
+
+.login-box {
+    width: 80%;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.login-wraper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+.input {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.input-style:last-child {
+    border: none;
+}
+
+.mynav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+.mynav li:not(:last-child) {
+    margin-right: 20px;
+}
+
+.mynav a {
+    display: block;
+    font-size: 1.3rem;
+    color: black;
+    text-decoration: none;
+    padding: 7px 15px;
+    font-size: 1.1rem;
+}
+
+.target {
+    position: absolute;
+    border-bottom: 4px solid transparent;
+    -webkit-transform: translateX(-60px);
+    transform: translateX(-60px);
+    z-index: 100;
+}
+
+.mynav a,
+.target {
+    -webkit-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+}
