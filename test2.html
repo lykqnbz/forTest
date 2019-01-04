@@ -10,20 +10,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <link rel="stylesheet" href="">
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+        }
+        .sec{
+            display:flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+        }
+        .sec_1{
+            height:20vh;
+            width:100%;
+            background:pink;
+        }
+        .sec_2{
+            flex: 1;
+            width: 100%;
+            background: red;
+            overflow: auto;
+        }
+        .sec_3{
+            width: 100%;
+            background: gold;
+            height: 20vh;
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <div style="display:flex;flex-direction: column;min-height: 100vh">
-        <div style="height:20vh;width:100%;background-color:pink;border:1px solid red;"></div>
-        <div style="flex:1">
-            <div style="overflow:scroll">
+    <div class="sec">
+        <div class="sec_1"></div>
+        <div class="sec_2" style="flex:1">
+           
                 <div style="height:1300px;background-color:yellow"></div>
                 <div style="height:300px;background-color:green"></div>
-            </div>
         </div>
-        <div style="height:20vh;">
-            <input type="text">
+        <div class="sec_3">
+            
         </div>
     </div>
     <script src="" async defer></script>
@@ -33,7 +61,7 @@
 
 
 <script>
-    var textareaBlur = function() {
+    var textareaBlur = function () {
         setTimeout(() => {
             const scrollHeight = document.documentElement.scrollTop || document.body.scrollTop || 0;
             window.scrollTo(0, Math.max(scrollHeight - 1, 0));
