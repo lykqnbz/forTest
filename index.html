@@ -1,259 +1,420 @@
-<?php
-    //$signPackage  =  ZYYZgetWxSafeSign();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="cleartype" content="on">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>登录页</title>
-    <link rel="stylesheet" href="css/link.css">
+    <meta charset="utf-8" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" media="screen" />
+    <title>王才贤</title>
+    <style type="text/css">
+        /*body{background:url(./new_chat/images/yuyin_bg.png) no-repeat;background-size:100%;}*/
+        
+        body {
+            background-color: #eee;
+            background-size: 100%;
+        }
+        
+        @media all and (min-width: 640px) {
+            body,
+            html,
+            .wenwen-footer,
+            .speak_window {
+                width: 640px!important;
+                margin: 0 auto
+            }
+            .speak_window,
+            .wenwen-footer {
+                left: 50%!important;
+                margin-left: -320px
+            }
+        }
+        
+        input,
+        button {
+            outline: none;
+        }
+        
+        .wenwen-footer {
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            background: #fff;
+            padding: 3%;
+            border-top: solid 1px #ddd;
+            box-sizing: border-box;
+        }
+        
+        .wenwen_btn,
+        .wenwen_help {
+            width: 15%;
+            text-align: center;
+        }
+        
+        .wenwen_btn img,
+        .wenwen_help img {
+            height: 40px;
+        }
+        
+        .wenwen_text {
+            height: 40px;
+            border-radius: 5px;
+            border: solid 1px #636162;
+            box-sizing: border-box;
+            width: 66%;
+            text-align: center;
+            overflow: hidden;
+            margin-left: 2%;
+        }
+        
+        .circle-button {
+            padding: 0 5px;
+        }
+        
+        .wenwen_text .circle-button {
+            font-size: 14px;
+            color: #666;
+            line-height: 38px;
+        }
+        
+        .write_box {
+            background: #fff;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            display: none;
+        }
+        
+        .write_box input {
+            height: 40px;
+            padding: 0 5px;
+            line-height: 40px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 0;
+        }
+        
+        .wenwen_help button {
+            width: 95%;
+            background: #42929d;
+            color: #fff;
+            border-radius: 5px;
+            border: 0;
+            height: 40px;
+            display: none;
+        }
+        
+        #wenwen {
+            height: 100%;
+        }
+        
+        .speak_window {
+            overflow-y: scroll;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        
+        .speak_box {
+            margin-bottom: 70px;
+            padding: 10px;
+        }
+        
+        .question,
+        .answer {
+            margin-bottom: 1rem;
+        }
+        
+        .question {
+            text-align: right;
+        }
+        
+        .question>div {
+            display: inline-block;
+        }
+        
+        .left {
+            float: left;
+        }
+        
+        .right {
+            float: right;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        
+        .heard_img {
+            height: 60px;
+            width: 60px;
+            border-radius: 5px;
+            overflow: hidden;
+            background: #ddd;
+        }
+        
+        .heard_img img {
+            width: 100%;
+            height: 100%
+        }
+        
+        .question_text,
+        .answer_text {
+            box-sizing: border-box;
+            position: relative;
+            display: table-cell;
+            min-height: 60px;
+        }
+        
+        .question_text {
+            padding-right: 20px;
+        }
+        
+        .answer_text {
+            padding-left: 20px;
+        }
+        
+        .question_text p,
+        .answer_text p {
+            border-radius: 10px;
+            padding: 10px;
+            margin: 0;
+            font-size: 14px;
+            line-height: 28px;
+            box-sizing: border-box;
+            vertical-align: middle;
+            display: table-cell;
+            word-wrap: break-word;
+        }
+        
+        .answer_text p {
+            background: #fff;
+        }
+        
+        .question_text p {
+            background: #42929d;
+            color: #fff;
+            text-align: left;
+        }
+        
+        .question_text i,
+        .answer_text i {
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            position: absolute;
+            top: 25px;
+        }
+        
+        .answer_text i {
+            border-right: 10px solid #fff;
+            left: 10px;
+        }
+        
+        .question_text i {
+            border-left: 10px solid #42929d;
+            right: 10px;
+        }
+        
+        .answer_text p a {
+            color: #42929d;
+            display: inline-block;
+        }
+        
+        audio {
+            display: none;
+        }
+        
+        .saying {
+            position: fixed;
+            bottom: 30%;
+            left: 50%;
+            width: 120px;
+            margin-left: -60px;
+            display: none;
+        }
+        
+        .saying img {
+            width: 100%;
+        }
+        
+        .write_list {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            border-top: solid 1px #ddd;
+            padding: 5px;
+            line-height: 30px;
+        }
+    </style>
 </head>
+
 <body>
-<input type="hidden" id="referer_url" value="{$referer_url}">
-<div class="backgroundImg">
-    <!-- <img src='https://lg-qbebxteq-1254009145.cos.ap-shanghai.myqcloud.com/backgroundImg.png'></img> -->
 
-<div class="container">
-    <!-- 登录方式选择按钮 -->
-    <nav class="mynav" style="margin-bottom: 20px;">
-        <ul>
-            <li>
-                <a id="xdy" onclick="xdyLogin()">校道云登录1</a>
-            </li>
-            <li>
-                <a id="tel" onclick="telLogin()">手机号登录</a>
-            </li>
-            <span class="target"></span>
-        </ul>
 
-    </nav>
 
-    <!-- 登录方式选择 -->
-
-    <!-- 校道登录界面 -->
-    <div class="login-wraper" style="width:100%;height: 200px;">
-        <div class="telLogin">
-            <div style="text-align: center">
-                <input id="mobile" class="input-style" placeholder='请输入手机号' type='text'>
-                <input id="password" class="input-style" placeholder='请输入登录密码' type='password'>
-            </div>
-            <div class="hyperlink">
-                <a href="__CONTROLLER__/register">注册账号</a>
-                <div>|</div>
-                <a href="__CONTROLLER__/repassword">忘记密码</a>
-            </div>
-        </div>
-        <div class="xdyLogin">
-            <div style="text-align: center">
-                <input id="name" class="input-style" placeholder='请输入用户名' type='text'/>
-                <input id="userPW" class="input-style" placeholder='请输入登录密码' type='password'/>
-                <input id="schoolName" class="input-style" placeholder='请输入校区名字' type='text'/>
+    <!-- <div class="wrapper" style="height:100%"> -->
+    <div class="speak_window">
+        <div class="speak_box">
+            <div class="answer">
+                <div class="heard_img left"><img src="./new_chat/images/1.jpg"></div>
+                <div class="answer_text">
+                    <p>Hey，您的专属导游在此！您可以向我提问哦！有时微信会跟我闹点小脾气，试试关闭当前页面重新进入就ok啦!</p>
+                    <i></i>
+                    <a href="./test2.html">text</a>
+                </div>
             </div>
         </div>
     </div>
-
-    <a class="submit-button" onclick="login()" style="margin-top: 20px;">登录</a>
-    <input id="login_type" type="hidden" value="base">
+    <!-- </div> -->
 
 
-</div>
 
-  <!-- 未完善信息提示 -->
-  <div id="noConsummateUserInfo" style="display:none;color:#000;border: 1px solid #000;border-radius: 10px;width: 250px;margin: 250px auto;padding:15px;box-sizing: border-box;">
-    <span>系统检测到您账号为已注册未完善信息状态，请您前往完善信息！</span>
-    <a href=""><div style="text-align: center;padding: 10px;color:#4504db;"><b>前往完善信息</b></div></a>
-</div>
-</div>
+
+    <div class="saying">
+        <img src="./new_chat/images/saying.gif" />
+    </div>
+
+
+    <div class="wenwen-footer">
+        <div class="wenwen_btn left" onClick="to_write()">
+            <img src="./new_chat/images/jp_btn.png">
+        </div>
+        <div class="wenwen_text left">
+            <div class="write_box">
+                <input type="text" class="left" onKeyUp="keyup()" id="comment-content" />
+            </div>
+            <div class="circle-button" id="wenwen">
+                按住 说话
+            </div>
+        </div>
+        <div class="wenwen_help right">
+            <button onClick="up_say()" class="right">发送</button>
+        </div>
+        <div style="opacity:0;" class="clear"></div>
+    </div>
+
+
+
 </body>
 <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/jquery-weui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
-<script src="js/underborder.js"></script>
-<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<script src="./iscroll.js"></script>
+
 <script>
-    /**********************微信JS-SDK开始***********************************/
-    wx.config({
-        debug: false,
-        appId: '<?php echo $signPackage["appId"];?>',
-        timestamp: '<?php echo $signPackage["timestamp"];?>',
-        nonceStr: '<?php echo $signPackage["nonceStr"];?>',
-        signature: '<?php echo $signPackage["signature"];?>',
-        jsApiList: [
-            // 所有要调用的 API 都要加到这个列表中
-            'onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ',
-            'onMenuShareWeibo','onMenuShareQZone','chooseImage',
-            'uploadImage','downloadImage','startRecord','stopRecord',
-            'onVoiceRecordEnd','playVoice','pauseVoice','stopVoice',
-            'translateVoice','openLocation','getLocation','hideOptionMenu',
-            'showOptionMenu','closeWindow','hideMenuItems','showMenuItems',
-            'showAllNonBaseMenuItem','hideAllNonBaseMenuItem'
-        ]
-    });
-    wx.ready(function (){
-        // 在这里调用 API
-        /**   分享区域开始   **/
-        wx.onMenuShareAppMessage({
-            title: '只用一招', // 分享标题
-            desc: '招生只用一招', // 分享描述
-            link: '', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-            imgUrl: '<?=$_SESSION["user_img_url"]?>', // 分享图标
-            type: 'link', // 分享类型,music、video或link，不填默认为link
-            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-            success: function () {
-                // 用户确认分享后执行的回调函数
-            },
-            cancel: function () {
-                // 用户取消分享后执行的回调函数
-            }
-        });
-        wx.onMenuShareTimeline({
-            title: '只用一招', // 分享标题
-            link: '', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-            imgUrl: '<?=$_SESSION["user_img_url"]?>', // 分享图标
-            success: function () {
-                // 用户确认分享后执行的回调函数
-            },
-            cancel: function () {
-                // 用户取消分享后执行的回调函数
-            }
-        });
-        /***   分享区域结束   ***/
-    });
+    function to_write() {
+        $('.wenwen_btn img').attr('src', './new_chat/images/yy_btn.png');
+        $('.wenwen_btn').attr('onclick', 'to_say()');
+        $('.write_box,.wenwen_help button').show();
+        $('.circle-button,.wenwen_help a').hide();
+        $('.write_box input').focus();
+        for_bottom();
+    }
 
-    wx.error(function(res){
-        // alert(res);
-    });
-    /**********************微信JS-SDK结束***********************************/
+    function to_say() {
+        $('.wenwen_btn img').attr('src', './new_chat/images/jp_btn.png');
+        $('.wenwen_btn').attr('onclick', 'to_write()');
+        $('.write_box,.wenwen_help button').hide();
+        $('.circle-button,.wenwen_help a').show();
+    }
 
+    function up_say() {
+        var text = $('.write_box input').val(),
+            str = '<div class="question">';
+        str += '<div class="heard_img right"><img src="./new_chat/images/1.jpg"/></div>';
+        str += '<div class="question_text clear"><p>' + text + '</p><i></i>';
+        str += '</div></div>';
 
-
-
-var referer_url = $('#referer_url').val();
-var url_index = referer_url .lastIndexOf("\/");
-var referer_url_ext  = referer_url .substring(url_index + 1, referer_url .length);
-var oldHeight = window.innerHeight;
-console.log(oldHeight)
-
-$("input").focus(function(){
-    // $("body").height=oldHeight;
-});
-$(".backgroundImg").eq(0).css('height',oldHeight+'px' );
-function login() {
-        var login_type = $('#login_type').val();
-
-        var mobile = $('#mobile').val();
-        var password = $('#password').val();
-
-        var name = $('#name').val();
-        var userPW = $('#userPW').val();
-        var schoolName = $('#schoolName').val();
-
-        if(login_type == 'base'){
-            if (mobile == '' || password == '') {
-                $.toast("用户名或密码不能为空", "text");
-                return;
-            }
-            
-            $.ajax({
-                url: '__CONTROLLER__/loginByBase',
-                type: 'POST', //GET
-                async: true, //或false,是否异步
-                data: {
-                    mobile: mobile,
-                    password: password
-                },
-                timeout: 5000, //超时时间
-                dataType: 'json', //返回的数据格式：json/xml/html/script/jsonp/text
-                beforeSend: function() {
-                },
-                success: function(data) {
-				console.log(referer_url_ext);
-                    if (data.code == '0') {
-                        if(referer_url_ext != 'markingTool' || referer_url_ext != 'markingWay'){
-                            window.location.href = "__CONTROLLER__/home";
-                        }else{
-                            window.location.href = referer_url;
-                        }
-                    }
-                    if(data.code == '2'){
-                        $('#noConsummateUserInfo').show();
-                        $('.container').hide();
-                        $('#noConsummateUserInfo a').attr("href","__CONTROLLER__/consummateUserInfo/user_name/"+data.user_name+"/p/MTIzNDU2/status/from_register");
-                    }else{
-                        $.toast(data.errmsg, 'text');
-                    }
-                },
-                error:function()
-                {
-                    console.log('asasa111');
-                },
-                complete:function(){
-                    console.log('asasa');
-                }
-            })
-        }else{
-            if(name == '' || userPW == '' || schoolName == ''){
-                $.toast("用户名,密码或校区不能为空", "text");return;
-            }
-            $.ajax({
-                url: '__CONTROLLER__/loginByXdy',
-                type: 'POST', //GET
-                async: true, //或false,是否异步
-                data: {
-                    name: name,
-                    userPW: userPW,
-                    schoolName:schoolName
-                },
-                timeout: 5000,    //超时时间
-                dataType: 'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-                beforeSend: function () {
-                    //$.showLoading('提交中');
-                },
-                success: function (data) 
-                {
-                    console.log(data);
-                    if(data.code == '0')
-                    {
-                        $.toast(data.errmsg,function()
-                        {
-                            window.location.href = "__CONTROLLER__/home";
-                        });
-                        return;
-                    }
-                    $.toast(data.errmsg,'text');
-                },
-                error: function () {
-                    console.log('faile');
-                    $.hideLoading();
-                },
-                complete: function () {
-                    //$.hideLoading();
-                }
-            })
+        if (text == '') {
+            alert('请输入提问！');
+            $('.write_box input').focus();
+        } else {
+            $('.speak_box').append(str);
+            $('.write_box input').val('');
+            // $('.write_box input').focus();
+            autoWidth();
+            for_bottom();
+            setTimeout(function() {
+                var ans = '<div class="answer"><div class="heard_img left"><img src="./new_chat/images/1.jpg"/></div>';
+                ans += '<div class="answer_text"><p>您发送的文字是：' + text + '</p><i></i>';
+                ans += '</div></div>';
+                $('.speak_box').append(ans);
+                for_bottom();
+            }, 1000);
         }
-
     }
 
-    var swiper = new Swiper('.swiper-container');
+    var oldHeight = window.innerHeight;
 
-    function xdyLogin() {
-        $('.xdyLogin').css('display', 'block');
-        $('.telLogin').css('display', "none");
-        $('#login_type').val('xdy');
+    function keyup() {
+        // console.log($("body").innerHeight());
+        // var footer_height = $('.wenwen-footer').outerHeight(),
+        // text = $('.write_box input').val();
+        // if (text == '' || text == undefined) {
+        // } else {
+        //     $('.wenwen-footer').append(str);
+        // }
+        $(".wenwen-footer").scrollIntoView();
+
+        $("input").focus(function() {
+            //$("body").height=oldHeight;
+
+        });
+        $("body").eq(0).css('height', oldHeight + 'px');
     }
 
-    function telLogin() {
-        $('.xdyLogin').css('display', 'none');
-        $('.telLogin').css('display', "block");
-        $('#login_type').val('base');
+    var wen = document.getElementById('wenwen');
+
+    function _touch_start(event) {
+        event.preventDefault();
+        $('.wenwen_text').css('background', '#c1c1c1');
+        $('.wenwen_text span').css('color', '#fff');
+        $('.saying').show();
     }
+
+    function _touch_end(event) {
+        event.preventDefault();
+        $('.wenwen_text').css('background', '#fff');
+        $('.wenwen_text .circle-button').css('color', '#666');
+        $('.saying').hide();
+        var str = '<div class="question">';
+        str += '<div class="heard_img right"><img src="./new_chat/images/1.jpg"/></div>';
+        str += '<div class="question_text clear"><p>不好意思，我听不清！</p><i></i>';
+        str += '</div></div>';
+        $('.speak_box').append(str);
+        for_bottom();
+        setTimeout(function() {
+            var ans = '<div class="answer"><div class="heard_img left"><img src="./new_chat/images/1.jpg"/></div>';
+            ans += '<div class="answer_text"><p>我不知道你在说什么?</p><i></i>';
+            ans += '</div></div>';
+            $('.speak_box').append(ans);
+            for_bottom();
+        }, 1000);
+    }
+
+    wen.addEventListener("touchstart", _touch_start, false);
+    wen.addEventListener("touchend", _touch_end, false);
+
+    //对话框上移动
+    function for_bottom() {
+        var speak_height = $('.speak_box').height();
+        $('.speak_box,.speak_window').animate({
+            scrollTop: speak_height
+        }, 500);
+    }
+
+    function autoWidth() {
+        $('.question_text').css('max-width', $('.question').width() - 60);
+    }
+    autoWidth();
 </script>
-
 
 </html>
