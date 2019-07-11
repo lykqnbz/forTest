@@ -13,21 +13,56 @@
     <title>上传身份证</title>
     <script type="text/javascript" src="event.js"></script>
     <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
-
+    <script type="text/javascript" src="js/html5-qrcode.min.js"></script>
+    <style>
+        #reader{
+            background: gainsboro;
+            text-align: center;
+            line-height: 250px;
+            color: goldenrod;
+            font-size: 30px;
+            font-weight: 600;
+        }
+        #label {
+            width: 100%;
+            padding: 0 50px;
+            box-sizing: border-box;
+            height: 100px;
+            line-height: 100px;
+            background: gray;
+            color: blueviolet;
+            font-size: 22px;
+            font-weight: 600;
+            display: block;
+        }
+    </style>
 </head>
 
 <body style="width: 100%;height: 100%;margin: 0;padding: 0; position: relative;">
-    <p id="ppp">测试</p>
-    <hr />
-    <hr />
-    <hr />
-    <hr />
-    <hr />
-    <a href="appmarket://details?id=com.javauser.lszzclound">22222222222222</a>
+    <div id="reader" style="width:300px;height:250px">点我
+    </div>
+
+    <label id="label"> 13123 </label>
 </body>
 <script>
-    var p = document.getElementById("ppp");
-    p.innerHTML = navigator.userAgent;
+    $("#label").html("1");
+    $('#reader').click(function () {
+        $('#reader').html5_qrcode(function (data) {
+            },
+            function (readSuccess) {
+                $("#label").html("readSuccess");
+            },
+            function (readError) {
+                $("#label").html("readError");
+            },
+            function (error) {
+                $("#label").html("error");
+            },
+            function (videoError) {
+                $("#label").html("videoError");
+            }
+        );
+    })
 </script>
 
 </html>
