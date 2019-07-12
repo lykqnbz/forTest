@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>二维码扫描</title>
     <style>
+        .qr {
+            display: flex;
+            align-items: center;
+        }
+
         .qr-img {
             width: 30px;
             height: 30px;
+            position: relative;
+            z-index: 2;
         }
 
         .jsbridge {
@@ -26,6 +33,19 @@
 
         input[node-type=jsbridge] {
             visibility: hidden;
+            width: 0px;
+        }
+
+        input[node-type=jsbridgecD] {
+            position: absolute;
+            visibility: hidden;
+            top: 0px;
+            left: 0px;
+            z-index: 0;
+            ;
+            width: 30px;
+            height: 30px;
+            ;
         }
 
         .result-qrcode {
@@ -33,14 +53,27 @@
             height: 50px;
             border: 1px solid #999;
         }
+
+        .qr2 {
+            margin-left: 50px;
+            position: relative;
+        }
+
+        .qr1 {
+            width: 40px;
+        }
     </style>
 </head>
 
 <body>
-    <div>
-        <div class="qr-btn" node-type="qr-btn">
-            <img class="qr-img" src="ewm_logo.png" />
-            <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码" />
+    <div class="qr">
+        <div class="qr-btn qr1" node-type="qr-btn">
+            <img class="qr-img" src="wx.png" />
+            <input node-type="jsbridge" type="file" name="myPhoto" />
+        </div>
+        <div class="qr-btn qr2">
+            <img class="qr-img" src="wc.png" onclick="qrClick()" />
+            <input id="qr2" node-type="jsbridgecD" type="file" accept="image/*;capture=camera" onchange="txmCheck()">
         </div>
     </div>
     <div class="result-qrcode">
@@ -49,11 +82,49 @@
     <script src="lib/zepto.js"></script>
     <script src="lib/qrcode.lib.min.js"></script>
     <script src="lib/qrcode.js"></script>
+    <script src="lib/quagga.min.js"></script>
     <script>
         //初始化扫描二维码按钮
         $(function () {
             Qrcode.init($('[node-type=qr-btn]'));
         });
+
+        function qrClick() {
+            $("#qr2").click();
+        }
+
+
+        function txmCheck() {
+            var input = document.querySelector("input[node-type=jsbridgecD]");
+            if (input.files && input.files.length) {
+                Quagga.decodeSingle({
+                    inputStream: {
+                        size: 800 // 这里指定图片的大小，需要自己测试一下
+                    },
+                    locator: {
+                        patchSize: "medium",
+                        halfSample: false
+                    },
+                    numOfWorkers: 1,
+                    decoder: {
+                        readers: [{
+                            format: "code_128_reader", // ean_reader 这里指定ean条形码，就是国际13位的条形码   code39    code_128
+                            config: {}
+                        }]
+                    },
+                    locate: true,
+                    src: URL.createObjectURL(input.files[0])
+                }, function (result) {
+                    var code = result.codeResult.code,
+                        $node,
+                        canvas = Quagga.canvas.dom.image;
+                    // 将扫描得到的条形码打印出来
+
+                    $('.result-qrcode').html(code);
+
+                });
+            }
+        }
     </script>
 </body>
 
