@@ -5,30 +5,55 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>二维码扫描</title>
-    <link rel="stylesheet" type="text/css" href="lib/my.css">
+    <style>
+        .qr-img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .jsbridge {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+
+        .upimg {
+            height: 200px;
+            width: 200px;
+            background-color: green;
+            margin-bottom: 50px;
+        }
+
+        input[node-type=jsbridge] {
+            visibility: hidden;
+        }
+
+        .result-qrcode {
+            width: 200px;
+            height: 50px;
+            border: 1px solid #999;
+        }
+    </style>
 </head>
 
 <body>
     <div>
-        <div class="qr-btn" node-type="qr-btn">扫描二维码1
-            <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码1" />
-        </div>
-    </div>
-    <div>
-        <div class="qr-btn" node-type="qr-btn">扫描二维码2
-            <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码2" />
+        <div class="qr-btn" node-type="qr-btn">
+            <img class="qr-img" src="ewm_logo.png" />
+            <input node-type="jsbridge" type="file" name="myPhoto" value="扫描二维码" />
         </div>
     </div>
     <div class="result-qrcode">
+
     </div>
     <script src="lib/zepto.js"></script>
     <script src="lib/qrcode.lib.min.js"></script>
     <script src="lib/qrcode.js"></script>
     <script>
-    //初始化扫描二维码按钮，传入自定义的 node-type 属性
-    $(function() {
-        Qrcode.init($('[node-type=qr-btn]'));
-    });
+        //初始化扫描二维码按钮
+        $(function () {
+            Qrcode.init($('[node-type=qr-btn]'));
+        });
     </script>
 </body>
 
